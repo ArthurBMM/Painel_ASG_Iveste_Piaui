@@ -108,7 +108,7 @@ test("config/metricas.json: válido contra o registro e todo indicador pontuado 
   assert.ok(metricas, "config/metricas.json não encontrado");
   const v = validarMetricas(metricas, registro, modelo.tema.indicadores);
   assert.deepEqual(v.erros, []);
-  assert.deepEqual(v.avisos, []);                  // todos os 21 do tema têm entrada (pontuados ou com motivo)
+  assert.deepEqual(v.avisos, []);                  // todos os 22 do tema têm entrada (pontuados ou com motivo)
   for (const [id, c] of Object.entries(metricas.indicadores)) {
     if (c.pontuar === false) assert.ok(c.motivo.length > 20, `${id}: motivo curto demais`);
     else assert.ok(c.justificativa.length > 30 && c.fonte, `${id}: justificativa/fonte`);
@@ -138,7 +138,7 @@ test("indicadores de total absoluto ficam fora da nota (não comparáveis entre 
   const a = pontuarASG(registro, metricas, ctx, modelo.tema.indicadores);
   assert.deepEqual(a.A.foraDaNota.map((x) => x.id).sort(), ["ES6", "H1"]);
   assert.deepEqual(a.S.foraDaNota.map((x) => x.id), ["C1"]);
-  assert.equal(a.A.total, 7); assert.equal(a.S.total, 8); assert.equal(a.G.total, 3);
+  assert.equal(a.A.total, 7); assert.equal(a.S.total, 8); assert.equal(a.G.total, 4);           // Q3, T1, M1 e CL1
 });
 
 // ------------------------------------------------------------ 3) motor JS × referência independente

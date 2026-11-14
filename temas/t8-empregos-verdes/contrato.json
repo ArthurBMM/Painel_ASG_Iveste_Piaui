@@ -155,6 +155,21 @@
     "investimento_renovavel_rs": "numero",
     "tem_plano_encerramento": "texto"
    }
+  },
+  "conformidade": {
+   "arquivo": "conformidade.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "ano"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ano": "inteiro",
+    "multas_qtd": "inteiro",
+    "multas_valor_rs": "numero",
+    "teve_multa": "texto"
+   }
   }
  },
  "relacoes": [
@@ -192,6 +207,10 @@
   },
   {
    "de": "comunidade.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "conformidade.projeto_id",
    "para": "projetos.projeto_id"
   }
  ]

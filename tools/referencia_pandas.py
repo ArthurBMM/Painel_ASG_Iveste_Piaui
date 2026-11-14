@@ -13,8 +13,8 @@ import numpy as np, pandas as pd
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 DADOS = RAIZ / "temas/t8-empregos-verdes/dados"
 L = lambda n: pd.read_csv(DADOS / f"{n}.csv")
-P, EMPR, O, E, C, PR, EN, AM, CO = (L(n) for n in ["projetos", "empresas", "ocupacoes", "emprego_mensal", "capacitacao",
-                                                    "programas", "energia_emissoes", "ambiental_mensal", "comunidade"])
+P, EMPR, O, E, C, PR, EN, AM, CO, CF = (L(n) for n in ["projetos", "empresas", "ocupacoes", "emprego_mensal", "capacitacao",
+                                                        "programas", "energia_emissoes", "ambiental_mensal", "comunidade", "conformidade"])
 P = P.merge(EMPR, on="empresa_id")
 E = E.merge(O[["ocupacao_id", "classe"]], on="ocupacao_id"); C = C.merge(O[["ocupacao_id", "classe"]], on="ocupacao_id")
 for d in (E, C, EN, AM): d["m"] = d.mes.str[:7]
@@ -50,6 +50,7 @@ def calcular(f):
     per = lambda d: d[d.projeto_id.isin(ids) & d.m.isin(meses)]
     en, am = per(EN), per(AM)
     co = CO[CO.projeto_id.isin(ids) & CO.ano.isin(anos)]
+    cf = CF[CF.projeto_id.isin(ids) & CF.ano.isin(anos)]
     ult = max(anos) if anos else None
     pr = PR[PR.projeto_id.isin(ids) & PR.m.isin(meses)]
 
@@ -98,6 +99,10 @@ def calcular(f):
     nao["T1.pct_renovavel"] = div(soma(co.investimento_renovavel_rs), soma(co.investimento_total_rs))
     u = co[co.ano == ult]; base = u[u.tem_plano_encerramento != "Não se aplica"]
     nao["M1.pct_com_plano"] = div(float((base.tem_plano_encerramento == "Sim").sum()), float(len(base))) if len(base) else np.nan
+    # CL1 (GRI 2-27): % de projetos com multa no último ano do período; total de multas no período
+    cu = cf[cf.ano == ult]
+    nao["CL1.pct_com_multa"] = div(float((cu.teve_multa == "Sim").sum()), float(len(cu))) if len(cu) else np.nan
+    nao["CL1.multas_total"] = soma(cf.multas_qtd)
     for k, v in nao.items(): r[k] = np.nan if recorte else v     # bloqueio: sem sentido com recorte de pessoas
     return {k: (None if pd.isna(v) else float(v)) for k, v in r.items()}
 

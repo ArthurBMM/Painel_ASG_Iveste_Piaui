@@ -234,6 +234,16 @@
       },
       "justificativa": "Peso 1. % das minas com plano de encerramento; só existe para projetos de mineração (outros setores ficam sem dado e não entram na média).",
       "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "CL1": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.5,
+        "teto": 0
+      },
+      "justificativa": "Peso 2: multas e sanções são o sinal mais direto de falha de conformidade, por isso pesa mais que os demais de Governança. Menor é melhor: piso 50% (metade ou mais dos projetos multados no ano vale 0) e teto 0% (nenhum projeto multado vale 100).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
     }
   }
 }

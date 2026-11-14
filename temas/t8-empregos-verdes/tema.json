@@ -26,7 +26,8 @@
   "H1",
   "Q3",
   "T1",
-  "M1"
+  "M1",
+  "CL1"
  ],
  "destaques": {
   "A": [
@@ -43,7 +44,8 @@
   "G": [
    "T1",
    "M1",
-   "Q3"
+   "Q3",
+   "CL1"
   ]
  },
  "cartoes_topo": [
@@ -117,7 +119,8 @@
     "refs": [
      "T1",
      "M1",
-     "Q3"
+     "Q3",
+     "CL1"
     ],
     "titulo": "Indicadores de governança por ano",
     "sub": "Cobertura parcial: o GRI trata estes temas em normas setoriais e gerais; a base do T8 tem poucos dados de governança."

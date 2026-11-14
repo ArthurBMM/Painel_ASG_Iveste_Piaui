@@ -1266,6 +1266,66 @@
      }
     }
    ]
+  },
+  {
+   "id": "CL1",
+   "pilar": "G",
+   "titulo": "Conformidade com leis e regulamentos",
+   "gri": [
+    {
+     "id": "2-27:2021"
+    }
+   ],
+   "por_que_asg": "Multas e sanções mostram se a operação cumpre as leis ambientais, trabalhistas e de licenciamento: é o teste mais direto de governança na prática.",
+   "como_calcula": "% de projetos com ao menos uma multa = projetos com multa no ano ÷ projetos com dado de conformidade, no último ano do período. O total de multas soma o período inteiro.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_com_multa",
+     "titulo": "% de projetos com multa no ano",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "contagem",
+       "tabela": "conformidade",
+       "onde": {
+        "teve_multa": "Sim"
+       },
+       "ano": "ultimo"
+      },
+      "den": {
+       "op": "contagem",
+       "tabela": "conformidade",
+       "ano": "ultimo"
+      }
+     }
+    },
+    {
+     "chave": "multas_total",
+     "titulo": "Multas e sanções no período",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " multas"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma",
+      "tabela": "conformidade",
+      "campo": "multas_qtd"
+     },
+     "depende_do_periodo": true
+    }
+   ]
   }
  ]
 }

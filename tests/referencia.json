@@ -34,7 +34,9 @@
    "C1.investimento": 60332000.0,
    "C3.pct_com_programa": 0.7916666666666666,
    "T1.pct_renovavel": 0.5399833601240721,
-   "M1.pct_com_plano": 0.6666666666666666
+   "M1.pct_com_plano": 0.6666666666666666,
+   "CL1.pct_com_multa": 0.08333333333333333,
+   "CL1.multas_total": 17.0
   }
  },
  {
@@ -72,7 +74,9 @@
    "C1.investimento": 13171000.0,
    "C3.pct_com_programa": 0.8333333333333334,
    "T1.pct_renovavel": 0.5242169940981486,
-   "M1.pct_com_plano": 0.6666666666666666
+   "M1.pct_com_plano": 0.6666666666666666,
+   "CL1.pct_com_multa": 0.25,
+   "CL1.multas_total": 5.0
   }
  },
  {
@@ -110,7 +114,9 @@
    "C1.investimento": 17518000.0,
    "C3.pct_com_programa": 0.75,
    "T1.pct_renovavel": 0.5054585152838428,
-   "M1.pct_com_plano": 0.3333333333333333
+   "M1.pct_com_plano": 0.3333333333333333,
+   "CL1.pct_com_multa": 0.16666666666666666,
+   "CL1.multas_total": 3.0
   }
  },
  {
@@ -148,7 +154,9 @@
    "C1.investimento": 14283000.0,
    "C3.pct_com_programa": 0.8333333333333334,
    "T1.pct_renovavel": 0.5776791849196454,
-   "M1.pct_com_plano": 0.6666666666666666
+   "M1.pct_com_plano": 0.6666666666666666,
+   "CL1.pct_com_multa": 0.08333333333333333,
+   "CL1.multas_total": 1.0
   }
  },
  {
@@ -186,7 +194,9 @@
    "C1.investimento": 4694000.0,
    "C3.pct_com_programa": 0.16666666666666666,
    "T1.pct_renovavel": 0.11598028796514465,
-   "M1.pct_com_plano": 0.6666666666666666
+   "M1.pct_com_plano": 0.6666666666666666,
+   "CL1.pct_com_multa": 0.3333333333333333,
+   "CL1.multas_total": 10.0
   }
  },
  {
@@ -224,7 +234,9 @@
    "C1.investimento": 4724000.0,
    "C3.pct_com_programa": 1.0,
    "T1.pct_renovavel": 0.5389635672568833,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": 0.0,
+   "CL1.multas_total": 0.0
   }
  },
  {
@@ -262,7 +274,9 @@
    "C1.investimento": 11331000.0,
    "C3.pct_com_programa": 1.0,
    "T1.pct_renovavel": 0.9231744125935931,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": 0.0,
+   "CL1.multas_total": 0.0
   }
  },
  {
@@ -300,7 +314,9 @@
    "C1.investimento": 2279000.0,
    "C3.pct_com_programa": 1.0,
    "T1.pct_renovavel": 0.538679450860754,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": 0.0,
+   "CL1.multas_total": 0.0
   }
  },
  {
@@ -338,7 +354,9 @@
    "C1.investimento": null,
    "C3.pct_com_programa": null,
    "T1.pct_renovavel": null,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": null,
+   "CL1.multas_total": null
   }
  },
  {
@@ -376,7 +394,9 @@
    "C1.investimento": null,
    "C3.pct_com_programa": null,
    "T1.pct_renovavel": null,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": null,
+   "CL1.multas_total": null
   }
  },
  {
@@ -414,7 +434,9 @@
    "C1.investimento": null,
    "C3.pct_com_programa": null,
    "T1.pct_renovavel": null,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": null,
+   "CL1.multas_total": null
   }
  },
  {
@@ -452,7 +474,9 @@
    "C1.investimento": null,
    "C3.pct_com_programa": null,
    "T1.pct_renovavel": null,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": null,
+   "CL1.multas_total": null
   }
  },
  {
@@ -490,7 +514,9 @@
    "C1.investimento": 4324000.0,
    "C3.pct_com_programa": 1.0,
    "T1.pct_renovavel": 0.9261190786614515,
-   "M1.pct_com_plano": null
+   "M1.pct_com_plano": null,
+   "CL1.pct_com_multa": 0.0,
+   "CL1.multas_total": 0.0
   }
  }
 ]
