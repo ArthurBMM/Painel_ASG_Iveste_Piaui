@@ -1266,6 +1266,218 @@
      }
     }
    ]
+  },
+  {
+   "id": "CL1",
+   "pilar": "G",
+   "titulo": "Conformidade com leis e regulamentos",
+   "gri": [
+    {
+     "id": "2-27:2021"
+    }
+   ],
+   "por_que_asg": "Multas e sanções mostram se a operação cumpre as leis ambientais, trabalhistas e de licenciamento: é o teste mais direto de governança na prática.",
+   "como_calcula": "% de projetos com ao menos uma multa = projetos com multa no ano ÷ projetos com dado de conformidade, no último ano do período. O total de multas soma o período inteiro.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_com_multa",
+     "titulo": "% de projetos com multa no ano",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "contagem",
+       "tabela": "conformidade",
+       "onde": {
+        "teve_multa": "Sim"
+       },
+       "ano": "ultimo"
+      },
+      "den": {
+       "op": "contagem",
+       "tabela": "conformidade",
+       "ano": "ultimo"
+      }
+     }
+    },
+    {
+     "chave": "multas_total",
+     "titulo": "Multas e sanções no período",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " multas"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma",
+      "tabela": "conformidade",
+      "campo": "multas_qtd"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "AC1",
+   "pilar": "G",
+   "titulo": "Casos confirmados de corrupção",
+   "gri": [
+    {
+     "id": "205-3:2016"
+    }
+   ],
+   "por_que_asg": "Um caso confirmado de corrupção é falha grave de governança e risco direto para a reputação e para o acesso a financiamento.",
+   "como_calcula": "% de projetos com ao menos um caso confirmado = projetos com caso no ano ÷ projetos com dado, no último ano do período. O total de casos soma o período inteiro.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_com_caso",
+     "titulo": "% de projetos com caso de corrupção no ano",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "contagem",
+       "tabela": "integridade",
+       "onde": {
+        "teve_caso_corrupcao": "Sim"
+       },
+       "ano": "ultimo"
+      },
+      "den": {
+       "op": "contagem",
+       "tabela": "integridade",
+       "ano": "ultimo"
+      }
+     }
+    },
+    {
+     "chave": "casos_total",
+     "titulo": "Casos confirmados no período",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " casos"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma",
+      "tabela": "integridade",
+      "campo": "casos_corrupcao"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "AC2",
+   "pilar": "G",
+   "titulo": "Capacitação em políticas anticorrupção",
+   "gri": [
+    {
+     "id": "205-2:2016"
+    }
+   ],
+   "por_que_asg": "Políticas só funcionam se quem decide as conhece: mede quanto da liderança foi capacitada para reconhecer e evitar corrupção.",
+   "como_calcula": "% de gestores capacitados = gestores capacitados em anticorrupção ÷ gestores e membros da direção, no último ano do período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_capacitados",
+     "titulo": "% de gestores capacitados em anticorrupção",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "integridade",
+       "campo": "gestores_capacitados_anticorrupcao",
+       "ano": "ultimo"
+      },
+      "den": {
+       "op": "soma",
+       "tabela": "integridade",
+       "campo": "gestores_total",
+       "ano": "ultimo"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "PO1",
+   "pilar": "G",
+   "titulo": "Compromissos de política",
+   "gri": [
+    {
+     "id": "2-23:2021"
+    }
+   ],
+   "por_que_asg": "Compromissos formais (ambiental, direitos humanos e anticorrupção) são o ponto de partida de uma governança responsável: sem política escrita não há o que cobrar.",
+   "como_calcula": "% de políticas adotadas = políticas existentes ÷ (3 × projetos com dado), no último ano do período. As três políticas são ambiental, direitos humanos e anticorrupção.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_politicas",
+     "titulo": "% das 3 políticas adotadas",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "integridade",
+       "campo": "politicas_adotadas_qtd",
+       "ano": "ultimo"
+      },
+      "den": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "contagem",
+         "tabela": "integridade",
+         "ano": "ultimo"
+        },
+        {
+         "op": "const",
+         "valor": 3
+        }
+       ]
+      }
+     }
+    }
+   ]
   }
  ]
 }

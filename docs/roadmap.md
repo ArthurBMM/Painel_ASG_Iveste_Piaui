@@ -2,7 +2,7 @@
 
 | Fase | Objetivo | Estado |
 |---|---|---|
-| **1. Motor + registro** | Motor genérico, registro de 21 indicadores/33 medidas, contrato de dados, testes contra referência independente | ✅ feito |
+| **1. Motor + registro** | Motor genérico, registro de 25 indicadores/39 medidas, contrato de dados, testes contra referência independente | ✅ feito |
 | **2. Interface ASG** | Visão ASG, Ambiental, Social, Governança, Empresas e projetos, Indicadores e método; catálogo GRI (130, privado) | ✅ feito (protótipo) |
 | **3. Escalabilidade** | Importação **CSV e XLSX** (e `metricas.json`) pelo navegador, sem persistência; validação com mensagens claras; segundo tema de demonstração | ⏳ próximo |
 | **4. Pontuação ASG** | `config/metricas.json` (pesos, piso/teto, faixas, justificativas); nota por pilar, ASG geral e por entidade; página de método com a conta; sensibilidade dos pesos | ✅ implementado (D5, D15); falta calibrar limites com dados reais |

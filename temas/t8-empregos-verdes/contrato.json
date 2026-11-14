@@ -155,6 +155,41 @@
     "investimento_renovavel_rs": "numero",
     "tem_plano_encerramento": "texto"
    }
+  },
+  "conformidade": {
+   "arquivo": "conformidade.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "ano"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ano": "inteiro",
+    "multas_qtd": "inteiro",
+    "multas_valor_rs": "numero",
+    "teve_multa": "texto"
+   }
+  },
+  "integridade": {
+   "arquivo": "integridade.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "ano"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ano": "inteiro",
+    "casos_corrupcao": "inteiro",
+    "teve_caso_corrupcao": "texto",
+    "gestores_total": "inteiro",
+    "gestores_capacitados_anticorrupcao": "inteiro",
+    "politica_ambiental": "texto",
+    "politica_direitos_humanos": "texto",
+    "politica_anticorrupcao": "texto",
+    "politicas_adotadas_qtd": "inteiro"
+   }
   }
  },
  "relacoes": [
@@ -192,6 +227,14 @@
   },
   {
    "de": "comunidade.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "conformidade.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "integridade.projeto_id",
    "para": "projetos.projeto_id"
   }
  ]
