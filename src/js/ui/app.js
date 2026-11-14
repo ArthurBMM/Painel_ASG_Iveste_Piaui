@@ -21,7 +21,7 @@ const ORDEM_CLASSE = ["Verde", "Neutra", "Alto impacto"];
 const unicos = (a) => [...new Set(a)].sort((x, y) => String(x).localeCompare(String(y), "pt-BR"));
 const opcoes = (pares, vazio) => `<option value="">${esc(vazio)}</option>` + pares.map(([v, r]) => `<option value="${esc(v)}">${esc(r)}</option>`).join("");
 
-export function iniciarApp({ modelo, registro, indice }) {
+export function iniciarApp({ modelo, registro, indice, metricas = null, problemasMetricas = null }) {
   const tema = modelo.tema;
   const projetos = [...modelo.projetos.values()], empresasLista = [...modelo.empresas.values()];
   const anos = unicos(modelo.meses.map((m) => m.slice(0, 4)));
@@ -76,11 +76,11 @@ export function iniciarApp({ modelo, registro, indice }) {
     const principal = $("principal");
     try {
       const ctx = criarContexto(modelo, filtrosDoMotor());
-      const c = { modelo, registro, ctx, tema, estado };
+      const c = { modelo, registro, ctx, tema, estado, metricas, problemasMetricas };
       const html = estado.pagina === "visao" ? visao.render(c) : ["A", "S", "G"].includes(estado.pagina) ? pilar.render(estado.pagina, c)
         : estado.pagina === "empresas" ? empresas.render(c) : metodo.render(c);
       principal.innerHTML = `<section class="pagina">${html}</section>`;
-      if (estado.pagina === "metodo") metodo.depois(principal);
+      if (estado.pagina === "metodo") metodo.depois(principal, c);
     } catch (e) {
       console.error(e);
       principal.innerHTML = `<div class="caixa"><h3>Não foi possível montar esta página</h3><p class="sub">${esc(e.message)}</p></div>`;

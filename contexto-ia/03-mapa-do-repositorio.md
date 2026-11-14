@@ -9,9 +9,9 @@ Itens marcados **(a criar)** ainda não existem.
 ├── AGENTS.md · CLAUDE.md      apontam as IAs para esta pasta (contexto-ia/)
 ├── contexto-ia/               memória compartilhada do grupo para assistentes de IA (leia 00 primeiro)
 ├── assets/                    (a criar) logo oficial da Investe Piauí e imagens da interface
-├── config/                    (a criar) parâmetros editáveis
-│   ├── metricas.json          pesos, piso/teto, faixas, justificativas
-│   └── identidade.json        nome da instituição, caminho do logo, cores
+├── config/                    parâmetros editáveis
+│   ├── metricas.json          pesos, piso/teto, faixas, justificativas (existe)
+│   └── identidade.json        (a criar) nome da instituição, caminho do logo, cores
 ├── catalogo/                  conhecimento sobre GRI e indicadores (dados, não código)
 │   └── indicadores.json       registro PÚBLICO dos indicadores calculáveis (fórmula, pilar, código GRI)
 ├── privado/                   FORA DO GIT (só o LEIA-ME.md é versionado)
@@ -28,11 +28,11 @@ Itens marcados **(a criar)** ainda não existem.
 │   ├── css/estilo.css         visual (tokens de cor por pilar no topo)
 │   └── js/
 │       ├── main.js            lê índice, tema e registro; liga o leitor de arquivos
-│       ├── nucleo/            MOTOR: sem HTML, roda em Node (por isso é testável)
+│       ├── nucleo/            MOTOR: sem HTML, roda em Node (por isso é testável); inclui pontuacao.js (notas 0-100)
 │       └── ui/                TELAS: sem contas; só desenham o que o motor entrega
 │           ├── app.js         casca, abas (#hash), filtros
 │           ├── paginas/       visao · pilar (A/S/G) · empresas · metodo
-│           └── componentes/   cartao · graficos (SVG) · balanco
+│           └── componentes/   cartao · graficos (SVG) · balanco · nota
 ├── tests/                     testes + referência independente (pandas)
 ├── tools/                     scripts de apoio (servidor local, extrair catálogo, gerar dados fictícios, referência)
 ├── vendor/                    (a criar, só se necessário) bibliotecas versionadas (ex.: XLSX, se a opção B for escolhida)

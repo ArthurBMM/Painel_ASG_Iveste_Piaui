@@ -6,23 +6,22 @@
 
 ## O que existe hoje (`main`)
 
-- Motor genérico + registro de **21 indicadores / 33 medidas** (9 A · 9 S · 3 G), validado contra cálculo independente em pandas (13 contextos × 33 medidas; 30 testes verdes).
+- Motor genérico + registro de **21 indicadores / 33 medidas** (9 A · 9 S · 3 G), validado contra cálculo independente em pandas (13 contextos × 33 medidas; 56 testes verdes, incluindo a pontuação).
 - Páginas: Visão ASG, Ambiental, Social, Governança, Empresas e projetos (empresas, instituições parceiras e iniciativas próprias, com projetos), Indicadores e método.
 - Catálogo GRI com 130 conteúdos e níveis de maturidade (catalogado → mapeado → calculável → em painel). **O catálogo é privado** (`privado/gri_catalogo.json`, fora do Git, por e-mail); sem ele o app mostra só os códigos GRI.
 - Tema T8 com dados fictícios; molde de tema em `temas/_modelo/`.
-- Entidade/projeto avaliados por **balanço de tendência** (▲▼), sem nota.
+- **Pontuação 0–100** implementada (frente 1): `config/metricas.json` (18 indicadores pontuados; `C1`, `ES6`, `H1` fora por serem totais absolutos), nota A/S/G/geral com faixa e cobertura em todas as páginas, notas por entidade, sensibilidade a pesos e demonstração da conta em *Indicadores e método*.
+- Entidade/projeto avaliados por **nota** e por **balanço de tendência** (▲▼).
 
 ## O que falta (prioridade)
 
 | Pri | Item | Req. | Frente |
 |---|---|---|---|
-| 1 | `config/metricas.json` + função de pontuação + testes | R6 | 1 |
 | 1 | Reforçar **Governança**: 6 a 8 indicadores novos e tabela(s) de dados fictícios | R8 | 4 |
 | 1 | **Importação** em **CSV e XLSX** (e `metricas.json`) pelo navegador, com validação | R2 | 2 |
-| 2 | Pontuação nas páginas: ASG geral, A, S, G, empresas | R3, R4 | 1 e 5 |
+| 2 | Revisar piso/teto/pesos com a professora ou com dados reais; criar medidas proporcionais para `C1`, `ES6`, `H1` | R6 | 1 |
 | 2 | **Segundo tema** de demonstração (ex.: "Gestão ambiental", reaproveitando `ambiental_mensal.csv`) | R1 | 4 |
 | 2 | **Modo apresentação** e **identidade da Investe Piauí** (logo, nome, cores em `config/identidade.json`) | R11, R12 | 5 |
-| 2 | Página de método: tabela de parâmetros + "onde editar" + demonstração da conta | R7 | 5 |
 | 3 | Análise de sensibilidade dos pesos | R6 | 1 |
 | 3 | Mais indicadores A e S (ver `docs/indicadores-candidatos.md`) | R8 | 3 |
 | 3 | Revisão do pilar de cada indicador (Q3, T1…) | — | todos |
@@ -72,4 +71,5 @@ Todos executam código, revisam o PR de alguém e leem `docs/arquitetura.md`. Co
 
 | Data | Quem | O que mudou | Pendente |
 |---|---|---|---|
+| 14/11/2026 (noite) | Arthur + IA | **Frente 1 concluída:** `config/metricas.json`, `nucleo/pontuacao.js`, `componentes/nota.js`, notas nas páginas, referência Python independente e 26 testes novos (56 no total) | Calibração dos limites com dados reais; medidas proporcionais para totais absolutos |
 | 14/11/2026 | Arthur + IA | Catálogo GRI movido para `privado/` (fora do Git) com fallback no app e testes pulados sem ele. Antes: estrutura inicial do repositório, motor, UI, catálogo GRI, documentação, `contexto-ia/` e planilha XLSX de exemplo; decisões: 5 pessoas, sem exportação, XLSX obrigatório, modo apresentação, identidade da Investe Piauí | Itens da tabela acima |

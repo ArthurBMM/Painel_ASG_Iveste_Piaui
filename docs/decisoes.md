@@ -41,6 +41,13 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 ### D13. XLSX e CSV na importação; dados de demonstração fixos
 - **Por quê:** a Investe Piauí trabalha com planilhas. Os dados do T8 ficam como demonstração fixa e a Investe Piauí pode trocá-los por importação. Há uma planilha de exemplo (uma aba por tabela) em `temas/t8-empregos-verdes/exemplo-importacao/`. Leitor XLSX: próprio (sem biblioteca) ou biblioteca versionada; ver `contexto-ia/01-…`.
 
+### D7. Gráficos em SVG próprio, sem Chart.js
+- **Por quê:** o registro npm estava bloqueado no ambiente em que o código foi gerado e queremos zero dependências. Simples de ler e funciona offline.
+- **Rever:** se precisarmos de interações complexas (zoom, tooltips ricos).
+
+### D8. Dados 100% fictícios
+- **Por quê:** requisito da disciplina e do grupo. Nada confidencial no repositório.
+
 ### D14. Catálogo GRI privado, fora do Git
 - **Por quê:** o grupo considera o conteúdo das Normas GRI confidencial. Títulos, páginas e pilar sugerido ficam em `privado/gri_catalogo.json` (no `.gitignore`), distribuído por e-mail. O Git guarda só o **código** GRI de cada indicador (necessário para rastrear a origem).
 - **Por que não `.env`:** o site é estático e roda no navegador, que não lê `.env`; o catálogo é um arquivo de dados, não um segredo curto.
@@ -50,12 +57,10 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 ### D6. Dimensão "Empresa / instituição"
 - **Por quê:** o feedback pediu ver cada empresa/projeto e a própria Investe Piauí como instituição. `empresas.csv` tem `origem` (empresa parceira, instituição parceira, iniciativa própria).
 
-### D7. Gráficos em SVG próprio, sem Chart.js
-- **Por quê:** o registro npm estava bloqueado no ambiente em que o código foi gerado e queremos zero dependências. Simples de ler e funciona offline.
-- **Rever:** se precisarmos de interações complexas (zoom, tooltips ricos).
-
-### D8. Dados 100% fictícios
-- **Por quê:** requisito da disciplina e do grupo. Nada confidencial no repositório.
+### D15. Pontuação: totais absolutos fora da nota; limites fixos; sensibilidade exibida
+- **Por quê:** `C1`, `ES6` e `H1` crescem com o tamanho da entidade e não indicam desempenho; limites tirados dos dados fariam a nota de uma entidade mudar quando outra entrasse; e como os pesos são arbitrários, a tela compara o ranking com pesos iguais.
+- **Descartado:** min-máx dos dados, z-score (dependem de distribuição real que não temos).
+- **Rever:** com dados reais, ou quando existirem medidas proporcionais (por empregado, por MWh). Parte dos limites foi calibrada vendo os dados fictícios; a justificativa de cada um diz isso.
 
 ## Em aberto (precisam do grupo)
 

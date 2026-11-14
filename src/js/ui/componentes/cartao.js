@@ -6,6 +6,7 @@ import { resolverRef, variacao } from "../../nucleo/registro.js";
 import { formatarValor, formatarDelta } from "../../nucleo/formato.js";
 import { anoSelecionado } from "../../nucleo/contexto.js";
 import { esc } from "../util.js";
+import { htmlNotaIndicador } from "./nota.js";
 
 /** Chips com a referência GRI: "GRI 305-1" (+ página, se o catálogo privado estiver carregado). O mouse mostra o título. */
 export function chipsGRI(ind) {
@@ -31,7 +32,7 @@ export function cartao(registro, ref, ctx, { mostrarGRI = true } = {}) {
 }
 
 /** Cartão grande de um indicador inteiro (páginas de pilar), com valores secundários e explicação. */
-export function cartaoIndicador(registro, ind, ctx) {
+export function cartaoIndicador(registro, ind, ctx, { item = null, foraDaNota = null } = {}) {
   const prin = ind.principal;
   const v = variacao(ind, prin, ctx);
   const ano = anoSelecionado(ctx);
@@ -45,6 +46,7 @@ export function cartaoIndicador(registro, ind, ctx) {
     <div class="cod">${esc(ind.id)}</div>
     <h3>${esc(ind.titulo)}</h3>
     <div class="principal"><span class="valor">${esc(formatarValor(v.atual, prin.formato))}</span>${delta}<span class="rot">${esc(prin.titulo)}</span></div>
+    ${htmlNotaIndicador(item, foraDaNota)}
     ${outras ? `<ul class="outras">${outras}</ul>` : ""}
     <div class="chips">${chipsGRI(ind)}${ind.cobertura === "parcial" ? '<span class="chip parcial">cobertura parcial</span>' : ""}</div>
     <details class="info"><summary>ⓘ Por que importa para ASG e como é calculado</summary>

@@ -107,7 +107,7 @@ th { background: #e8ebe4; font-weight: 600; } td.num, th.num { text-align: right
 .resumo { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
 .resumo .chip { font-size: 12.5px; padding: 4px 9px; }
 .tabela-emp { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); overflow-x: auto; }
-.tabela-emp .linha { display: grid; grid-template-columns: minmax(230px, 2.4fr) minmax(120px, 1fr) 70px repeat(5, minmax(86px, 1fr)) minmax(235px, 1.6fr); gap: 8px; align-items: center; padding: 8px 12px; min-width: 1150px; }
+.tabela-emp .linha { display: grid; grid-template-columns: minmax(210px, 2fr) minmax(100px, .8fr) 62px repeat(5, minmax(72px, .8fr)) minmax(185px, 1.2fr) minmax(200px, 1.3fr); gap: 8px; align-items: center; padding: 8px 12px; min-width: 1210px; }
 .tabela-emp .cabeca { font-size: 12px; font-weight: 600; color: var(--suave); background: #e8ebe4; border-bottom: 1px solid var(--linha); }
 .tabela-emp details { border-bottom: 1px solid var(--linha); }
 .tabela-emp details > summary { list-style: none; cursor: pointer; } .tabela-emp details > summary::-webkit-details-marker { display: none; }
@@ -135,3 +135,43 @@ th { background: #e8ebe4; font-weight: 600; } td.num, th.num { text-align: right
 
 @media (max-width: 640px) { header h1 { font-size: 20px; } .grade { grid-template-columns: 1fr; } .filtros select { min-width: 120px; } }
 @media print { nav, .filtros, .dica { display: none; } body { background: #fff; } }
+
+/* ---------- pontuação (notas 0–100): a cor acompanha a faixa, mas o rótulo em texto sempre aparece ---------- */
+.f-alinhado { --fc: var(--bom); } .f-atencao { --fc: var(--alerta); } .f-critico { --fc: var(--ruim); } .f-sem_dados { --fc: var(--neutro); }
+.nota-bloco { display: flex; align-items: center; gap: 12px; margin: 8px 0 10px; }
+.nota-bloco .nota-num { font-size: 40px; line-height: 1; font-weight: 700; color: var(--fc); font-family: Georgia, "Times New Roman", serif; }
+.nota-bloco .nota-num small { font-size: 13px; font-weight: 400; color: var(--suave); font-family: inherit; margin-left: 2px; }
+.nota-bloco .nota-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.nota-bloco .faixa { font-weight: 600; color: var(--fc); font-size: 14px; }
+.nota-bloco .cob { font-size: 12px; color: var(--suave); }
+.nota-barra { height: 6px; background: #e6e9e2; border-radius: 3px; overflow: hidden; margin-top: 3px; }
+.nota-barra i { display: block; height: 100%; background: var(--fc, var(--primaria)); border-radius: 3px; }
+.nota-bloco.compacto .nota-num { font-size: 30px; }
+.nota-asg { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); padding: 14px 16px; margin: 0 0 18px; display: grid; grid-template-columns: minmax(260px, 1fr) 2fr; gap: 8px 24px; align-items: center; }
+.nota-asg .nota-geral .titulo { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--suave); }
+.nota-asg .nota-geral .nota-bloco .nota-num { font-size: 56px; }
+.nota-pilares { display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 12px; }
+.nota-mini { border-left: 4px solid var(--primaria); padding-left: 10px; }
+.nota-mini.p-A { border-left-color: var(--pil-A); } .nota-mini.p-S { border-left-color: var(--pil-S); } .nota-mini.p-G { border-left-color: var(--pil-G); }
+.nota-mini .nome { font-size: 13px; font-weight: 600; }
+.nota-mini .nota-bloco { margin: 2px 0 0; }
+.nota-aviso { grid-column: 1 / -1; margin: 0; font-size: 12.5px; color: var(--suave); }
+.nota-ind { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--suave); margin: 4px 0 6px; }
+.nota-ind .nota-barra { width: 90px; margin: 0; flex: none; } .nota-ind b { color: var(--texto); }
+.nota-ind.sem { font-style: italic; }
+.sel-notas { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; }
+.sel-notas .n { white-space: nowrap; font-weight: 600; color: var(--fc); } .sel-notas .n i { font-style: normal; font-weight: 400; color: var(--suave); font-size: 11.5px; }
+.sel-notas .geral { border-left: 1px solid var(--linha); padding-left: 10px; }
+.sensib { margin-top: 12px; padding: 10px 14px; border-radius: var(--raio); font-size: 13.5px; border: 1px solid var(--linha); background: var(--branco); }
+.sensib.atencao { border-color: #f0cfa8; background: #fff6ec; }
+/* tabela de parâmetros e demonstração da conta (página Indicadores e método) */
+.params td.num, .demo td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.params td.just { max-width: 380px; font-size: 12.5px; color: var(--suave); } .params code, .demo code { font-size: 12px; }
+.demo td.conta { font-size: 12.5px; color: var(--suave); } .demo tr.resumo td { background: #f4f6f1; font-weight: 600; }
+.demo-barra { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 6px 0 10px; }
+@media (max-width: 760px) { .nota-asg { grid-template-columns: 1fr; } .nota-pilares { grid-template-columns: 1fr; } }
+/* demonstração da conta: colunas com largura definida para a conta caber ao lado do valor */
+.demo { width: 100%; table-layout: fixed; }
+.demo th:nth-child(1) { width: 56px; } .demo th:nth-child(2) { width: 24%; } .demo th:nth-child(3) { width: 96px; }
+.demo th:nth-child(5), .demo th:nth-child(6) { width: 58px; } .demo th:nth-child(7) { width: 96px; }
+.demo-geral { font-size: 14px; background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); padding: 10px 14px; margin-top: 12px; }

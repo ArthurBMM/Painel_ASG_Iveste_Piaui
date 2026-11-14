@@ -41,7 +41,7 @@ Redesenhamos a página inteira a cada filtro: com milhares de linhas é instant�
 5. **Cor pelo sentido, não pelo sinal.** Em emissões, subir é ruim (vermelho). O campo `sentido` (`up`/`down`/`neutro`) decide.
 6. **Guardas de filtro.** Indicadores `ocupacional` respeitam o filtro de classe (verde/neutra/alto impacto); os que não são por ocupação ignoram esse filtro; `bloqueia_faixa` impede mostrar faixa etária onde não faz sentido.
 7. **Balanço do pilar** = quantos indicadores melhoraram, pioraram ou ficaram estáveis vs. ano anterior (leitura de **tendência**).
-8. **Pontuação** (a implementar): nota 0–100 por normalização linear com piso/teto fixos, média ponderada por pilar com renormalização dos pesos quando falta dado, e **cobertura** exibida junto. Parâmetros em `config/metricas.json`. Ver `contexto-ia/02-metricas-pesos-e-normalizacao.md` e `decisoes.md` (D5).
+8. **Pontuação** (`nucleo/pontuacao.js`, implementada): nota 0–100 por normalização linear com piso/teto fixos, média ponderada por pilar com renormalização dos pesos quando falta dado, e **cobertura** exibida junto. Totais absolutos (`pontuar:false`) ficam fora da nota. Parâmetros em `config/metricas.json`. Ver `contexto-ia/02-metricas-pesos-e-normalizacao.md` e `decisoes.md` (D5).
 
 ## Como um indicador é descrito (resumo)
 

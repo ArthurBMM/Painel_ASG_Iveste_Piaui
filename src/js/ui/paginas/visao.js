@@ -4,9 +4,12 @@
 import { cartao } from "../componentes/cartao.js";
 import { renderGrafico } from "../componentes/graficos.js";
 import { htmlBalanco } from "../componentes/balanco.js";
+import { htmlNotaASG, htmlNotaPilar } from "../componentes/nota.js";
+import { pontuarASG } from "../../nucleo/pontuacao.js";
 import { esc } from "../util.js";
 
-export function render({ registro, ctx, tema }) {
+export function render({ registro, ctx, tema, metricas }) {
+  const asg = metricas ? pontuarASG(registro, metricas, ctx, tema.indicadores) : null;
   const h = tema.historia || { titulo: "", pontos: [] };
   const topo = (tema.cartoes_topo || []).map((r) => cartao(registro, r, ctx, { mostrarGRI: false })).join("");
 
@@ -17,6 +20,7 @@ export function render({ registro, ctx, tema }) {
     return `<section class="pilar p-${p}">
       <h2><a href="#${p}">${esc(info.nome)}</a></h2>
       <p class="pergunta">${esc(info.pergunta)}</p>
+      ${asg ? htmlNotaPilar(asg[p], metricas, { compacto: true }) : ""}
       ${htmlBalanco(registro, ctx, p, ids)}
       <div class="cartoes">${dest}</div>
       <a class="ver-mais" href="#${p}">Ver os ${ids.length} indicadores de ${esc(info.nome.toLowerCase())} →</a>
@@ -27,6 +31,7 @@ export function render({ registro, ctx, tema }) {
   return `<h2 class="titulo-pagina">Visão ASG</h2>
     <p class="sub-pagina">${esc(tema.resumo)}</p>
     ${h.titulo ? `<div class="historia"><h2>${esc(h.titulo)}</h2><ul>${h.pontos.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div>` : ""}
+    ${htmlNotaASG(asg, metricas, registro)}
     <div class="cartoes">${topo}</div>
     <div class="pilares">${pilares}</div>
     <div class="grade">${graficos}</div>`;

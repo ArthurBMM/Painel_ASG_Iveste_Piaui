@@ -4,6 +4,7 @@
 // =====================================================================================
 import { carregarTema } from "./nucleo/modelo.js";
 import { carregarRegistro } from "./nucleo/registro.js";
+import { carregarMetricas, validarMetricas } from "./nucleo/pontuacao.js";
 import { iniciarApp } from "./ui/app.js";
 
 /** Leitor do navegador: busca o arquivo por HTTP (exige servidor; ver README). */
@@ -19,7 +20,13 @@ try {
   const info = indice.temas.find((t) => t.id === pedido) || indice.temas[0];
   const [modelo, registro] = await Promise.all([carregarTema(leitor, info.pasta), carregarRegistro(leitor)]);
   if (modelo.problemas.erros.length) console.warn("Problemas nos dados:", modelo.problemas);
-  iniciarApp({ modelo, registro, indice });
+  // Parâmetros da pontuação (config/metricas.json). Com ERROS de validação não calculamos nota nenhuma:
+  // melhor mostrar só valores do que uma nota errada. A página "Indicadores e método" lista o que corrigir.
+  const metricasBrutas = await carregarMetricas(leitor);
+  const problemasMetricas = metricasBrutas ? validarMetricas(metricasBrutas, registro, modelo.tema.indicadores) : null;
+  const metricas = metricasBrutas && !problemasMetricas.erros.length ? metricasBrutas : null;
+  if (problemasMetricas?.erros.length) console.warn("config/metricas.json inválido:", problemasMetricas.erros);
+  iniciarApp({ modelo, registro, indice, metricas, problemasMetricas });
 } catch (e) {
   console.error(e);
   document.getElementById("app").innerHTML = `<main style="padding:5vw;max-width:70ch"><h1>Não foi possível carregar</h1>

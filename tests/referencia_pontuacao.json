@@ -1,0 +1,756 @@
+[
+ {
+  "normal": {
+   "A": {
+    "nota": 55.33178097823596,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 56.81521676720214,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 58.76859705798821,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 56.971864934475434,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 53.135999207433045,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 59.30015005901827,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 60.35868407318188,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 57.598277779877726,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 56.638910088582044,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 56.660078524260285,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 58.18616593051685,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 57.16171818111973,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 53.91216505855716,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 55.785896391510846,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 60.10765477075085,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 56.601905406939615,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 57.00072135918441,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 54.64709338837182,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 48.62905177661911,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 53.42562217472511,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 55.41795494844148,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 57.07715770514889,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 47.99011852603072,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 53.4950770598737,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 59.87446542524416,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 59.64064609080344,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 61.39076071886678,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 60.301957411638135,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 56.89755933087641,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 60.369511381672254,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 62.59837479450086,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 59.955148502349836,
+    "cobertura": 1.0,
+    "faixa": "atencao"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 22.07951912528643,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 31.496518742769414,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 33.44195617557354,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 29.005998014543128,
+    "cobertura": 1.0,
+    "faixa": "critico"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 22.784181167109605,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 37.01249683228876,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 40.72326530192656,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 3,
+    "total": 3
+   },
+   "geral": {
+    "nota": 33.50664776710831,
+    "cobertura": 1.0,
+    "faixa": "critico"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 74.78079688330324,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 73.74770885869057,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 59.36910458864215,
+    "cobertura": 0.75,
+    "faixa": "atencao",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 69.29920344354532,
+    "cobertura": 0.9166666666666666,
+    "faixa": "atencao"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 71.65532130790488,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 74.65064108176894,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 62.10547852011905,
+    "cobertura": 0.6666666666666666,
+    "faixa": "atencao",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 69.4704803032643,
+    "cobertura": 0.8888888888888888,
+    "faixa": "atencao"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 88.42630980243595,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 69.74905112394357,
+    "cobertura": 1.0,
+    "faixa": "atencao",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 85.49738998746227,
+    "cobertura": 0.75,
+    "faixa": "alinhado",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 81.22425030461393,
+    "cobertura": 0.9166666666666666,
+    "faixa": "alinhado"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 84.57145357782045,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 70.01311972246582,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 82.08736435151376,
+    "cobertura": 0.6666666666666666,
+    "faixa": "alinhado",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 78.89064588393335,
+    "cobertura": 0.8888888888888888,
+    "faixa": "alinhado"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 74.35566074422862,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 79.32888764292427,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 59.650738081258545,
+    "cobertura": 0.75,
+    "faixa": "atencao",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 71.11176215613715,
+    "cobertura": 0.9166666666666666,
+    "faixa": "alinhado"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 70.81628481602579,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 78.00088914974815,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 8,
+    "total": 8
+   },
+   "G": {
+    "nota": 62.54213457885013,
+    "cobertura": 0.6666666666666666,
+    "faixa": "atencao",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 70.45310284820802,
+    "cobertura": 0.8888888888888888,
+    "faixa": "alinhado"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 65.01783010016996,
+    "cobertura": 0.6666666666666666,
+    "faixa": "atencao",
+    "avaliados": 5,
+    "total": 8
+   },
+   "G": {
+    "nota": 75.95833241638522,
+    "cobertura": 0.25,
+    "faixa": "sem_dados",
+    "avaliados": 1,
+    "total": 3
+   },
+   "geral": {
+    "nota": 70.48808125827759,
+    "cobertura": 0.3055555555555555,
+    "faixa": "sem_dados"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 66.0900541050411,
+    "cobertura": 0.625,
+    "faixa": "atencao",
+    "avaliados": 5,
+    "total": 8
+   },
+   "G": {
+    "nota": 75.95833241638522,
+    "cobertura": 0.3333333333333333,
+    "faixa": "sem_dados",
+    "avaliados": 1,
+    "total": 3
+   },
+   "geral": {
+    "nota": 71.02419326071316,
+    "cobertura": 0.3194444444444444,
+    "faixa": "sem_dados"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 53.570248484735544,
+    "cobertura": 0.6666666666666666,
+    "faixa": "atencao",
+    "avaliados": 5,
+    "total": 8
+   },
+   "G": {
+    "nota": 64.43201585219344,
+    "cobertura": 0.25,
+    "faixa": "sem_dados",
+    "avaliados": 1,
+    "total": 3
+   },
+   "geral": {
+    "nota": 59.001132168464494,
+    "cobertura": 0.3055555555555555,
+    "faixa": "sem_dados"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 57.23434990765579,
+    "cobertura": 0.625,
+    "faixa": "atencao",
+    "avaliados": 5,
+    "total": 8
+   },
+   "G": {
+    "nota": 64.43201585219344,
+    "cobertura": 0.3333333333333333,
+    "faixa": "sem_dados",
+    "avaliados": 1,
+    "total": 3
+   },
+   "geral": {
+    "nota": 60.83318287992462,
+    "cobertura": 0.3194444444444444,
+    "faixa": "sem_dados"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 61.72478214775165,
+    "cobertura": 0.5,
+    "faixa": "atencao",
+    "avaliados": 4,
+    "total": 8
+   },
+   "G": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 3
+   },
+   "geral": {
+    "nota": 61.72478214775165,
+    "cobertura": 0.16666666666666666,
+    "faixa": "sem_dados"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 61.663272826002625,
+    "cobertura": 0.5,
+    "faixa": "atencao",
+    "avaliados": 4,
+    "total": 8
+   },
+   "G": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 3
+   },
+   "geral": {
+    "nota": 61.663272826002625,
+    "cobertura": 0.16666666666666666,
+    "faixa": "sem_dados"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 20.560138689622192,
+    "cobertura": 0.6666666666666666,
+    "faixa": "critico",
+    "avaliados": 5,
+    "total": 8
+   },
+   "G": {
+    "nota": 34.12048425029516,
+    "cobertura": 0.25,
+    "faixa": "sem_dados",
+    "avaliados": 1,
+    "total": 3
+   },
+   "geral": {
+    "nota": 27.340311469958678,
+    "cobertura": 0.3055555555555555,
+    "faixa": "sem_dados"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": null,
+    "cobertura": 0.0,
+    "faixa": "sem_dados",
+    "avaliados": 0,
+    "total": 7
+   },
+   "S": {
+    "nota": 29.73840267814443,
+    "cobertura": 0.625,
+    "faixa": "critico",
+    "avaliados": 5,
+    "total": 8
+   },
+   "G": {
+    "nota": 34.12048425029516,
+    "cobertura": 0.3333333333333333,
+    "faixa": "sem_dados",
+    "avaliados": 1,
+    "total": 3
+   },
+   "geral": {
+    "nota": 31.929443464219794,
+    "cobertura": 0.3194444444444444,
+    "faixa": "sem_dados"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 86.92070264353484,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 79.27438812706127,
+    "cobertura": 0.8333333333333334,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 8
+   },
+   "G": {
+    "nota": 86.07691216380533,
+    "cobertura": 0.75,
+    "faixa": "alinhado",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 84.09066764480048,
+    "cobertura": 0.8611111111111112,
+    "faixa": "alinhado"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 82.7670371754342,
+    "cobertura": 1.0,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 75.83176283879287,
+    "cobertura": 0.875,
+    "faixa": "alinhado",
+    "avaliados": 7,
+    "total": 8
+   },
+   "G": {
+    "nota": 82.80941431263543,
+    "cobertura": 0.6666666666666666,
+    "faixa": "alinhado",
+    "avaliados": 2,
+    "total": 3
+   },
+   "geral": {
+    "nota": 80.46940477562083,
+    "cobertura": 0.8472222222222222,
+    "faixa": "alinhado"
+   }
+  }
+ }
+]

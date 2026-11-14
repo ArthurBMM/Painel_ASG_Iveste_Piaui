@@ -1,0 +1,215 @@
+{
+  "versao": 1,
+  "aviso": "PARÂMETROS ESTIMADOS PELO GRUPO. Não são metas oficiais da Investe Piauí nem vêm do GRI. Servem para demonstrar o método e devem ser ajustados com dados reais. Para trocar qualquer número, edite só este arquivo: cada indicador tem piso, teto, peso, justificativa e fonte.",
+  "como_ler": "nota do indicador = (valor - piso) / (teto - piso), limitada entre 0 e 100. Se piso > teto, menor é melhor. Nota do pilar = média ponderada pelos pesos, só dos indicadores com dado. Nota ASG = média ponderada dos três pilares.",
+  "pesos_pilares": {
+    "A": 1,
+    "S": 1,
+    "G": 1
+  },
+  "faixas": {
+    "alinhado": 70,
+    "atencao": 40,
+    "cobertura_minima": 0.5
+  },
+  "rotulos_faixas": {
+    "alinhado": "Alinhado",
+    "atencao": "Em atenção",
+    "critico": "Crítico",
+    "sem_dados": "Sem dados suficientes"
+  },
+  "indicadores": {
+    "EV1": {
+      "peso": 3,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.1,
+        "teto": 0.6
+      },
+      "justificativa": "Peso 3: é a pergunta central do T8 (transição de empregos). Piso 10%: carteira praticamente sem empregos verdes; teto 60%: carteira em que a maioria dos empregos já é verde. Valores intermediários são proporcionais.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "EV2": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.05,
+        "teto": 0.25
+      },
+      "justificativa": "Peso 1. Taxa de contratação ao ano como sinal de geração de vagas. Piso 5% (quase sem contratar) e teto 25% (expansão forte). Ser alta não é sempre bom (ver rotatividade, EV3); por isso o peso é baixo.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "EV3": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.4,
+        "teto": 0.1
+      },
+      "justificativa": "Peso 1. Rotatividade ao ano; quanto menor, melhor (piso > teto). 40% ou mais ao ano vale 0 pontos; 10% ou menos vale 100.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "EV4": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.1,
+        "teto": 0.4
+      },
+      "justificativa": "Peso 1. % de mulheres. Piso 10%; teto 40%. O teto fica abaixo de 50% porque o grupo considera o ponto de partida dos setores de energia e mineração; hipótese a rever com a Investe Piauí.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "Q1": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 40
+      },
+      "justificativa": "Peso 2: qualificação é o segundo eixo do T8. Horas de capacitação por empregado ao ano; 0 h vale 0 e 40 h (cerca de uma semana de trabalho) vale 100.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "Q2": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 0.6
+      },
+      "justificativa": "Peso 2: mede se a qualificação vira vaga verde. % de concluintes recolocados em vaga verde; 0% vale 0 e 60% vale 100 (meta ambiciosa para um programa de transição).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "N1": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 8
+      },
+      "justificativa": "Peso 1. Prazo de aviso sobre mudanças operacionais, em semanas. 0 vale 0 e 8 semanas vale 100; 4 semanas (aprox. 1 mês) fica em 50.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "C3": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 1
+      },
+      "justificativa": "Peso 1. % de projetos com programa para a comunidade local; já é uma proporção natural (0% a 100%).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "C1": {
+      "pontuar": false,
+      "motivo": "Total absoluto em reais: cresce com o tamanho da entidade e não é comparável entre empresas. Fica como valor, sem nota, até existir medida proporcional (ex.: por empregado ou por MW)."
+    },
+    "ES1": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 1
+      },
+      "justificativa": "Peso 2. % de energia renovável no consumo; proporção natural (0% a 100%).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "ES2": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 120,
+        "teto": 20
+      },
+      "justificativa": "Peso 1. MWh por empregado ao ano (menor é melhor). 120 ou mais vale 0 e 20 ou menos vale 100; limites escolhidos em torno da faixa observada nos dados fictícios, a rever com dados reais.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "ES3": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 0.02
+      },
+      "justificativa": "Peso 1. % de redução do consumo de energia; 0% vale 0 e 2% ao ano vale 100 (hipótese do grupo para uma redução ambiciosa). A validar com dados reais.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "ES4": {
+      "peso": 3,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 40,
+        "teto": 1
+      },
+      "justificativa": "Peso 3: emissões são o núcleo ambiental da transição energética. tCO2e por empregado ao ano (menor é melhor). 40 ou mais vale 0 e 1 ou menos vale 100; limites em torno da faixa observada nos dados fictícios.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "R1": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 25,
+        "teto": 1
+      },
+      "justificativa": "Peso 1. Toneladas de resíduos por empregado ao ano (menor é melhor). 25 ou mais vale 0 e 1 ou menos vale 100.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "R2": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 0.8
+      },
+      "justificativa": "Peso 1. % de resíduos recuperados (não enviados à disposição final); 0% vale 0 e 80% vale 100.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "A1": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 1.5,
+        "teto": 0.05
+      },
+      "justificativa": "Peso 1. Megalitros de água por empregado ao ano (menor é melhor). 1,5 ML ou mais vale 0 e 0,05 ML ou menos vale 100.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "ES6": {
+      "pontuar": false,
+      "motivo": "Total absoluto de tCO2e reduzidas: cresce com o tamanho da entidade. Sem nota até existir medida proporcional."
+    },
+    "H1": {
+      "pontuar": false,
+      "motivo": "Total absoluto de hectares restaurados: cresce com o tamanho da entidade (e do território). Sem nota até existir medida proporcional (ex.: por MW instalado)."
+    },
+    "Q3": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 1
+      },
+      "justificativa": "Peso 1. % de empregados com avaliação regular de desempenho; proporção natural (0% a 100%).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "T1": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 1
+      },
+      "justificativa": "Peso 2: é o indicador de governança mais ligado ao tema (direcionamento do investimento para a transição). % do investimento em renovável; 0% a 100%.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "M1": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 1
+      },
+      "justificativa": "Peso 1. % das minas com plano de encerramento; só existe para projetos de mineração (outros setores ficam sem dado e não entram na média).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    }
+  }
+}

@@ -5,20 +5,27 @@
 import { cartaoIndicador } from "../componentes/cartao.js";
 import { renderGrafico } from "../componentes/graficos.js";
 import { htmlBalanco } from "../componentes/balanco.js";
+import { htmlNotaPilar } from "../componentes/nota.js";
+import { pontuarPilar } from "../../nucleo/pontuacao.js";
 import { esc } from "../util.js";
 
-export function render(pilar, { registro, ctx, tema, estado }) {
+export function render(pilar, { registro, ctx, tema, estado, metricas }) {
   const info = registro.pilares[pilar];
   const inds = tema.indicadores.map((id) => registro.porId.get(id)).filter((i) => i && i.pilar === pilar);
   const parciais = inds.filter((i) => i.cobertura === "parcial").length;
   const notas = [];
   if (pilar === "G") notas.push("Governança tem cobertura parcial neste tema: os indicadores abaixo são os que a base do T8 sustenta. Outros conteúdos GRI de governança estão no catálogo (página Indicadores e método) e podem ser ativados com mais dados.");
   if (pilar === "S" && estado.classe) notas.push("Com filtro de classe, indicadores que não têm corte por ocupação (Q2, N1, C1, C3) aparecem como – de propósito: mostrar o mesmo número para todas as classes seria enganoso.");
+  // nota do pilar (se houver parâmetros válidos) e, por indicador, a nota e o peso que entraram na conta
+  const nota = metricas ? pontuarPilar(registro, metricas, ctx, pilar, tema.indicadores) : null;
+  const itemDe = (id) => nota?.itens.find((x) => x.id === id) || null;
+  const foraDe = (id) => nota?.foraDaNota.find((x) => x.id === id) || null;
   const graficos = (tema.graficos?.[pilar] || []).map((g) => renderGrafico(g, { registro, ctx, tema })).join("");
   return `<h2 class="titulo-pagina">${esc(info.nome)}</h2>
     <p class="sub-pagina">${esc(info.pergunta)} ${inds.length} indicadores${parciais ? `, ${parciais} com cobertura parcial` : ""}.</p>
+    ${htmlNotaPilar(nota, metricas)}
     ${htmlBalanco(registro, ctx, pilar, inds.map((i) => i.id))}
     ${notas.map((n) => `<div class="aviso" style="margin:8px 0;border:1px solid #f0cfa8;border-radius:4px">${esc(n)}</div>`).join("")}
-    <div class="indicadores">${inds.map((i) => cartaoIndicador(registro, i, ctx)).join("")}</div>
+    <div class="indicadores">${inds.map((i) => cartaoIndicador(registro, i, ctx, { item: itemDe(i.id), foraDaNota: foraDe(i.id) })).join("")}</div>
     <div class="grade">${graficos}</div>`;
 }

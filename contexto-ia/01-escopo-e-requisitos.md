@@ -12,12 +12,12 @@ Ela quer um painel para monitorar **o próprio trabalho** (a Investe Piauí como
 |---|---|---|---|
 | R1 | **Escalável por tema.** Outros temas entram sem mexer em `src/`, com a mesma leitura de tópicos e gráficos dos mesmos estilos | 🟡 | Mecanismo existe (tema = pasta). Falta um **segundo tema de demonstração** para provar |
 | R2 | **Importação de arquivos pelo navegador, em CSV e em XLSX** (planilhas Excel), sem servidor e sem persistência | ❌ | Ver "Importação" abaixo. Há uma planilha de exemplo em `temas/t8-empregos-verdes/exemplo-importacao/` |
-| R3 | **Páginas por pilar** (Ambiental, Social, Governança) **e uma página ASG geral**, todas com os mesmos filtros (ano, origem, empresa/instituição, projeto, setor, município) | 🟡 | Páginas e filtros existem; a pontuação por pilar e a geral ainda não |
-| R4 | **Avaliar cada empresa/projeto e a Investe Piauí** nos três critérios | 🟡 | Hoje: balanço (▲▼). Falta pontuação e classificação (R6) |
+| R3 | **Páginas por pilar** (Ambiental, Social, Governança) **e uma página ASG geral**, todas com os mesmos filtros (ano, origem, empresa/instituição, projeto, setor, município) | 🟡 | Páginas, filtros e notas (por pilar e geral) existem; falta reforçar G (poucos indicadores) |
+| R4 | **Avaliar cada empresa/projeto e a Investe Piauí** nos três critérios | 🟡 | Nota A, S, G e geral com faixa e cobertura por entidade, mais balanço (▲▼) e aviso de sensibilidade aos pesos |
 | R5 | **Catálogo completo de indicadores GRI**, com cada indicador usado claramente identificado (código; página e título quando o catálogo privado estiver carregado) | ✅ | 130 conteúdos; níveis de maturidade. **Catálogo é privado** (`privado/`, fora do Git) e opcional em tempo de execução |
 | R14 | **Conteúdo GRI fora do repositório**: só códigos no Git; catálogo distribuído por e-mail e carregado de `privado/` ou **importado pela interface** | 🟡 | `privado/` e fallback prontos; falta aceitar `gri_catalogo.json` no importador |
-| R6 | **Métricas, pesos, normalização e faixas com justificativa, fáceis de alterar** | ❌ | Especificado em `02-…`; a implementar em `config/metricas.json` |
-| R7 | **Transparência dos cálculos** para a professora e a Investe Piauí | 🟡 | Existe "Por que importa / como é calculado"; falta mostrar normalização, pesos e "onde está no código" |
+| R6 | **Métricas, pesos, normalização e faixas com justificativa, fáceis de alterar** | ✅ | Implementado em `config/metricas.json` + `nucleo/pontuacao.js`; ver `02-…`. Parâmetros são hipóteses a revisar com dados reais |
+| R7 | **Transparência dos cálculos** para a professora e a Investe Piauí | ✅ | Página *Indicadores e método* mostra parâmetros, justificativas, onde editar e a conta passo a passo de uma entidade |
 | R8 | **Quanto mais indicadores GRI, melhor** (só os que fazem sentido no tema), com **Governança reforçada** | 🟡 | 21 indicadores; G tem 3. Candidatos em `docs/indicadores-candidatos.md` |
 | R9 | **Site estático**, sem back-end complexo | ✅ | |
 | R10 | **Apresentação focada no T8** | ⏳ | O segundo tema entra só como prova de escalabilidade |

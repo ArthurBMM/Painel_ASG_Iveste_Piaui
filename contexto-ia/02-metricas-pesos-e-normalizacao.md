@@ -1,6 +1,13 @@
 # Métricas, pesos e normalização
 
-> **Estado:** especificação **aprovada na conversa do grupo, ainda não implementada**. Hoje a ferramenta mostra apenas valores e um *balanço* (quantos indicadores melhoraram/pioraram). Esta página descreve o que construir.
+> **Estado (14/11/2026):** **implementado.** A conta está em `src/js/nucleo/pontuacao.js`, os parâmetros em `config/metricas.json`, a apresentação em `src/js/ui/componentes/nota.js` e nas páginas, e os testes em `tests/pontuacao.test.mjs` (comparados com uma referência independente em Python, `tools/referencia_pontuacao.py`). O restante deste arquivo é a especificação, que continua valendo como explicação do modelo.
+>
+> **Decisões tomadas na implementação:**
+> - **Totais absolutos ficam fora da nota** (`C1`, `ES6`, `H1`, marcados com `pontuar:false` e `motivo`): uma empresa grande teria "mais" só por ser grande. Esses indicadores continuam aparecendo como valor. Ideal futuro: medidas proporcionais (por empregado, por MWh).
+> - **Piso e teto são fixos** (não saem dos dados), para a nota de uma entidade não mudar quando outra entra.
+> - **Parte dos limites foi calibrada olhando os dados fictícios.** Está sinalizado na justificativa e deve ser revisto com dados reais.
+> - **Sensibilidade:** a página Empresas compara o ranking com os pesos do arquivo × pesos iguais e avisa quando a ordem muda.
+> - Formato real do arquivo: chaves `pesos_pilares`, `faixas`, `rotulos_faixas` e `indicadores.<ID>` com `medida` (opcional), `peso`, `normalizacao {tipo, piso, teto}`, `justificativa`, `fonte`. O validador (`validarMetricas`) rejeita indicador sem justificativa/fonte ou com teto/piso contrários ao sentido do registro.
 
 ## Por que pontuar (e por que com cuidado)
 
@@ -52,7 +59,7 @@ Os cortes (70/40) e a cobertura mínima são **chute inicial do grupo** e ficam 
 
 A nota mede **nível** (onde está); o balanço (▲▼ vs. ano anterior) mede **tendência** (para onde vai). As duas leituras convivem.
 
-## Onde ficam os parâmetros: `config/metricas.json` (a criar)
+## Onde ficam os parâmetros: `config/metricas.json`
 
 Formato proposto (o grupo pode refinar, mas **mantenha tudo aqui**):
 
