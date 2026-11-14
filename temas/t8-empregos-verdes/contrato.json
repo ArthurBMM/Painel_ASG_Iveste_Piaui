@@ -1,0 +1,198 @@
+{
+ "descricao": "Contrato de dados do tema T8. Cada tabela é um CSV com cabeçalho. Tipos: texto, numero, inteiro, data (AAAA-MM-DD). Campo vazio em coluna numérica = sem dado (null), diferente de zero.",
+ "tabelas": {
+  "projetos": {
+   "arquivo": "projetos.csv",
+   "obrigatoria": true,
+   "chave": [
+    "projeto_id"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "nome_projeto": "texto",
+    "setor": "texto",
+    "municipio": "texto",
+    "regiao": "texto",
+    "mw_instalado": "numero",
+    "data_inicio": "data",
+    "empresa_id": "texto"
+   }
+  },
+  "empresas": {
+   "arquivo": "empresas.csv",
+   "obrigatoria": false,
+   "chave": [
+    "empresa_id"
+   ],
+   "colunas": {
+    "empresa_id": "texto",
+    "nome_empresa": "texto",
+    "origem": "texto"
+   }
+  },
+  "ocupacoes": {
+   "arquivo": "ocupacoes.csv",
+   "obrigatoria": true,
+   "chave": [
+    "ocupacao_id"
+   ],
+   "colunas": {
+    "ocupacao_id": "texto",
+    "ocupacao": "texto",
+    "categoria_funcional": "texto",
+    "classe": "texto",
+    "justificativa_classe": "texto"
+   }
+  },
+  "emprego_mensal": {
+   "arquivo": "emprego_mensal.csv",
+   "obrigatoria": true,
+   "chave": [
+    "projeto_id",
+    "ocupacao_id",
+    "mes",
+    "genero",
+    "faixa_etaria"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ocupacao_id": "texto",
+    "mes": "data",
+    "genero": "texto",
+    "faixa_etaria": "texto",
+    "empregados_fim_mes": "inteiro",
+    "contratacoes": "inteiro",
+    "desligamentos": "inteiro"
+   }
+  },
+  "capacitacao": {
+   "arquivo": "capacitacao.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "ocupacao_id",
+    "mes",
+    "genero"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ocupacao_id": "texto",
+    "mes": "data",
+    "genero": "texto",
+    "horas_capacitacao": "numero",
+    "empregados_avaliados": "inteiro"
+   }
+  },
+  "programas": {
+   "arquivo": "programas.csv",
+   "obrigatoria": false,
+   "chave": [
+    "programa_id"
+   ],
+   "colunas": {
+    "programa_id": "texto",
+    "projeto_id": "texto",
+    "nome_programa": "texto",
+    "tipo": "texto",
+    "publico_alvo": "texto",
+    "data_inicio": "data",
+    "vagas": "inteiro",
+    "concluintes": "inteiro",
+    "contratados_verde": "inteiro"
+   }
+  },
+  "energia_emissoes": {
+   "arquivo": "energia_emissoes.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "mes"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "mes": "data",
+    "energia_renovavel_mwh": "numero",
+    "energia_nao_renovavel_mwh": "numero",
+    "reducao_consumo_mwh": "numero",
+    "emissoes_escopo1_tco2e": "numero",
+    "emissoes_escopo2_tco2e": "numero",
+    "reducao_emissoes_tco2e": "numero"
+   }
+  },
+  "ambiental_mensal": {
+   "arquivo": "ambiental_mensal.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "mes"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "mes": "data",
+    "residuos_perigosos_ton": "numero",
+    "residuos_nao_perigosos_ton": "numero",
+    "residuos_recuperados_ton": "numero",
+    "residuos_disposicao_final_ton": "numero",
+    "consumo_agua_megalitros": "numero",
+    "habitat_restaurado_ha": "numero"
+   }
+  },
+  "comunidade": {
+   "arquivo": "comunidade.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "ano"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ano": "inteiro",
+    "investimento_infraestrutura_rs": "numero",
+    "tipo_investimento": "texto",
+    "tem_programa_comunidade": "texto",
+    "prazo_aviso_semanas": "inteiro",
+    "investimento_total_rs": "numero",
+    "investimento_renovavel_rs": "numero",
+    "tem_plano_encerramento": "texto"
+   }
+  }
+ },
+ "relacoes": [
+  {
+   "de": "projetos.empresa_id",
+   "para": "empresas.empresa_id"
+  },
+  {
+   "de": "emprego_mensal.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "emprego_mensal.ocupacao_id",
+   "para": "ocupacoes.ocupacao_id"
+  },
+  {
+   "de": "capacitacao.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "capacitacao.ocupacao_id",
+   "para": "ocupacoes.ocupacao_id"
+  },
+  {
+   "de": "programas.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "energia_emissoes.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "ambiental_mensal.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "comunidade.projeto_id",
+   "para": "projetos.projeto_id"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+programa_id,projeto_id,nome_programa,tipo,publico_alvo,data_inicio,vagas,concluintes,contratados_verde
+PR01,P01,Técnico de manutenção de aerogerador,Curso interno,Técnicos,2025-07-01,32,23,0
+PR02,P01,Apoio a graduação em engenharia,Apoio a curso externo,Técnicos e administrativos,2023-12-01,58,51,0
+PR03,P01,Transição de carreira (desligados da eólica),Transição de carreira,Desligados em 2025,2025-08-01,28,23,9
+PR04,P02,Técnico de manutenção de aerogerador,Curso interno,Técnicos,2024-09-01,60,53,0
+PR05,P02,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2023-07-01,59,54,25
+PR06,P02,Apoio a graduação em engenharia,Apoio a curso externo,Técnicos e administrativos,2024-06-01,50,35,0
+PR07,P03,Segurança em altura (NR-35),Curso interno,Todos os operacionais,2023-12-01,22,20,0
+PR08,P03,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2024-10-01,34,28,9
+PR09,P03,Transição de carreira (desligados da eólica),Transição de carreira,Desligados em 2025,2025-09-01,28,22,9
+PR10,P04,Segurança em altura (NR-35),Curso interno,Todos os operacionais,2024-01-01,41,31,0
+PR11,P04,Apoio a graduação em engenharia,Apoio a curso externo,Técnicos e administrativos,2026-02-01,45,38,0
+PR12,P05,Operador de usina solar,Curso interno,Novos contratados,2023-11-01,23,21,0
+PR13,P05,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2026-04-01,45,40,18
+PR14,P06,Segurança em altura (NR-35),Curso interno,Todos os operacionais,2024-04-01,47,35,0
+PR15,P06,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2026-04-01,24,20,7
+PR16,P06,Apoio a graduação em engenharia,Apoio a curso externo,Técnicos e administrativos,2024-07-01,27,25,0
+PR17,P08,Segurança em altura (NR-35),Curso interno,Todos os operacionais,2024-07-01,21,15,0
+PR18,P08,Recuperação de áreas degradadas,Curso interno,Operacionais de mineração,2024-10-01,41,32,11
+PR19,P08,Obras de baixo impacto,Curso interno,Engenharia e arquitetura,2026-01-01,55,39,0
+PR20,P09,Recuperação de áreas degradadas,Curso interno,Operacionais de mineração,2025-06-01,54,47,18
+PR21,P10,Recuperação de áreas degradadas,Curso interno,Operacionais de mineração,2025-05-01,24,17,5
+PR22,P11,Recuperação de áreas degradadas,Curso interno,Operacionais de mineração,2023-11-01,22,21,8
+PR23,P12,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2024-04-01,30,28,11
+PR24,P12,Recuperação de áreas degradadas,Curso interno,Operacionais de mineração,2024-02-01,39,34,10
+PR25,P10,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2024-03-01,50,35,11
+PR26,P10,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2025-06-01,75,53,18
+PR27,P10,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2026-02-01,57,45,17
+PR28,P11,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2024-03-01,51,46,17
+PR29,P11,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2025-06-01,62,55,24
+PR30,P11,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2026-02-01,47,34,13
+PR31,P12,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2024-03-01,57,49,18
+PR32,P12,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2025-06-01,38,33,15
+PR33,P12,Requalificação para energia renovável,Requalificação,Ex-operadores de mina,2026-02-01,45,41,16

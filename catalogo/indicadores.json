@@ -1,0 +1,1271 @@
+{
+ "versao": 1,
+ "pilares": {
+  "A": {
+   "nome": "Ambiental",
+   "cor": "#00704A",
+   "pergunta": "Como as operações tratam o território e o clima?"
+  },
+  "S": {
+   "nome": "Social",
+   "cor": "#2A78D6",
+   "pergunta": "O que acontece com as pessoas e as comunidades?"
+  },
+  "G": {
+   "nome": "Governança",
+   "cor": "#1D4E63",
+   "pergunta": "As decisões e os controles sustentam a transição?"
+  }
+ },
+ "indicadores": [
+  {
+   "id": "EV1",
+   "pilar": "S",
+   "titulo": "Empregos verdes na força de trabalho",
+   "gri": [
+    {
+     "id": "2-7:2021",
+     "parte": "a"
+    }
+   ],
+   "por_que_asg": "Mede o tamanho da força de trabalho e quanto dela já está em empregos verdes ou ainda em atividade de alto impacto. É o termômetro da transição justa: social no efeito, ambiental na direção.",
+   "como_calcula": "Empregados = média dos meses do total de empregados no fim de cada mês (estoque, nunca soma de meses). % por classe = média mensal da classe ÷ média mensal total. A classe (Verde, Neutra, Alto impacto) é critério do grupo, aplicado só pela ocupação.",
+   "ocupacional": true,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "verde",
+     "titulo": "% de empregos verdes",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "onde": {
+        "classe": "Verde"
+       },
+       "ignorar": [
+        "classe"
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "ignorar": [
+        "classe"
+       ]
+      }
+     }
+    },
+    {
+     "chave": "alto_impacto",
+     "titulo": "% em alto impacto",
+     "principal": false,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "onde": {
+        "classe": "Alto impacto"
+       },
+       "ignorar": [
+        "classe"
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "ignorar": [
+        "classe"
+       ]
+      }
+     }
+    },
+    {
+     "chave": "neutra",
+     "titulo": "% em ocupações neutras",
+     "principal": false,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "neutro",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "onde": {
+        "classe": "Neutra"
+       },
+       "ignorar": [
+        "classe"
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "ignorar": [
+        "classe"
+       ]
+      }
+     }
+    },
+    {
+     "chave": "empregados",
+     "titulo": "Empregados (média mensal)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": ""
+     },
+     "sentido": "neutro",
+     "expr": {
+      "op": "estoque_medio",
+      "tabela": "emprego_mensal",
+      "campo": "empregados_fim_mes"
+     }
+    }
+   ]
+  },
+  {
+   "id": "EV2",
+   "pilar": "S",
+   "titulo": "Novas contratações e taxa de contratação",
+   "gri": [
+    {
+     "id": "401-1:2016",
+     "parte": "a"
+    }
+   ],
+   "por_que_asg": "Mostra se os projetos estão criando vagas, que é a face social do investimento.",
+   "como_calcula": "Taxa anual = contratações do período × (12 ÷ meses com dado) ÷ empregados (média mensal). A anualização deixa períodos de tamanhos diferentes comparáveis.",
+   "ocupacional": true,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "taxa",
+     "titulo": "Taxa de contratação (ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "emprego_mensal",
+         "campo": "contratacoes"
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    },
+    {
+     "chave": "contratacoes",
+     "titulo": "Contratações (nº)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": ""
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "soma",
+      "tabela": "emprego_mensal",
+      "campo": "contratacoes"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "EV3",
+   "pilar": "S",
+   "titulo": "Rotatividade de empregados",
+   "gri": [
+    {
+     "id": "401-1:2016",
+     "parte": "b"
+    }
+   ],
+   "por_que_asg": "Mostra a estabilidade do emprego, incluindo o choque de desligamentos da eólica em fev/2025.",
+   "como_calcula": "Taxa anual = desligamentos do período × (12 ÷ meses com dado) ÷ empregados (média mensal).",
+   "ocupacional": true,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "taxa",
+     "titulo": "Rotatividade (ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "emprego_mensal",
+         "campo": "desligamentos"
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    },
+    {
+     "chave": "desligamentos",
+     "titulo": "Desligamentos (nº)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": ""
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma",
+      "tabela": "emprego_mensal",
+      "campo": "desligamentos"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "EV4",
+   "pilar": "S",
+   "titulo": "Diversidade nos empregos",
+   "gri": [
+    {
+     "id": "405-1:2016",
+     "parte": "b"
+    }
+   ],
+   "por_que_asg": "Mostra quem ocupa os empregos: a transição só é justa se o emprego novo não excluir mulheres nem faixas etárias.",
+   "como_calcula": "% de mulheres = média mensal de empregadas ÷ média mensal total. O recorte por faixa etária usa o filtro de faixa.",
+   "ocupacional": true,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "mulheres",
+     "titulo": "% de mulheres",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "onde": {
+        "genero": "F"
+       },
+       "ignorar": [
+        "genero"
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes",
+       "ignorar": [
+        "genero"
+       ]
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Q1",
+   "pilar": "S",
+   "titulo": "Horas de capacitação por empregado",
+   "gri": [
+    {
+     "id": "404-1:2016"
+    }
+   ],
+   "por_que_asg": "Compara o investimento em formação entre classes de emprego: sem capacitação não há migração de quem sai da atividade de alto impacto.",
+   "como_calcula": "Horas anuais = horas de capacitação × (12 ÷ meses com dado) ÷ empregados (média mensal). A tabela de capacitação não tem faixa etária, então o filtro de faixa devolve vazio.",
+   "ocupacional": true,
+   "bloqueia_faixa": true,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "horas_por_empregado",
+     "titulo": "Horas de capacitação por empregado (ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 1,
+      "unidade": " h"
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "capacitacao",
+         "campo": "horas_capacitacao"
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    },
+    {
+     "chave": "horas_total",
+     "titulo": "Horas de capacitação (total)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " h"
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "soma",
+      "tabela": "capacitacao",
+      "campo": "horas_capacitacao"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "pilar": "S",
+   "titulo": "Programas de qualificação e transição de carreira",
+   "gri": [
+    {
+     "id": "404-2:2016"
+    }
+   ],
+   "por_que_asg": "Mostra se quem sai da mineração é de fato requalificado e recolocado em função verde. A transição é incompleta: só parte dos concluintes é recontratada.",
+   "como_calcula": "Taxa de conclusão = concluintes ÷ vagas. % recolocados = contratados em vaga verde ÷ concluintes. Programas contam no mês de início.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "recolocados_verde",
+     "titulo": "% de concluintes recolocados em vaga verde",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "programas",
+       "campo": "contratados_verde"
+      },
+      "den": {
+       "op": "soma",
+       "tabela": "programas",
+       "campo": "concluintes"
+      }
+     }
+    },
+    {
+     "chave": "taxa_conclusao",
+     "titulo": "Taxa de conclusão dos programas",
+     "principal": false,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "programas",
+       "campo": "concluintes"
+      },
+      "den": {
+       "op": "soma",
+       "tabela": "programas",
+       "campo": "vagas"
+      }
+     }
+    },
+    {
+     "chave": "programas",
+     "titulo": "Programas iniciados",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": ""
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "contagem",
+      "tabela": "programas",
+      "distinto": "programa_id"
+     },
+     "depende_do_periodo": true
+    },
+    {
+     "chave": "concluintes",
+     "titulo": "Concluintes",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": ""
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "soma",
+      "tabela": "programas",
+      "campo": "concluintes"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "N1",
+   "pilar": "S",
+   "titulo": "Prazo de aviso sobre mudanças operacionais",
+   "gri": [
+    {
+     "id": "402-1:2016"
+    }
+   ],
+   "por_que_asg": "Mede a proteção do trabalhador quando a operação muda ou fecha, parte central de uma transição justa.",
+   "como_calcula": "Média, entre os projetos selecionados, do prazo mínimo de aviso (em semanas) no último ano do período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "prazo_aviso",
+     "titulo": "Prazo médio de aviso (semanas)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 1,
+      "unidade": " sem."
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "media",
+      "tabela": "comunidade",
+      "campo": "prazo_aviso_semanas",
+      "ano": "ultimo"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C1",
+   "pilar": "S",
+   "titulo": "Investimentos em infraestrutura e apoio a serviços",
+   "gri": [
+    {
+     "id": "203-1:2016"
+    }
+   ],
+   "por_que_asg": "Mostra o retorno ao território onde os projetos operam.",
+   "como_calcula": "Soma do investimento em infraestrutura nos anos do período selecionado.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "investimento",
+     "titulo": "Investimento em infraestrutura",
+     "principal": true,
+     "formato": {
+      "tipo": "moeda_milhoes",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "soma",
+      "tabela": "comunidade",
+      "campo": "investimento_infraestrutura_rs"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C3",
+   "pilar": "S",
+   "titulo": "Operações com programa para a comunidade local",
+   "gri": [
+    {
+     "id": "413-1:2016"
+    }
+   ],
+   "por_que_asg": "Mostra o engajamento local: se a transição acontece com a comunidade e não apesar dela.",
+   "como_calcula": "% de projetos com programa = linhas projeto-ano com programa ÷ total de linhas projeto-ano, nos anos do período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "pct_com_programa",
+     "titulo": "% de projetos com programa comunitário",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "contagem",
+       "tabela": "comunidade",
+       "onde": {
+        "tem_programa_comunidade": "Sim"
+       }
+      },
+      "den": {
+       "op": "contagem",
+       "tabela": "comunidade"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ES1",
+   "pilar": "A",
+   "titulo": "Consumo de energia renovável e não renovável",
+   "gri": [
+    {
+     "id": "302-1:2016"
+    }
+   ],
+   "por_que_asg": "Mostra o avanço da matriz energética das operações.",
+   "como_calcula": "% renovável = MWh renovável ÷ (renovável + não renovável) no período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "pct_renovavel",
+     "titulo": "% de energia renovável",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "energia_emissoes",
+       "campo": "energia_renovavel_mwh"
+      },
+      "den": {
+       "op": "soma_de",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "energia_emissoes",
+         "campo": "energia_renovavel_mwh"
+        },
+        {
+         "op": "soma",
+         "tabela": "energia_emissoes",
+         "campo": "energia_nao_renovavel_mwh"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "chave": "renovavel",
+     "titulo": "Energia renovável (MWh)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " MWh"
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "soma",
+      "tabela": "energia_emissoes",
+      "campo": "energia_renovavel_mwh"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "ES2",
+   "pilar": "A",
+   "titulo": "Intensidade energética",
+   "gri": [
+    {
+     "id": "302-3:2016"
+    }
+   ],
+   "por_que_asg": "Normaliza o consumo de energia pelo tamanho da equipe, para comparar projetos de portes diferentes.",
+   "como_calcula": "MWh anuais por empregado = (renovável + não renovável) × (12 ÷ meses com dado) ÷ empregados (média mensal).",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "mwh_por_empregado",
+     "titulo": "MWh por empregado (ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 1,
+      "unidade": " MWh"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma_de",
+         "args": [
+          {
+           "op": "soma",
+           "tabela": "energia_emissoes",
+           "campo": "energia_renovavel_mwh"
+          },
+          {
+           "op": "soma",
+           "tabela": "energia_emissoes",
+           "campo": "energia_nao_renovavel_mwh"
+          }
+         ]
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ES3",
+   "pilar": "A",
+   "titulo": "Redução do consumo de energia",
+   "gri": [
+    {
+     "id": "302-4:2016"
+    }
+   ],
+   "por_que_asg": "Mostra o resultado de iniciativas de eficiência energética.",
+   "como_calcula": "% de redução = MWh economizados por iniciativas ÷ consumo total de energia no período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "pct_reducao",
+     "titulo": "% de redução do consumo",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "energia_emissoes",
+       "campo": "reducao_consumo_mwh"
+      },
+      "den": {
+       "op": "soma_de",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "energia_emissoes",
+         "campo": "energia_renovavel_mwh"
+        },
+        {
+         "op": "soma",
+         "tabela": "energia_emissoes",
+         "campo": "energia_nao_renovavel_mwh"
+        }
+       ]
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ES4",
+   "pilar": "A",
+   "titulo": "Emissões de gases de efeito estufa (escopos 1 e 2)",
+   "gri": [
+    {
+     "id": "305-1:2016"
+    },
+    {
+     "id": "305-2:2016"
+    }
+   ],
+   "por_que_asg": "Normaliza as emissões pelo tamanho da equipe: é a pegada de carbono por posto de trabalho.",
+   "como_calcula": "tCO2e anuais por empregado = (escopo 1 + escopo 2) × (12 ÷ meses com dado) ÷ empregados (média mensal).",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "tco2e_por_empregado",
+     "titulo": "tCO2e por empregado (ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 1,
+      "unidade": " tCO2e"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma_de",
+         "args": [
+          {
+           "op": "soma",
+           "tabela": "energia_emissoes",
+           "campo": "emissoes_escopo1_tco2e"
+          },
+          {
+           "op": "soma",
+           "tabela": "energia_emissoes",
+           "campo": "emissoes_escopo2_tco2e"
+          }
+         ]
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    },
+    {
+     "chave": "total",
+     "titulo": "Emissões escopos 1+2 (tCO2e)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " tCO2e"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma_de",
+      "args": [
+       {
+        "op": "soma",
+        "tabela": "energia_emissoes",
+        "campo": "emissoes_escopo1_tco2e"
+       },
+       {
+        "op": "soma",
+        "tabela": "energia_emissoes",
+        "campo": "emissoes_escopo2_tco2e"
+       }
+      ]
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "ES6",
+   "pilar": "A",
+   "titulo": "Redução de emissões por iniciativas",
+   "gri": [
+    {
+     "id": "305-5:2016"
+    }
+   ],
+   "por_que_asg": "Mostra o resultado de iniciativas de descarbonização.",
+   "como_calcula": "tCO2e anuais evitados = redução de emissões do período × (12 ÷ meses com dado).",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "reducao_ano",
+     "titulo": "Redução de emissões (tCO2e ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " tCO2e"
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "mult",
+      "args": [
+       {
+        "op": "soma",
+        "tabela": "energia_emissoes",
+        "campo": "reducao_emissoes_tco2e"
+       },
+       {
+        "op": "fator_anual"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "R1",
+   "pilar": "A",
+   "titulo": "Resíduos gerados",
+   "gri": [
+    {
+     "id": "306-3:2020"
+    }
+   ],
+   "por_que_asg": "Liga o emprego ao desempenho ambiental: quanto resíduo cada posto de trabalho gera.",
+   "como_calcula": "t anuais por empregado = (perigosos + não perigosos) × (12 ÷ meses com dado) ÷ empregados (média mensal).",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "por_empregado",
+     "titulo": "Resíduos por empregado (t ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 2,
+      "unidade": " t"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma_de",
+         "args": [
+          {
+           "op": "soma",
+           "tabela": "ambiental_mensal",
+           "campo": "residuos_perigosos_ton"
+          },
+          {
+           "op": "soma",
+           "tabela": "ambiental_mensal",
+           "campo": "residuos_nao_perigosos_ton"
+          }
+         ]
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    },
+    {
+     "chave": "gerados",
+     "titulo": "Resíduos gerados (t)",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " t"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma_de",
+      "args": [
+       {
+        "op": "soma",
+        "tabela": "ambiental_mensal",
+        "campo": "residuos_perigosos_ton"
+       },
+       {
+        "op": "soma",
+        "tabela": "ambiental_mensal",
+        "campo": "residuos_nao_perigosos_ton"
+       }
+      ]
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
+   "id": "R2",
+   "pilar": "A",
+   "titulo": "Resíduos não destinados à disposição final",
+   "gri": [
+    {
+     "id": "306-4:2020"
+    }
+   ],
+   "por_que_asg": "Mostra quanto do resíduo é recuperado em vez de ir para aterro ou descarte.",
+   "como_calcula": "% recuperados = resíduos recuperados ÷ resíduos gerados.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "pct_recuperados",
+     "titulo": "% de resíduos recuperados",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "ambiental_mensal",
+       "campo": "residuos_recuperados_ton"
+      },
+      "den": {
+       "op": "soma_de",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "ambiental_mensal",
+         "campo": "residuos_perigosos_ton"
+        },
+        {
+         "op": "soma",
+         "tabela": "ambiental_mensal",
+         "campo": "residuos_nao_perigosos_ton"
+        }
+       ]
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "A1",
+   "pilar": "A",
+   "titulo": "Consumo de água",
+   "gri": [
+    {
+     "id": "303-5:2018"
+    }
+   ],
+   "por_que_asg": "Liga o emprego ao uso de água, um recurso crítico no semiárido piauiense.",
+   "como_calcula": "ML anuais por empregado = consumo × (12 ÷ meses com dado) ÷ empregados (média mensal).",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "agua_por_empregado",
+     "titulo": "Água por empregado (ML ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 2,
+      "unidade": " ML"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "ambiental_mensal",
+         "campo": "consumo_agua_megalitros"
+        },
+        {
+         "op": "fator_anual"
+        }
+       ]
+      },
+      "den": {
+       "op": "estoque_medio",
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "pilar": "A",
+   "titulo": "Habitats protegidos ou restaurados",
+   "gri": [
+    {
+     "id": "304-3:2016"
+    }
+   ],
+   "por_que_asg": "Mostra a entrega de restauração ambiental, normalmente feita por empregos verdes.",
+   "como_calcula": "ha anuais = habitat restaurado no período × (12 ÷ meses com dado).",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "completa",
+   "medidas": [
+    {
+     "chave": "ha_ano",
+     "titulo": "Habitat restaurado (ha ao ano)",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 1,
+      "unidade": " ha"
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "mult",
+      "args": [
+       {
+        "op": "soma",
+        "tabela": "ambiental_mensal",
+        "campo": "habitat_restaurado_ha"
+       },
+       {
+        "op": "fator_anual"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "pilar": "G",
+   "titulo": "Empregados com avaliação regular de desempenho",
+   "gri": [
+    {
+     "id": "404-3:2016"
+    }
+   ],
+   "por_que_asg": "Mostra se há gestão formal de desempenho e carreira, uma prática de governança de pessoas.",
+   "como_calcula": "Para cada mês: avaliados ÷ empregados; depois, a média entre os meses.",
+   "ocupacional": true,
+   "bloqueia_faixa": true,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_avaliados",
+     "titulo": "% de empregados avaliados",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "media_mensal_razao",
+      "num": {
+       "tabela": "capacitacao",
+       "campo": "empregados_avaliados"
+      },
+      "den": {
+       "tabela": "emprego_mensal",
+       "campo": "empregados_fim_mes"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T1",
+   "pilar": "G",
+   "titulo": "Direcionamento do investimento para a transição",
+   "gri": [
+    {
+     "id": "201-2:2016"
+    },
+    {
+     "setorial": true,
+     "norma": "GRI 11"
+    },
+    {
+     "setorial": true,
+     "norma": "GRI 12"
+    }
+   ],
+   "por_que_asg": "Mostra quanto do capital vai para a transição: é decisão de estratégia e governança, não de operação.",
+   "como_calcula": "% do investimento em renovável = investimento em renováveis ÷ investimento total, nos anos do período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_renovavel",
+     "titulo": "% do investimento em renovável",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "soma",
+       "tabela": "comunidade",
+       "campo": "investimento_renovavel_rs"
+      },
+      "den": {
+       "op": "soma",
+       "tabela": "comunidade",
+       "campo": "investimento_total_rs"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "M1",
+   "pilar": "G",
+   "titulo": "Planejamento de encerramento das minas",
+   "gri": [
+    {
+     "setorial": true,
+     "norma": "GRI 14"
+    }
+   ],
+   "por_que_asg": "Mostra se a saída da atividade de alto impacto foi planejada: encerramento sem plano é risco social e ambiental.",
+   "como_calcula": "% das minas com plano = minas com plano de encerramento ÷ minas (as demais atividades não se aplicam), no último ano do período.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "pct_com_plano",
+     "titulo": "% das minas com plano de encerramento",
+     "principal": true,
+     "formato": {
+      "tipo": "percentual",
+      "casas": 1
+     },
+     "sentido": "up",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "contagem",
+       "tabela": "comunidade",
+       "onde": {
+        "tem_plano_encerramento": "Sim"
+       },
+       "ano": "ultimo"
+      },
+      "den": {
+       "op": "contagem",
+       "tabela": "comunidade",
+       "onde": {
+        "tem_plano_encerramento": {
+         "!=": "Não se aplica"
+        }
+       },
+       "ano": "ultimo"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+ocupacao_id,ocupacao,categoria_funcional,classe,justificativa_classe
+O01,Engenheiro eólico,Engenharia,Verde,Projeta e opera parques de energia renovável
+O02,Engenheiro de usina solar ou hidrelétrica,Engenharia,Verde,Projeta e opera geração renovável
+O03,Engenheiro civil (obras sustentáveis),Engenharia,Verde,Obras de baixo impacto ambiental
+O04,Arquiteto (projetos sustentáveis),Engenharia,Verde,Projetos de arquitetura de baixo impacto
+O05,Técnico de manutenção de aerogerador,Técnico,Verde,Mantém turbinas de geração eólica
+O06,Instalador de painéis solares,Operacional,Verde,Instala sistemas de geração solar
+O07,Operador de usina de energia renovável,Operacional,Verde,"Opera usinas solares, eólicas e hidrelétricas"
+O08,Eletricista de energia renovável,Operacional,Verde,Instalação e manutenção elétrica em usinas renováveis
+O09,Técnico de recuperação de áreas degradadas,Técnico,Verde,Restaura ecossistemas e áreas afetadas
+O10,Assistente administrativo,Administrativo,Neutra,Não contribui nem agrava de forma relevante
+O11,Analista financeiro ou contábil,Administrativo,Neutra,Não contribui nem agrava de forma relevante
+O12,Motorista,Operacional,Neutra,Não contribui nem agrava de forma relevante
+O13,Segurança patrimonial,Operacional,Neutra,Não contribui nem agrava de forma relevante
+O14,Gerente de projeto,Gestão,Neutra,Não contribui nem agrava de forma relevante
+O15,Engenheiro civil (obras gerais),Engenharia,Neutra,Obras sem critério ambiental específico
+O16,Operador de mina ou lavra,Operacional,Alto impacto,Extração mineral: emissões e degradação do solo
+O17,Operador de máquinas pesadas na mineração,Operacional,Alto impacto,Frota a diesel: alta emissão de GEE
+O18,Operador de britagem e beneficiamento,Operacional,Alto impacto,"Processamento mineral: poeira, energia e resíduos"

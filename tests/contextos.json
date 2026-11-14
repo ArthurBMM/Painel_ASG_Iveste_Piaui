@@ -1,0 +1,15 @@
+[
+  {"nome": "sem filtro", "filtros": {}},
+  {"nome": "ano 2025", "filtros": {"periodo": {"de": "2025-01", "ate": "2025-12"}}},
+  {"nome": "ano 2024", "filtros": {"periodo": {"de": "2024-01", "ate": "2024-12"}}},
+  {"nome": "2026 (10 meses)", "filtros": {"periodo": {"de": "2026-01", "ate": "2026-10"}}},
+  {"nome": "setor Mineração", "filtros": {"setores": ["Mineração"]}},
+  {"nome": "município Teresina", "filtros": {"municipios": ["Teresina"]}},
+  {"nome": "empresa E03 (2 solares)", "filtros": {"empresas": ["E03"]}},
+  {"nome": "origem Iniciativa própria em 2025", "filtros": {"origens": ["Iniciativa própria"], "periodo": {"de": "2025-01", "ate": "2025-12"}}},
+  {"nome": "classe Verde", "filtros": {"classes": ["Verde"]}},
+  {"nome": "gênero F", "filtros": {"generos": ["F"]}},
+  {"nome": "faixa De 30 a 50", "filtros": {"faixas": ["De 30 a 50"]}},
+  {"nome": "Alto impacto + Mineração, mar-set/2025", "filtros": {"classes": ["Alto impacto"], "setores": ["Mineração"], "periodo": {"de": "2025-03", "ate": "2025-09"}}},
+  {"nome": "Eólica jan-out/2026", "filtros": {"setores": ["Eólica"], "periodo": {"de": "2026-01", "ate": "2026-10"}}}
+]

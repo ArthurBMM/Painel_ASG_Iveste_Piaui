@@ -1,0 +1,127 @@
+{
+ "id": "t8-empregos-verdes",
+ "titulo": "Empregos verdes e qualificação para a transição energética",
+ "resumo": "Como a carteira da Investe Piauí troca empregos de alto impacto por empregos verdes, e se a qualificação acompanha essa troca.",
+ "aviso_dados": "Demonstração com dados fictícios. Nenhum número aqui representa projetos reais.",
+ "pasta_dados": "dados",
+ "contrato": "contrato.json",
+ "indicadores": [
+  "EV1",
+  "EV2",
+  "EV3",
+  "EV4",
+  "Q1",
+  "Q2",
+  "N1",
+  "C1",
+  "C3",
+  "ES1",
+  "ES2",
+  "ES3",
+  "ES4",
+  "ES6",
+  "R1",
+  "R2",
+  "A1",
+  "H1",
+  "Q3",
+  "T1",
+  "M1"
+ ],
+ "destaques": {
+  "A": [
+   "ES1",
+   "ES4",
+   "R2"
+  ],
+  "S": [
+   "EV1",
+   "EV1.alto_impacto",
+   "EV3",
+   "Q1"
+  ],
+  "G": [
+   "T1",
+   "M1",
+   "Q3"
+  ]
+ },
+ "cartoes_topo": [
+  "EV1.empregados",
+  "EV1",
+  "EV1.alto_impacto",
+  "ES1",
+  "ES4",
+  "Q1"
+ ],
+ "historia": {
+  "titulo": "A transição está acontecendo, mas não está completa",
+  "pontos": [
+   "A mineração (alto impacto) encolhe e os empregos verdes crescem.",
+   "Parte de quem sai da mineração é requalificada e recontratada em função verde, mas só uma fração.",
+   "A eólica demitiu em fev/2025: o ganho verde não é linear."
+  ]
+ },
+ "marcas": [
+  {
+   "mes": "2025-02",
+   "texto": "Demissões na eólica"
+  }
+ ],
+ "graficos": {
+  "visao": [
+   {
+    "tipo": "classes",
+    "larga": true,
+    "titulo": "Empregados por classe de ocupação",
+    "sub": "Média mensal de empregados. Verde, neutra e alto impacto são critério do grupo (por ocupação), não uma classificação do GRI."
+   }
+  ],
+  "A": [
+   {
+    "tipo": "medida",
+    "refs": [
+     "ES1"
+    ],
+    "titulo": "% de energia renovável, mês a mês",
+    "sub": "GRI 302-1. Sobe quando a matriz se renova."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "ES4"
+    ],
+    "titulo": "tCO2e por empregado (anualizado), mês a mês",
+    "sub": "GRI 305-1 e 305-2. Cada ponto é o mês anualizado (×12)."
+   }
+  ],
+  "S": [
+   {
+    "tipo": "classes",
+    "titulo": "Empregados por classe de ocupação",
+    "sub": "Média mensal de empregados por classe."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "EV3"
+    ],
+    "titulo": "Rotatividade (anualizada), mês a mês",
+    "sub": "GRI 401-1-b. O pico de 2025 é o choque de desligamentos na eólica."
+   }
+  ],
+  "G": [
+   {
+    "tipo": "anual",
+    "larga": true,
+    "refs": [
+     "T1",
+     "M1",
+     "Q3"
+    ],
+    "titulo": "Indicadores de governança por ano",
+    "sub": "Cobertura parcial: o GRI trata estes temas em normas setoriais e gerais; a base do T8 tem poucos dados de governança."
+   }
+  ]
+ }
+}

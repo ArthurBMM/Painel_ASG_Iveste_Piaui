@@ -1,0 +1,12 @@
+{
+  "id": "novo-tema",
+  "titulo": "Título do tema",
+  "resumo": "Uma frase: qual pergunta este tema responde?",
+  "aviso_dados": "Dados fictícios para demonstração.",
+  "pasta_dados": "dados",
+  "contrato": "contrato.json",
+  "indicadores": ["IDs", "do", "registro", "que", "este", "tema", "usa"],
+  "destaques": { "A": [], "S": [], "G": [] },
+  "cartoes_topo": [],
+  "historia": { "titulo": "", "pontos": [] }
+}

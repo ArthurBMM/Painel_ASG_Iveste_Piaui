@@ -1,0 +1,33 @@
+# dependências e builds
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# ⚠ DADOS REAIS OU CONFIDENCIAIS NUNCA ENTRAM NO REPOSITÓRIO.
+# Este projeto usa só dados fictícios. Se algum dia usar dados reais, guarde-os em
+# temas/*/dados-privados/ (ignorado abaixo) e nunca envie a ferramentas de IA.
+temas/*/dados-privados/
+*.confidencial.*
+.env
+
+# material interno da disciplina (cronograma, PDFs de enunciado etc.)
+material-privado/
+
+# CONTEÚDO DAS NORMAS GRI (catálogo com títulos/páginas, PDFs, texto extraído): PRIVADO, nunca versionar.
+# O catálogo fica em privado/ e é distribuído ao grupo por e-mail. Só o LEIA-ME.md da pasta é versionado.
+privado/*
+!privado/LEIA-ME.md
+*.pdf
+gri_all.txt
+Normas*GRI*

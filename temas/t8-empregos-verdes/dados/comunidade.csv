@@ -1,0 +1,49 @@
+projeto_id,ano,investimento_infraestrutura_rs,tipo_investimento,tem_programa_comunidade,prazo_aviso_semanas,investimento_total_rs,investimento_renovavel_rs,tem_plano_encerramento
+P01,2023,1634000.0,Estrada de acesso,Sim,6,19995000.0,18513000.0,Não se aplica
+P01,2024,1759000.0,Posto de saúde,Sim,6,22038000.0,20113000.0,Não se aplica
+P01,2025,1457000.0,Energia comunitária,Sim,2,14055000.0,13184000.0,Não se aplica
+P01,2026,1588000.0,Posto de saúde,Sim,5,19744000.0,18075000.0,Não se aplica
+P02,2023,1475000.0,Energia comunitária,Sim,6,32690000.0,30380000.0,Não se aplica
+P02,2024,1605000.0,Escola técnica,Sim,6,29214000.0,27059000.0,Não se aplica
+P02,2025,1226000.0,Energia comunitária,Sim,2,21684000.0,19940000.0,Não se aplica
+P02,2026,1533000.0,Posto de saúde,Sim,5,27828000.0,25992000.0,Não se aplica
+P03,2023,1300000.0,Estrada de acesso,Sim,6,14891000.0,13792000.0,Não se aplica
+P03,2024,1585000.0,Estrada de acesso,Sim,6,15312000.0,14199000.0,Não se aplica
+P03,2025,1316000.0,Escola técnica,Sim,2,11050000.0,10139000.0,Não se aplica
+P03,2026,1203000.0,Escola técnica,Sim,5,14555000.0,13470000.0,Não se aplica
+P04,2023,2100000.0,Estrada de acesso,Sim,4,34944000.0,32445000.0,Não se aplica
+P04,2024,2315000.0,Energia comunitária,Sim,4,34094000.0,31858000.0,Não se aplica
+P04,2025,1529000.0,Energia comunitária,Sim,5,38645000.0,35377000.0,Não se aplica
+P04,2026,1804000.0,Saneamento,Sim,5,35763000.0,32888000.0,Não se aplica
+P05,2023,942000.0,Estrada de acesso,Sim,4,21999000.0,20614000.0,Não se aplica
+P05,2024,1027000.0,Posto de saúde,Sim,4,23664000.0,21675000.0,Não se aplica
+P05,2025,805000.0,Energia comunitária,Sim,5,24832000.0,22784000.0,Não se aplica
+P05,2026,809000.0,Saneamento,Sim,5,25927000.0,23799000.0,Não se aplica
+P06,2023,1761000.0,Estrada de acesso,Sim,4,16319000.0,14972000.0,Não se aplica
+P06,2024,2110000.0,Saneamento,Sim,4,17445000.0,16137000.0,Não se aplica
+P06,2025,1506000.0,Posto de saúde,Sim,5,19462000.0,18128000.0,Não se aplica
+P06,2026,1789000.0,Estrada de acesso,Sim,5,17422000.0,15893000.0,Não se aplica
+P07,2023,2267000.0,Posto de saúde,Sim,4,6639000.0,6307000.0,Não se aplica
+P07,2024,2865000.0,Escola técnica,Sim,4,7839000.0,7378000.0,Não se aplica
+P07,2025,1982000.0,Escola técnica,Sim,5,6219000.0,5737000.0,Não se aplica
+P07,2026,2219000.0,Posto de saúde,Sim,5,9384000.0,8804000.0,Não se aplica
+P08,2023,1241000.0,Saneamento,Sim,4,13087000.0,7050000.0,Não se aplica
+P08,2024,1281000.0,Saneamento,Sim,4,11982000.0,6426000.0,Não se aplica
+P08,2025,1090000.0,Escola técnica,Sim,5,11270000.0,6169000.0,Não se aplica
+P08,2026,1112000.0,Energia comunitária,Sim,5,17596000.0,9424000.0,Não se aplica
+P09,2023,1425000.0,Saneamento,Sim,4,17392000.0,9335000.0,Não se aplica
+P09,2024,1615000.0,Escola técnica,Sim,4,11681000.0,6347000.0,Não se aplica
+P09,2025,1189000.0,Estrada de acesso,Sim,5,20853000.0,11135000.0,Não se aplica
+P09,2026,1174000.0,Energia comunitária,Sim,5,21662000.0,11624000.0,Não se aplica
+P10,2023,261000.0,Posto de saúde,Não,2,33716000.0,1309000.0,Não
+P10,2024,299000.0,Estrada de acesso,Não,3,41719000.0,3310000.0,Não
+P10,2025,228000.0,Energia comunitária,Não,4,44754000.0,6238000.0,Sim
+P10,2026,234000.0,Escola técnica,Não,6,32885000.0,6442000.0,Sim
+P11,2023,512000.0,Posto de saúde,Não,2,40326000.0,1612000.0,Não
+P11,2024,601000.0,Energia comunitária,Não,3,67640000.0,5304000.0,Sim
+P11,2025,442000.0,Saneamento,Sim,4,42696000.0,5854000.0,Sim
+P11,2026,443000.0,Estrada de acesso,Sim,6,50881000.0,9883000.0,Sim
+P12,2023,442000.0,Escola técnica,Não,2,32698000.0,1285000.0,Não
+P12,2024,456000.0,Estrada de acesso,Não,3,39804000.0,3170000.0,Não
+P12,2025,401000.0,Saneamento,Não,4,53705000.0,7416000.0,Não
+P12,2026,375000.0,Estrada de acesso,Não,6,47990000.0,9509000.0,Não

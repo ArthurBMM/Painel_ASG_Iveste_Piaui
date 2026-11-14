@@ -1,0 +1,6 @@
+# Normaliza fins de linha (Windows x Linux/macOS) e protege binários
+* text=auto eol=lf
+*.xlsx binary
+*.png binary
+*.jpg binary
+*.svg text

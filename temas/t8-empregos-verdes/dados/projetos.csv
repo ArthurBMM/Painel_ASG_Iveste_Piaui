@@ -1,0 +1,13 @@
+projeto_id,nome_projeto,setor,municipio,regiao,mw_instalado,data_inicio,empresa_id
+P01,Parque Eólico Serra Azul,Eólica,Marcolândia,Semiárido,180.0,2022-06-01,E01
+P02,Complexo Ventos do Sertão,Eólica,Simões,Semiárido,250.0,2022-03-01,E01
+P03,Parque Eólico Costa Branca,Eólica,Parnaíba,Litoral,120.0,2022-09-01,E02
+P04,Usina Solar Sol do Sertão,Solar,São João do Piauí,Semiárido,300.0,2022-11-01,E03
+P05,Usina Solar Caldeirão,Solar,Caldeirão Grande do Piauí,Semiárido,200.0,2023-01-01,E03
+P06,Usina Solar Picos,Solar,Picos,Centro,150.0,2023-03-01,E04
+P07,PCH Rio Parnaíba,Hidrelétrica,Floriano,Centro,60.0,2021-05-01,E05
+P08,Obras Verdes Teresina,Obras sustentáveis,Teresina,Centro,,2023-01-01,E06
+P09,Restauração e Obras Vale do Sul,Obras sustentáveis,Corrente,Sul,,2024-06-01,E06
+P10,Mineradora Pedra Norte,Mineração,Pedro II,Norte,,2020-01-01,E07
+P11,Mineração Serra Cinza,Mineração,Paulistana,Semiárido,,2021-08-01,E08
+P12,Lavra Vale do Sul,Mineração,Bom Jesus,Sul,,2022-02-01,E09

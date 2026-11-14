@@ -1,0 +1,16 @@
+{
+  "name": "asg-investe-pi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ferramenta de análise ASG baseada nas Normas GRI para a Investe Piauí (protótipo web estático)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "servir": "node tools/servir.mjs",
+    "referencia": "python3 tools/referencia_pandas.py",
+    "servir:python": "python -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

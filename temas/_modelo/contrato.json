@@ -1,0 +1,8 @@
+{
+  "descricao": "Copie o contrato do T8 e ajuste: liste as tabelas do tema, as colunas e os tipos (texto, numero, inteiro, data).",
+  "tabelas": {
+    "projetos": { "arquivo": "projetos.csv", "obrigatoria": true, "chave": ["projeto_id"],
+      "colunas": { "projeto_id": "texto", "nome_projeto": "texto", "setor": "texto", "municipio": "texto", "empresa_id": "texto" } }
+  },
+  "relacoes": []
+}
