@@ -59,7 +59,8 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 
 ### D15. Pontuação: totais absolutos fora da nota; limites fixos; sensibilidade exibida
 - **Por quê:** `C1`, `ES6` e `H1` crescem com o tamanho da entidade e não indicam desempenho; limites tirados dos dados fariam a nota de uma entidade mudar quando outra entrasse; e como os pesos são arbitrários, a tela compara o ranking com pesos iguais.
-- **Descartado:** min-máx dos dados, z-score (dependem de distribuição real que não temos).
+- **Descartado por ora:** min-máx dos dados, z-score, percentil, escala robusta, log e sigmoide (comparação completa em `contexto-ia/02-…`). Os relativos dependem da distribuição da carteira, que não temos.
+- **Referências de mercado** (EcoVadis, ISE B3, Sustainalytics) consultadas em 14/11 apenas para ordem de grandeza; não existe critério universal "50% ou 75%".
 - **Rever:** com dados reais, ou quando existirem medidas proporcionais (por empregado, por MWh). Parte dos limites foi calibrada vendo os dados fictícios; a justificativa de cada um diz isso.
 
 ## Em aberto (precisam do grupo)

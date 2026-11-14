@@ -1,6 +1,6 @@
 # Métricas, pesos e normalização
 
-> **Estado (14/11/2026):** **implementado.** A conta está em `src/js/nucleo/pontuacao.js`, os parâmetros em `config/metricas.json`, a apresentação em `src/js/ui/componentes/nota.js` e nas páginas, e os testes em `tests/pontuacao.test.mjs` (comparados com uma referência independente em Python, `tools/referencia_pontuacao.py`). O restante deste arquivo é a especificação, que continua valendo como explicação do modelo.
+> **Estado (14/11/2026): versão 1.0 implementada.** A conta está em `src/js/nucleo/pontuacao.js`, os parâmetros em `config/metricas.json`, a apresentação em `src/js/ui/componentes/nota.js` e nas páginas, e os testes em `tests/pontuacao.test.mjs` (comparados com uma referência independente em Python, `tools/referencia_pontuacao.py`). O restante deste arquivo é a especificação, que continua valendo como explicação do modelo.
 >
 > **Decisões tomadas na implementação:**
 > - **Totais absolutos ficam fora da nota** (`C1`, `ES6`, `H1`, marcados com `pontuar:false` e `motivo`): uma empresa grande teria "mais" só por ser grande. Esses indicadores continuam aparecendo como valor. Ideal futuro: medidas proporcionais (por empregado, por MWh).
@@ -58,6 +58,51 @@ Os cortes (70/40) e a cobertura mínima são **chute inicial do grupo** e ficam 
 ### 5. Mantém-se o balanço de tendência
 
 A nota mede **nível** (onde está); o balanço (▲▼ vs. ano anterior) mede **tendência** (para onde vai). As duas leituras convivem.
+
+## Normalização: o que usamos e o que ficou de fora
+
+**Normalizar** é trazer variáveis de unidades e escalas diferentes (%, tCO2e, horas) para uma escala comum, para poder compará-las e somá-las. Na ciência de dados isso se chama *feature scaling*.
+
+**O que a versão 1.0 usa:** *min-max com limites fixos e saturação*. É uma função linear por partes: abaixo do piso vale 0, acima do teto vale 100, e entre os dois cresce em linha reta. Quem estudou redes neurais reconhece o formato: é um *clipping* (parecido com o ReLU6 ou o *hard sigmoid*), **não** uma sigmoide. O efeito "espremer valores grandes e esticar valores pequenos" vem de mapear o intervalo [piso, teto] em [0, 100]; valores fora dele são travados nas pontas.
+
+| Técnica | Fórmula | Usada? | Por quê |
+|---|---|---|---|
+| **Min-max com piso/teto fixos** | `(x − piso) / (teto − piso)`, travada em [0, 1] | ✅ **sim** | Simples de explicar, o limite é declarado e editável, e a nota de uma entidade **não muda** quando outra entra |
+| Min-max com mín/máx dos dados | `(x − min) / (max − min)` | ❌ | A nota depende da carteira: entra uma empresa extrema e todas as outras mudam. Um *outlier* esmaga o resto |
+| **Z-score** | `(x − média) / desvio` | ❌ ainda | Mede "quantos desvios acima da média", **relativo à carteira**. Com 9 entidades fictícias, média e desvio são instáveis; além disso não diz se o valor é bom em termos absolutos |
+| **Percentil / posição** | fração das entidades com valor menor | ❌ ainda | Bom para *ranking* ("está entre os 25% melhores"), mas com poucas entidades dá saltos grandes |
+| Escala robusta | `(x − mediana) / IQR` | ❌ | Mais resistente a *outliers* que o z-score; mesma limitação de depender da carteira |
+| Log | `log(1 + x)` antes de normalizar | ❌ | Útil para dados muito assimétricos (totais, emissões absolutas). Optamos por **excluir** os totais absolutos (`pontuar:false`) |
+| Sigmoide (logística) | `1 / (1 + e^(−k(x−x0)))` | ❌ | Suaviza as pontas, mas é mais difícil de explicar e de editar (exige dois parâmetros sem unidade clara) |
+
+**Regra prática:** limites **fixos** respondem "está de acordo com uma meta?"; técnicas **relativas** (z-score, percentil) respondem "como está em relação aos outros?". Os dois são úteis e **não se substituem**. Os provedores de mercado também separam as duas ideias (ver abaixo).
+
+### Outras escolhas estatísticas da v1.0
+
+- **Média ponderada com renormalização:** indicador sem dado sai da conta e os pesos restantes são reescalados. Dado ausente **nunca** vira zero.
+- **Cobertura** (completude dos dados) exibida junto da nota.
+- **Agregação compensatória:** na média, um pilar muito bom pode esconder um muito ruim. É uma limitação conhecida; ver "Evoluções" abaixo.
+- **Sensibilidade aos pesos:** o ranking é recalculado com pesos iguais e a tela avisa se a ordem muda.
+- **Exclusão de totais absolutos** (`C1`, `ES6`, `H1`): dependem do tamanho da entidade, não do desempenho.
+
+## Referências de mercado (comparação, não validação)
+
+Pesquisadas em 14/11/2026. Cada fonte mede outra coisa, com outra escala; servem só para ver a **ordem de grandeza**. As mesmas fontes estão em `config/metricas.json → referencias_externas`.
+
+| Fonte | O que diz |
+|---|---|
+| [EcoVadis, medalhas](https://support.ecovadis.com/hc/en-us/articles/210460227-Understanding-EcoVadis-Medals-and-Badges) | Medalha por **percentil** (Platinum top 1%, Gold top 5%, Silver top 15%, Bronze top 35%). Notas de corte **indicativas**: 81, 73, 66 e 58 (jul/2024). Selo *Committed* a partir de 45 |
+| [ISE B3, metodologia](https://www.b3.com.br/data/files/DB/B2/66/3C/6B6AA71096B63AA7AC094EA8/ISE-Metodologia-pt-br%20vf.pdf) (seção 4.4 e apêndice) | Pontuação qualitativa mínima de **70 pontos percentuais** e nota de corte geral recalculada a cada ciclo com **média e desvio-padrão** dos scores (o texto não informa o valor) |
+| [Sustainalytics](https://connect.sustainalytics.com/hubfs/INV/Product%20Brochures/Sustainalytics%20ESG%20Risk%20Ratings.pdf) | Escala de **risco** (menor é melhor): Negligible 0–10, Low 10–20, Medium 20–30, High 30–40, Severe 40+ |
+
+**Conclusão:** não existe um critério universal do tipo "a empresa precisa de 50% ou 75%". Cada provedor define o seu, e os de seleção costumam ser **relativos** (percentil ou desvio-padrão). Os nossos cortes 70/40 estão na mesma vizinhança do mínimo de 70 do ISE e das notas de corte da EcoVadis (58 a 73), mas continuam sendo **hipótese do grupo**.
+
+## Evoluções possíveis (v1.1, não implementadas)
+
+1. **Posição na carteira:** mostrar, ao lado da nota, o **percentil** da entidade entre as demais (leitura relativa, no estilo EcoVadis/ISE). Só faz sentido com mais entidades.
+2. **Critério não compensatório:** além da média, exigir "nota geral ≥ X **e** nenhum pilar abaixo de Y" (o ISE exige mínimo por tema). Evita que um pilar excelente esconda um crítico.
+3. **Medidas proporcionais** (por empregado, por MWh) para trazer `C1`, `ES6` e `H1` para dentro da nota.
+4. **Intervalo de confiança / simulação:** variar pesos, pisos e tetos aleatoriamente (Monte Carlo) e mostrar a faixa em que a nota cai. É a forma probabilística de dizer "quão estável é esta nota".
 
 ## Onde ficam os parâmetros: `config/metricas.json`
 

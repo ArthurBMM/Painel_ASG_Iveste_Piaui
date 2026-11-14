@@ -1,5 +1,29 @@
 {
-  "versao": 1,
+  "versao": "1.0",
+  "metodo": {
+    "resumo": "Cada indicador, em sua unidade (%, tCO2e, horas), é convertido em uma nota de 0 a 100 por normalização linear com piso e teto FIXOS (min-max com limites escolhidos pelo grupo) e com travas em 0 e 100. As notas são combinadas por média ponderada, só com o que tem dado.",
+    "passos": [
+      "1. Normalização (por indicador): nota = (valor - piso) / (teto - piso), limitada a [0, 1] e multiplicada por 100. Piso = valor que vale 0; teto = valor que vale 100. Se piso > teto, 'menor é melhor' (mesma fórmula).",
+      "2. Pilar: nota_pilar = soma(peso x nota) / soma(peso), só dos indicadores COM dado (dado ausente não vira zero; os pesos são renormalizados).",
+      "3. Cobertura: soma dos pesos com dado / soma dos pesos pontuáveis do pilar. Abaixo de faixas.cobertura_minima, a faixa vira 'Sem dados suficientes'.",
+      "4. ASG geral: média ponderada das notas dos pilares (pesos_pilares), com a cobertura geral ponderada da mesma forma.",
+      "5. Faixas: nota >= faixas.alinhado = Alinhado; >= faixas.atencao = Em atenção; abaixo = Crítico.",
+      "6. Exclusões: indicadores com pontuar:false (totais absolutos C1, ES6, H1) aparecem como valor, mas não entram na nota.",
+      "7. Sensibilidade: a página Empresas recalcula a nota com pesos iguais e avisa quando a ordem das entidades muda."
+    ],
+    "tecnicas_usadas": ["normalização min-max com limites fixos (feature scaling)", "saturação/clipping em 0 e 100", "média ponderada com renormalização de pesos", "cobertura (completude dos dados)", "análise de sensibilidade aos pesos"],
+    "tecnicas_nao_usadas_ainda": ["z-score", "percentil / posição na carteira", "escala robusta (mediana e IQR)", "transformação logarítmica", "função logística (sigmoide)", "critério não compensatório por pilar"],
+    "por_que_nao_usadas": "z-score, percentil e escala robusta dependem da distribuição dos dados da carteira. Com 9 entidades fictícias, média e desvio são instáveis, e a nota de uma entidade mudaria quando outra entrasse. Ficam como evolução (ver contexto-ia/02-metricas-pesos-e-normalizacao.md)."
+  },
+  "referencias_externas": {
+    "aviso": "Apenas COMPARAÇÃO de ordem de grandeza, consultada em 14/11/2026. Não valida nossos cortes: cada fonte mede outra coisa, com outra escala.",
+    "itens": [
+      {"fonte": "EcoVadis (página oficial de medalhas)", "o_que_diz": "Medalha por percentil (Platinum top 1%, Gold top 5%, Silver top 15%, Bronze top 35%); notas de corte apenas indicativas: 81, 73, 66 e 58 (jul/2024). Selo 'Committed' exige nota mínima 45.", "url": "https://support.ecovadis.com/hc/en-us/articles/210460227-Understanding-EcoVadis-Medals-and-Badges"},
+      {"fonte": "ISE B3, Metodologia (seção 4.4 e apêndice)", "o_que_diz": "Exige pontuação qualitativa mínima de 70 pontos percentuais e uma nota de corte geral recalculada a cada ciclo com média e desvio-padrão dos scores; o texto não informa o valor.", "url": "https://www.b3.com.br/data/files/DB/B2/66/3C/6B6AA71096B63AA7AC094EA8/ISE-Metodologia-pt-br%20vf.pdf"},
+      {"fonte": "Sustainalytics (brochura ESG Risk Ratings)", "o_que_diz": "Escala de RISCO, onde menor é melhor: Negligible 0-10, Low 10-20, Medium 20-30, High 30-40, Severe 40+. Não é comparável diretamente à nossa nota.", "url": "https://connect.sustainalytics.com/hubfs/INV/Product%20Brochures/Sustainalytics%20ESG%20Risk%20Ratings.pdf"}
+    ],
+    "conclusao": "Não encontramos um critério único de mercado do tipo 'a empresa precisa de 50% ou 75%'. Os provedores usam cortes próprios e, em geral, relativos (percentil ou desvio-padrão). Nossos cortes 70/40 ficam na mesma vizinhança de referências como o mínimo de 70 do ISE e as notas de corte indicativas de 58 a 73 da EcoVadis, mas continuam sendo hipótese do grupo."
+  },
   "aviso": "PARÂMETROS ESTIMADOS PELO GRUPO. Não são metas oficiais da Investe Piauí nem vêm do GRI. Servem para demonstrar o método e devem ser ajustados com dados reais. Para trocar qualquer número, edite só este arquivo: cada indicador tem piso, teto, peso, justificativa e fonte.",
   "como_ler": "nota do indicador = (valor - piso) / (teto - piso), limitada entre 0 e 100. Se piso > teto, menor é melhor. Nota do pilar = média ponderada pelos pesos, só dos indicadores com dado. Nota ASG = média ponderada dos três pilares.",
   "pesos_pilares": {

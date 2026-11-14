@@ -18,6 +18,12 @@
 | **Balanço** | Quantos indicadores de um pilar melhoraram/pioraram/ficaram estáveis vs. ano anterior |
 | **Piso / teto** | Valor que dá 0 / 100 pontos na normalização linear (ver `02-…`) |
 | **Peso** | Importância relativa de um indicador (ou pilar) na média ponderada |
+| **Normalização** | Trazer indicadores de unidades diferentes para uma escala comum (aqui, 0 a 100). Em ciência de dados: *feature scaling* |
+| **Min-max** | Normalização linear entre um mínimo e um máximo. Nós usamos limites **fixos** (piso/teto), não os dos dados |
+| **Clipping (saturação)** | Travar o resultado nas pontas: abaixo do piso vale 0, acima do teto vale 100 |
+| **Z-score** | `(x − média) / desvio`: posição relativa à carteira. Não usado na v1.0 |
+| **Percentil** | Fração das entidades com valor menor. Não usado na v1.0 |
+| **Agregação compensatória** | Média em que um pilar bom compensa um ruim |
 | **Cobertura** | Fração do peso do pilar que tem dado; mostra a confiabilidade da nota |
 | **Sensibilidade** | Quanto o resultado muda ao alterar pesos |
 | **Fictício** | Todos os dados do repositório. Nunca confundir com resultado real da Investe Piauí |

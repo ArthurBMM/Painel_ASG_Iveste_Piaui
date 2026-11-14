@@ -13,12 +13,21 @@
 - **Pontuação 0–100** implementada (frente 1): `config/metricas.json` (18 indicadores pontuados; `C1`, `ES6`, `H1` fora por serem totais absolutos), nota A/S/G/geral com faixa e cobertura em todas as páginas, notas por entidade, sensibilidade a pesos e demonstração da conta em *Indicadores e método*.
 - Entidade/projeto avaliados por **nota** e por **balanço de tendência** (▲▼).
 
+## Pontuação v1.0 (resumo para o grupo)
+
+> Texto curto para colar no grupo:
+>
+> "Eu e a IA montamos uma função que transforma cada indicador em uma **nota de 0 a 100**. Dados brutos grandes e pequenos ficam na mesma escala: cada indicador tem um **piso** (vale 0) e um **teto** (vale 100), e a nota cresce em linha reta entre os dois; fora deles, trava em 0 ou 100. É a *normalização min-max com limites fixos* (um *clipping*, não uma sigmoide). Depois fazemos a **média ponderada** por pilar (A, S, G) e a nota ASG geral. Dado ausente não vira zero, e mostramos a **cobertura**. **Todos os números** (piso, teto, peso, faixas 70/40) são **hipóteses nossas** e estão em `config/metricas.json`, cada um com justificativa e fonte; para mudar, é só editar esse arquivo. Totais absolutos (C1, ES6, H1) ficam fora da nota porque dependem do tamanho da empresa. Detalhes em `contexto-ia/02-metricas-pesos-e-normalizacao.md`. Falta vocês revisarem os limites e reforçarem Governança."
+
+Arquivos da v1.0: `config/metricas.json`, `src/js/nucleo/pontuacao.js`, `src/js/ui/componentes/nota.js`, `tests/pontuacao.test.mjs`, `tools/referencia_pontuacao.py`.
+
 ## O que falta (prioridade)
 
 | Pri | Item | Req. | Frente |
 |---|---|---|---|
 | 1 | Reforçar **Governança**: 6 a 8 indicadores novos e tabela(s) de dados fictícios | R8 | 4 |
 | 1 | **Importação** em **CSV e XLSX** (e `metricas.json`) pelo navegador, com validação | R2 | 2 |
+| 3 | Evoluções v1.1 da pontuação (percentil na carteira, critério por pilar, simulação): ver `02-…`, última seção | R6 | 1 |
 | 2 | Revisar piso/teto/pesos com a professora ou com dados reais; criar medidas proporcionais para `C1`, `ES6`, `H1` | R6 | 1 |
 | 2 | **Segundo tema** de demonstração (ex.: "Gestão ambiental", reaproveitando `ambiental_mensal.csv`) | R1 | 4 |
 | 2 | **Modo apresentação** e **identidade da Investe Piauí** (logo, nome, cores em `config/identidade.json`) | R11, R12 | 5 |
@@ -71,5 +80,5 @@ Todos executam código, revisam o PR de alguém e leem `docs/arquitetura.md`. Co
 
 | Data | Quem | O que mudou | Pendente |
 |---|---|---|---|
-| 14/11/2026 (noite) | Arthur + IA | **Frente 1 concluída:** `config/metricas.json`, `nucleo/pontuacao.js`, `componentes/nota.js`, notas nas páginas, referência Python independente e 26 testes novos (56 no total) | Calibração dos limites com dados reais; medidas proporcionais para totais absolutos |
+| 14/11/2026 (noite) | Arthur + IA | **Pontuação v1.0 fechada:** método e referências de mercado gravados em `config/metricas.json` (`metodo`, `referencias_externas`), técnicas de normalização documentadas em `02-…`. Antes, **frente 1 concluída:** `config/metricas.json`, `nucleo/pontuacao.js`, `componentes/nota.js`, notas nas páginas, referência Python independente e 26 testes novos (56 no total) | Calibração dos limites com dados reais; medidas proporcionais para totais absolutos |
 | 14/11/2026 | Arthur + IA | Catálogo GRI movido para `privado/` (fora do Git) com fallback no app e testes pulados sem ele. Antes: estrutura inicial do repositório, motor, UI, catálogo GRI, documentação, `contexto-ia/` e planilha XLSX de exemplo; decisões: 5 pessoas, sem exportação, XLSX obrigatório, modo apresentação, identidade da Investe Piauí | Itens da tabela acima |
