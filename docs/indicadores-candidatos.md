@@ -36,6 +36,8 @@ Os códigos abaixo constam no catálogo privado (`privado/gri_catalogo.json`, fo
 | 205-2 | Comunicação e capacitação anticorrupção | % de empregados/gestores capacitados |
 | 205-3 | Casos confirmados de corrupção | Contagem (fictícia) por ano |
 
+> **Já implementados em G:** 2-27 (CL1), 205-3 (AC1), 205-2 (AC2) e 2-23 (PO1). Faltam 2-9, 2-16 e 2-26.
+
 ## Sugestão de ordem
 
 1. **G primeiro** (2-27, 205-2, 205-3, 2-23): é onde a cobertura está mais frágil e os dados fictícios são simples (contagens e flags por projeto/ano).

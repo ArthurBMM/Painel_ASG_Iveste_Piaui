@@ -36,7 +36,11 @@
    "T1.pct_renovavel": 0.5399833601240721,
    "M1.pct_com_plano": 0.6666666666666666,
    "CL1.pct_com_multa": 0.08333333333333333,
-   "CL1.multas_total": 17.0
+   "CL1.multas_total": 17.0,
+   "AC1.pct_com_caso": 0.16666666666666666,
+   "AC1.casos_total": 4.0,
+   "AC2.pct_capacitados": 0.7204968944099379,
+   "PO1.pct_politicas": 0.9722222222222222
   }
  },
  {
@@ -76,7 +80,11 @@
    "T1.pct_renovavel": 0.5242169940981486,
    "M1.pct_com_plano": 0.6666666666666666,
    "CL1.pct_com_multa": 0.25,
-   "CL1.multas_total": 5.0
+   "CL1.multas_total": 5.0,
+   "AC1.pct_com_caso": 0.0,
+   "AC1.casos_total": 0.0,
+   "AC2.pct_capacitados": 0.5527950310559007,
+   "PO1.pct_politicas": 0.9444444444444444
   }
  },
  {
@@ -116,7 +124,11 @@
    "T1.pct_renovavel": 0.5054585152838428,
    "M1.pct_com_plano": 0.3333333333333333,
    "CL1.pct_com_multa": 0.16666666666666666,
-   "CL1.multas_total": 3.0
+   "CL1.multas_total": 3.0,
+   "AC1.pct_com_caso": 0.08333333333333333,
+   "AC1.casos_total": 1.0,
+   "AC2.pct_capacitados": 0.4720496894409938,
+   "PO1.pct_politicas": 0.8611111111111112
   }
  },
  {
@@ -156,7 +168,11 @@
    "T1.pct_renovavel": 0.5776791849196454,
    "M1.pct_com_plano": 0.6666666666666666,
    "CL1.pct_com_multa": 0.08333333333333333,
-   "CL1.multas_total": 1.0
+   "CL1.multas_total": 1.0,
+   "AC1.pct_com_caso": 0.16666666666666666,
+   "AC1.casos_total": 3.0,
+   "AC2.pct_capacitados": 0.7204968944099379,
+   "PO1.pct_politicas": 0.9722222222222222
   }
  },
  {
@@ -196,7 +212,11 @@
    "T1.pct_renovavel": 0.11598028796514465,
    "M1.pct_com_plano": 0.6666666666666666,
    "CL1.pct_com_multa": 0.3333333333333333,
-   "CL1.multas_total": 10.0
+   "CL1.multas_total": 10.0,
+   "AC1.pct_com_caso": 0.3333333333333333,
+   "AC1.casos_total": 3.0,
+   "AC2.pct_capacitados": 0.6842105263157895,
+   "PO1.pct_politicas": 0.8888888888888888
   }
  },
  {
@@ -236,7 +256,11 @@
    "T1.pct_renovavel": 0.5389635672568833,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": 0.0,
-   "CL1.multas_total": 0.0
+   "CL1.multas_total": 0.0,
+   "AC1.pct_com_caso": 0.0,
+   "AC1.casos_total": 0.0,
+   "AC2.pct_capacitados": 0.8571428571428571,
+   "PO1.pct_politicas": 1.0
   }
  },
  {
@@ -276,7 +300,11 @@
    "T1.pct_renovavel": 0.9231744125935931,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": 0.0,
-   "CL1.multas_total": 0.0
+   "CL1.multas_total": 0.0,
+   "AC1.pct_com_caso": 0.0,
+   "AC1.casos_total": 0.0,
+   "AC2.pct_capacitados": 0.7142857142857143,
+   "PO1.pct_politicas": 1.0
   }
  },
  {
@@ -316,7 +344,11 @@
    "T1.pct_renovavel": 0.538679450860754,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": 0.0,
-   "CL1.multas_total": 0.0
+   "CL1.multas_total": 0.0,
+   "AC1.pct_com_caso": 0.0,
+   "AC1.casos_total": 0.0,
+   "AC2.pct_capacitados": 0.631578947368421,
+   "PO1.pct_politicas": 1.0
   }
  },
  {
@@ -356,7 +388,11 @@
    "T1.pct_renovavel": null,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": null,
-   "CL1.multas_total": null
+   "CL1.multas_total": null,
+   "AC1.pct_com_caso": null,
+   "AC1.casos_total": null,
+   "AC2.pct_capacitados": null,
+   "PO1.pct_politicas": null
   }
  },
  {
@@ -396,7 +432,11 @@
    "T1.pct_renovavel": null,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": null,
-   "CL1.multas_total": null
+   "CL1.multas_total": null,
+   "AC1.pct_com_caso": null,
+   "AC1.casos_total": null,
+   "AC2.pct_capacitados": null,
+   "PO1.pct_politicas": null
   }
  },
  {
@@ -436,7 +476,11 @@
    "T1.pct_renovavel": null,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": null,
-   "CL1.multas_total": null
+   "CL1.multas_total": null,
+   "AC1.pct_com_caso": null,
+   "AC1.casos_total": null,
+   "AC2.pct_capacitados": null,
+   "PO1.pct_politicas": null
   }
  },
  {
@@ -476,7 +520,11 @@
    "T1.pct_renovavel": null,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": null,
-   "CL1.multas_total": null
+   "CL1.multas_total": null,
+   "AC1.pct_com_caso": null,
+   "AC1.casos_total": null,
+   "AC2.pct_capacitados": null,
+   "PO1.pct_politicas": null
   }
  },
  {
@@ -516,7 +564,11 @@
    "T1.pct_renovavel": 0.9261190786614515,
    "M1.pct_com_plano": null,
    "CL1.pct_com_multa": 0.0,
-   "CL1.multas_total": 0.0
+   "CL1.multas_total": 0.0,
+   "AC1.pct_com_caso": 0.3333333333333333,
+   "AC1.casos_total": 1.0,
+   "AC2.pct_capacitados": 0.8181818181818182,
+   "PO1.pct_politicas": 1.0
   }
  }
 ]

@@ -13,8 +13,9 @@ import numpy as np, pandas as pd
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 DADOS = RAIZ / "temas/t8-empregos-verdes/dados"
 L = lambda n: pd.read_csv(DADOS / f"{n}.csv")
-P, EMPR, O, E, C, PR, EN, AM, CO, CF = (L(n) for n in ["projetos", "empresas", "ocupacoes", "emprego_mensal", "capacitacao",
-                                                        "programas", "energia_emissoes", "ambiental_mensal", "comunidade", "conformidade"])
+P, EMPR, O, E, C, PR, EN, AM, CO, CF, IG = (L(n) for n in ["projetos", "empresas", "ocupacoes", "emprego_mensal", "capacitacao",
+                                                            "programas", "energia_emissoes", "ambiental_mensal", "comunidade", "conformidade",
+                                                            "integridade"])
 P = P.merge(EMPR, on="empresa_id")
 E = E.merge(O[["ocupacao_id", "classe"]], on="ocupacao_id"); C = C.merge(O[["ocupacao_id", "classe"]], on="ocupacao_id")
 for d in (E, C, EN, AM): d["m"] = d.mes.str[:7]
@@ -51,6 +52,7 @@ def calcular(f):
     en, am = per(EN), per(AM)
     co = CO[CO.projeto_id.isin(ids) & CO.ano.isin(anos)]
     cf = CF[CF.projeto_id.isin(ids) & CF.ano.isin(anos)]
+    ig = IG[IG.projeto_id.isin(ids) & IG.ano.isin(anos)]
     ult = max(anos) if anos else None
     pr = PR[PR.projeto_id.isin(ids) & PR.m.isin(meses)]
 
@@ -103,6 +105,14 @@ def calcular(f):
     cu = cf[cf.ano == ult]
     nao["CL1.pct_com_multa"] = div(float((cu.teve_multa == "Sim").sum()), float(len(cu))) if len(cu) else np.nan
     nao["CL1.multas_total"] = soma(cf.multas_qtd)
+    # AC1 (GRI 205-3), AC2 (GRI 205-2), PO1 (GRI 2-23): tabela integridade, último ano do período
+    iu = ig[ig.ano == ult]
+    nao["AC1.pct_com_caso"] = div(float((iu.casos_corrupcao > 0).sum()), float(len(iu))) if len(iu) else np.nan
+    nao["AC1.casos_total"] = soma(ig.casos_corrupcao)
+    nao["AC2.pct_capacitados"] = div(soma(iu.gestores_capacitados_anticorrupcao), soma(iu.gestores_total))
+    # PO1: conta as políticas "Sim" nas 3 colunas de texto (de outro jeito que a coluna auxiliar usada pelo motor)
+    pols = (iu[["politica_ambiental", "politica_direitos_humanos", "politica_anticorrupcao"]] == "Sim").to_numpy().sum() if len(iu) else np.nan
+    nao["PO1.pct_politicas"] = div(float(pols), 3.0 * len(iu)) if len(iu) else np.nan
     for k, v in nao.items(): r[k] = np.nan if recorte else v     # bloqueio: sem sentido com recorte de pessoas
     return {k: (None if pd.isna(v) else float(v)) for k, v in r.items()}
 

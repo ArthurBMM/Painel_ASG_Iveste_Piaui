@@ -62,6 +62,6 @@ Veja `CONTRIBUTING.md` (fluxo de branches, testes, regras de dados) e `docs/divi
 - É um **protótipo estático**: sem login, sem histórico de versões, sem multiusuário.
 - Importação por **CSV e XLSX** (planilha com uma aba por tabela): especificada, **ainda não implementada**. Não haverá exportação (a ferramenta é a própria apresentação).
 - "Pilar" de cada indicador é **decisão do grupo**; o GRI não classifica conteúdos em A, S ou G (ver `docs/mapeamento-asg.md`).
-- Governança tem cobertura parcial no T8 (4 indicadores).
+- Governança tem cobertura parcial no T8 (7 indicadores).
 - A **pontuação 0–100** por pilar (com pesos e justificativas editáveis) está **implementada, versão 1.0** (`config/metricas.json` + `src/js/nucleo/pontuacao.js`) e mostrada com cobertura e a conta passo a passo. Os parâmetros são *hipóteses do grupo*, não metas oficiais (ver `contexto-ia/02-metricas-pesos-e-normalizacao.md`).
 - Hoje o tema é lido da pasta `temas/`; o **modo apresentação** e a **identidade da Investe Piauí** (logo) também estão pendentes.

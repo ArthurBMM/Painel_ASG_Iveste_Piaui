@@ -244,6 +244,36 @@
       },
       "justificativa": "Peso 2: multas e sanções são o sinal mais direto de falha de conformidade, por isso pesa mais que os demais de Governança. Menor é melhor: piso 50% (metade ou mais dos projetos multados no ano vale 0) e teto 0% (nenhum projeto multado vale 100).",
       "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "AC1": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.25,
+        "teto": 0
+      },
+      "justificativa": "Peso 2: corrupção confirmada é a falha de governança mais grave. Menor é melhor: piso 25% (um em cada quatro projetos com caso no ano vale 0) e teto 0% (nenhum projeto com caso vale 100).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "AC2": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0.2,
+        "teto": 0.9
+      },
+      "justificativa": "Peso 1. Maior é melhor: piso 20% (poucos gestores capacitados vale 0) e teto 90% (quase toda a liderança capacitada vale 100). 100% foi evitado como teto porque há rotatividade de gestores ao longo do ano.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
+    "PO1": {
+      "peso": 1,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 0,
+        "teto": 1
+      },
+      "justificativa": "Peso 1. Proporção natural de 0% (nenhuma das três políticas) a 100% (ambiental, direitos humanos e anticorrupção em todos os projetos).",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
     }
   }
 }

@@ -4,7 +4,7 @@
 // Três camadas de teste:
 //  1) NÚMEROS ÂNCORA: os valores que o grupo validou no Power BI (2.256 empregados, 40,5% verde...).
 //     Se algum mudar, algo quebrou na regra de cálculo ou nos dados.
-//  2) REFERÊNCIA INDEPENDENTE: 13 contextos de filtro × 35 medidas comparados com o pandas
+//  2) REFERÊNCIA INDEPENDENTE: 13 contextos de filtro × 39 medidas comparados com o pandas
 //     (tools/referencia_pandas.py). Pega erros de filtro, anualização e bloqueios.
 //  3) INTEGRIDADE: registro ↔ catálogo GRI ↔ contrato de dados sem referências quebradas;
 //     leitor de CSV; validação de arquivo importado.
@@ -156,8 +156,8 @@ test("integridade: todo campo lido pelas fórmulas existe no contrato de dados",
   assert.deepEqual(faltando, []);
 });
 
-test("integridade: os 22 indicadores do tema existem no registro, estão ativos e têm GRI com página", () => {
-  assert.equal(modelo.tema.indicadores.length, 22);
+test("integridade: os 25 indicadores do tema existem no registro, estão ativos e têm GRI com página", () => {
+  assert.equal(modelo.tema.indicadores.length, 25);
   for (const id of modelo.tema.indicadores) {
     const ind = registro.porId.get(id);
     assert.ok(ind, `indicador ${id} não está no registro`);
@@ -229,4 +229,22 @@ test("CL1: % de projetos com multa no último ano e total de multas (conta feita
   assert.equal(valorDe(registro, "CL1.multas_total", todos), linhas.reduce((a, r) => a + r.multas_qtd, 0));
   // coerência da coluna auxiliar: teve_multa == "Sim" exatamente quando multas_qtd > 0
   assert.ok(linhas.every((r) => (r.teve_multa === "Sim") === (r.multas_qtd > 0)));
+});
+
+// ---------------------------------------------------------------- AC1, AC2, PO1 (Governança: tabela integridade)
+test("AC1, AC2 e PO1: contas à mão sobre integridade.csv (último ano = 2025 no período de 2025)", () => {
+  const linhas = modelo.tabelas.integridade.filter((r) => r.ano === 2025);
+  const ctx = criarContexto(modelo, { periodo: { de: "2025-01", ate: "2025-12" } });
+  const perto = (a, b) => assert.ok(Math.abs(a - b) < 1e-12, `${a} != ${b}`);
+  perto(valorDe(registro, "AC1", ctx), linhas.filter((r) => r.casos_corrupcao > 0).length / linhas.length);
+  perto(valorDe(registro, "AC2", ctx), linhas.reduce((a, r) => a + r.gestores_capacitados_anticorrupcao, 0) / linhas.reduce((a, r) => a + r.gestores_total, 0));
+  const sim = linhas.reduce((a, r) => a + [r.politica_ambiental, r.politica_direitos_humanos, r.politica_anticorrupcao].filter((x) => x === "Sim").length, 0);
+  perto(valorDe(registro, "PO1", ctx), sim / (3 * linhas.length));
+});
+
+test("integridade.csv: colunas auxiliares coerentes e capacitados nunca passam do total de gestores", () => {
+  const linhas = modelo.tabelas.integridade;
+  assert.ok(linhas.every((r) => (r.teve_caso_corrupcao === "Sim") === (r.casos_corrupcao > 0)));
+  assert.ok(linhas.every((r) => r.gestores_capacitados_anticorrupcao <= r.gestores_total));
+  assert.ok(linhas.every((r) => r.politicas_adotadas_qtd === [r.politica_ambiental, r.politica_direitos_humanos, r.politica_anticorrupcao].filter((x) => x === "Sim").length));
 });

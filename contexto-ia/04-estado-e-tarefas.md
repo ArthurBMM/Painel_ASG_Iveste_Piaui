@@ -6,7 +6,7 @@
 
 ## O que existe hoje (`main`)
 
-- Motor genérico + registro de **22 indicadores / 35 medidas** (9 A · 9 S · 4 G), validado contra cálculo independente em pandas (13 contextos × 35 medidas; 57 testes verdes, incluindo a pontuação).
+- Motor genérico + registro de **25 indicadores / 39 medidas** (9 A · 9 S · 7 G), validado contra cálculo independente em pandas (13 contextos × 39 medidas; 59 testes verdes, incluindo a pontuação).
 - Páginas: Visão ASG, Ambiental, Social, Governança, Empresas e projetos (empresas, instituições parceiras e iniciativas próprias, com projetos), Indicadores e método.
 - Catálogo GRI com 130 conteúdos e níveis de maturidade (catalogado → mapeado → calculável → em painel). **O catálogo é privado** (`privado/gri_catalogo.json`, fora do Git, por e-mail); sem ele o app mostra só os códigos GRI.
 - Tema T8 com dados fictícios; molde de tema em `temas/_modelo/`.
@@ -25,7 +25,7 @@ Arquivos da v1.0: `config/metricas.json`, `src/js/nucleo/pontuacao.js`, `src/js/
 
 | Pri | Item | Req. | Frente |
 |---|---|---|---|
-| 1 | Reforçar **Governança**: 6 a 8 indicadores novos e tabela(s) de dados fictícios (feito: CL1 / GRI 2-27; faltam 205-2, 205-3, 2-23 e outros) | R8 | 4 |
+| 1 | Reforçar **Governança**: 6 a 8 indicadores novos e tabela(s) de dados fictícios (feitos: CL1 / 2-27, AC1 / 205-3, AC2 / 205-2, PO1 / 2-23; faltam 2-26, 2-9 e outros) | R8 | 4 |
 | 1 | **Importação** em **CSV e XLSX** (e `metricas.json`) pelo navegador, com validação | R2 | 2 |
 | 3 | Evoluções v1.1 da pontuação (percentil na carteira, critério por pilar, simulação): ver `02-…`, última seção | R6 | 1 |
 | 2 | Revisar piso/teto/pesos com a professora ou com dados reais; criar medidas proporcionais para `C1`, `ES6`, `H1` | R6 | 1 |
@@ -80,6 +80,7 @@ Todos executam código, revisam o PR de alguém e leem `docs/arquitetura.md`. Co
 
 | Data | Quem | O que mudou | Pendente |
 |---|---|---|---|
+| 14/11/2026 (Governança 2) | Manoel + IA | **Indicadores AC1 (GRI 205-3), AC2 (205-2) e PO1 (2-23):** tabela fictícia `integridade.csv` (mesmo gerador, `gerar_governanca.py`), contrato, registro, tema, `config/metricas.json` (AC1 peso 2; AC2 e PO1 peso 1), referência pandas e testes (59 verdes) | Aba `integridade` na planilha de exemplo; 2-26 e 2-9; revisar piso/teto com a professora |
 | 14/11/2026 (Governança) | Manoel + IA | **Indicador CL1 (GRI 2-27, conformidade):** tabela fictícia `conformidade.csv` gerada por `tools/gerador/gerar_governanca.py`, contrato, registro, tema, `config/metricas.json` (peso 2, menor é melhor), referência pandas e testes (57 verdes) | Regenerar a planilha de exemplo com a aba `conformidade`; indicadores 205-2, 205-3, 2-23 e demais de G |
 | 14/11/2026 (noite) | Arthur + IA | **Pontuação v1.0 fechada:** método e referências de mercado gravados em `config/metricas.json` (`metodo`, `referencias_externas`), técnicas de normalização documentadas em `02-…`. Antes, **frente 1 concluída:** `config/metricas.json`, `nucleo/pontuacao.js`, `componentes/nota.js`, notas nas páginas, referência Python independente e 26 testes novos (56 no total) | Calibração dos limites com dados reais; medidas proporcionais para totais absolutos |
 | 14/11/2026 | Arthur + IA | Catálogo GRI movido para `privado/` (fora do Git) com fallback no app e testes pulados sem ele. Antes: estrutura inicial do repositório, motor, UI, catálogo GRI, documentação, `contexto-ia/` e planilha XLSX de exemplo; decisões: 5 pessoas, sem exportação, XLSX obrigatório, modo apresentação, identidade da Investe Piauí | Itens da tabela acima |
