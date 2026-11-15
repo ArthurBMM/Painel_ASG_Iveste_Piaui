@@ -24,6 +24,8 @@ Os códigos abaixo constam no catálogo privado (`privado/gri_catalogo.json`, fo
 | 408-1 | Risco de trabalho infantil em fornecedores | Fornecedores (agregado) |
 | 409-1 | Risco de trabalho forçado em fornecedores | Fornecedores (agregado) |
 
+> **Já implementado em S:** 403-9 (SST1, tabela `seguranca`, gerada por `tools/gerador/gerar_seguranca.py`). Cobre a taxa de acidentes registráveis e os dias perdidos; óbitos e lesões de grande consequência ficam de fora.
+
 ## Governança (reforço de G)
 
 | GRI | Tema | Dados novos |
@@ -41,7 +43,7 @@ Os códigos abaixo constam no catálogo privado (`privado/gri_catalogo.json`, fo
 ## Sugestão de ordem
 
 1. **G primeiro** (2-27, 205-2, 205-3, 2-23): é onde a cobertura está mais frágil e os dados fictícios são simples (contagens e flags por projeto/ano).
-2. **403-9**: indicador "clássico" de SST, ótimo para a apresentação do T8 (mineração × energia limpa).
+2. **403-9** (feito: SST1): indicador "clássico" de SST, ótimo para a apresentação do T8 (mineração × energia limpa).
 3. **305-4, 303-3/4**: aproveitam dados já existentes.
 
 Ao incluir: siga o checklist de `divisao-de-tarefas.md` e atualize `docs/mapeamento-asg.md`.

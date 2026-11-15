@@ -601,6 +601,90 @@
    ]
   },
   {
+   "id": "SST1",
+   "pilar": "S",
+   "titulo": "Acidentes de trabalho",
+   "gri": [
+    {
+     "id": "403-9:2018"
+    }
+   ],
+   "por_que_asg": "Emprego verde só é bom se for seguro: mede quantas lesões de trabalho acontecem a cada milhão de horas trabalhadas, o que permite comparar projetos grandes e pequenos e mostra onde a transição ainda traz risco para quem trabalha.",
+   "como_calcula": "Taxa de frequência = acidentes registráveis × 1.000.000 ÷ horas trabalhadas, somando os anos que o período selecionado alcança (a tabela é anual). Mostra também o total de acidentes e de dias perdidos.",
+   "ocupacional": false,
+   "bloqueia_faixa": false,
+   "cobertura": "parcial",
+   "medidas": [
+    {
+     "chave": "taxa_frequencia",
+     "titulo": "Acidentes por 1 milhão de horas trabalhadas",
+     "principal": true,
+     "formato": {
+      "tipo": "numero",
+      "casas": 1,
+      "unidade": " por 1 mi h"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "razao",
+      "num": {
+       "op": "mult",
+       "args": [
+        {
+         "op": "soma",
+         "tabela": "seguranca",
+         "campo": "acidentes_registraveis"
+        },
+        {
+         "op": "const",
+         "valor": 1000000
+        }
+       ]
+      },
+      "den": {
+       "op": "soma",
+       "tabela": "seguranca",
+       "campo": "horas_trabalhadas"
+      }
+     }
+    },
+    {
+     "chave": "acidentes",
+     "titulo": "Acidentes registráveis no período",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " acidentes"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma",
+      "tabela": "seguranca",
+      "campo": "acidentes_registraveis"
+     },
+     "depende_do_periodo": true
+    },
+    {
+     "chave": "dias_perdidos",
+     "titulo": "Dias de trabalho perdidos no período",
+     "principal": false,
+     "formato": {
+      "tipo": "numero",
+      "casas": 0,
+      "unidade": " dias"
+     },
+     "sentido": "down",
+     "expr": {
+      "op": "soma",
+      "tabela": "seguranca",
+      "campo": "dias_perdidos"
+     },
+     "depende_do_periodo": true
+    }
+   ]
+  },
+  {
    "id": "ES1",
    "pilar": "A",
    "titulo": "Consumo de energia renovável e não renovável",

@@ -123,6 +123,16 @@
       "justificativa": "Peso 1. % de projetos com programa para a comunidade local; já é uma proporção natural (0% a 100%).",
       "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
     },
+    "SST1": {
+      "peso": 2,
+      "normalizacao": {
+        "tipo": "linear",
+        "piso": 15,
+        "teto": 0
+      },
+      "justificativa": "Peso 2: a segurança de quem trabalha é o sinal social mais direto de que o emprego criado é bom, por isso pesa mais que a maioria dos indicadores sociais. Menor é melhor: piso 15 (15 ou mais acidentes por milhão de horas vale 0; a mineração fictícia chega a cerca de 16 em 2023) e teto 0 (nenhum acidente vale 100). Limites em torno da faixa observada nos dados fictícios, a rever com dados reais.",
+      "fonte": "estimativa do grupo (a validar com a Investe Piauí)"
+    },
     "C1": {
       "pontuar": false,
       "motivo": "Total absoluto em reais: cresce com o tamanho da entidade e não é comparável entre empresas. Fica como valor, sem nota, até existir medida proporcional (ex.: por empregado ou por MW)."

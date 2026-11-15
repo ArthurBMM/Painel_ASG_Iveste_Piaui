@@ -6,11 +6,11 @@
 
 ## O que existe hoje (`main`)
 
-- Motor genérico + registro de **25 indicadores / 39 medidas** (9 A · 9 S · 7 G), validado contra cálculo independente em pandas (13 contextos × 39 medidas; 59 testes verdes, incluindo a pontuação).
+- Motor genérico + registro de **26 indicadores / 42 medidas** (9 A · 10 S · 7 G), validado contra cálculo independente em pandas (14 contextos × 42 medidas; 61 testes verdes, incluindo a pontuação).
 - Páginas: Visão ASG, Ambiental, Social, Governança, Empresas e projetos (empresas, instituições parceiras e iniciativas próprias, com projetos), Indicadores e método.
 - Catálogo GRI com 130 conteúdos e níveis de maturidade (catalogado → mapeado → calculável → em painel). **O catálogo é privado** (`privado/gri_catalogo.json`, fora do Git, por e-mail); sem ele o app mostra só os códigos GRI.
 - Tema T8 com dados fictícios; molde de tema em `temas/_modelo/`.
-- **Pontuação 0–100** implementada (frente 1): `config/metricas.json` (18 indicadores pontuados; `C1`, `ES6`, `H1` fora por serem totais absolutos), nota A/S/G/geral com faixa e cobertura em todas as páginas, notas por entidade, sensibilidade a pesos e demonstração da conta em *Indicadores e método*.
+- **Pontuação 0–100** implementada (frente 1): `config/metricas.json` (23 indicadores pontuados; `C1`, `ES6`, `H1` fora por serem totais absolutos), nota A/S/G/geral com faixa e cobertura em todas as páginas, notas por entidade, sensibilidade a pesos e demonstração da conta em *Indicadores e método*.
 - Entidade/projeto avaliados por **nota** e por **balanço de tendência** (▲▼).
 
 ## Pontuação v1.0 (resumo para o grupo)
@@ -32,7 +32,7 @@ Arquivos da v1.0: `config/metricas.json`, `src/js/nucleo/pontuacao.js`, `src/js/
 | 2 | **Segundo tema** de demonstração (ex.: "Gestão ambiental", reaproveitando `ambiental_mensal.csv`) | R1 | 4 |
 | 2 | **Modo apresentação** e **identidade da Investe Piauí** (logo, nome, cores em `config/identidade.json`) | R11, R12 | 5 |
 | 3 | Análise de sensibilidade dos pesos | R6 | 1 |
-| 3 | Mais indicadores A e S (ver `docs/indicadores-candidatos.md`) | R8 | 3 |
+| 3 | Mais indicadores A e S (ver `docs/indicadores-candidatos.md`; feito: SST1 / 403-9 com a tabela `seguranca`) | R8 | 3 |
 | 3 | Revisão do pilar de cada indicador (Q3, T1…) | — | todos |
 | 3 | Roteiro da apresentação e manual de uso | R10 | 5 |
 
@@ -80,6 +80,7 @@ Todos executam código, revisam o PR de alguém e leem `docs/arquitetura.md`. Co
 
 | Data | Quem | O que mudou | Pendente |
 |---|---|---|---|
+| 14/11/2026 (Social) | Luiz + IA | **Indicador SST1 (GRI 403-9, acidentes de trabalho):** tabela fictícia `seguranca.csv` gerada por `tools/gerador/gerar_seguranca.py` (semente 31, horas coerentes com `emprego_mensal`), contrato, registro (taxa por 1 milhão de horas, acidentes e dias perdidos), tema (destaque e quadro anual em S), `config/metricas.json` (peso 2, menor é melhor, piso 15 e teto 0), referência pandas, 1 contexto novo e testes (61 verdes). Valores antigos de `referencia.json` ficaram intactos | Aba `seguranca` na planilha de exemplo; óbitos e lesões de grande consequência (403-9 completo); revisar piso/teto com dados reais; abrir a página Social no navegador para conferir o quadro |
 | 14/11/2026 (Governança 2) | Manoel + IA | **Indicadores AC1 (GRI 205-3), AC2 (205-2) e PO1 (2-23):** tabela fictícia `integridade.csv` (mesmo gerador, `gerar_governanca.py`), contrato, registro, tema, `config/metricas.json` (AC1 peso 2; AC2 e PO1 peso 1), referência pandas e testes (59 verdes) | Aba `integridade` na planilha de exemplo; 2-26 e 2-9; revisar piso/teto com a professora |
 | 14/11/2026 (Governança) | Manoel + IA | **Indicador CL1 (GRI 2-27, conformidade):** tabela fictícia `conformidade.csv` gerada por `tools/gerador/gerar_governanca.py`, contrato, registro, tema, `config/metricas.json` (peso 2, menor é melhor), referência pandas e testes (57 verdes) | Regenerar a planilha de exemplo com a aba `conformidade`; indicadores 205-2, 205-3, 2-23 e demais de G |
 | 14/11/2026 (noite) | Arthur + IA | **Pontuação v1.0 fechada:** método e referências de mercado gravados em `config/metricas.json` (`metodo`, `referencias_externas`), técnicas de normalização documentadas em `02-…`. Antes, **frente 1 concluída:** `config/metricas.json`, `nucleo/pontuacao.js`, `componentes/nota.js`, notas nas páginas, referência Python independente e 26 testes novos (56 no total) | Calibração dos limites com dados reais; medidas proporcionais para totais absolutos |

@@ -18,7 +18,7 @@ Ela quer um painel para monitorar **o próprio trabalho** (a Investe Piauí como
 | R14 | **Conteúdo GRI fora do repositório**: só códigos no Git; catálogo distribuído por e-mail e carregado de `privado/` ou **importado pela interface** | 🟡 | `privado/` e fallback prontos; falta aceitar `gri_catalogo.json` no importador |
 | R6 | **Métricas, pesos, normalização e faixas com justificativa, fáceis de alterar** | ✅ | Implementado em `config/metricas.json` + `nucleo/pontuacao.js`; ver `02-…`. Parâmetros são hipóteses a revisar com dados reais |
 | R7 | **Transparência dos cálculos** para a professora e a Investe Piauí | ✅ | Página *Indicadores e método* mostra parâmetros, justificativas, onde editar e a conta passo a passo de uma entidade |
-| R8 | **Quanto mais indicadores GRI, melhor** (só os que fazem sentido no tema), com **Governança reforçada** | 🟡 | 25 indicadores; G tem 7 (CL1, AC1, AC2 e PO1 entraram). Candidatos em `docs/indicadores-candidatos.md` |
+| R8 | **Quanto mais indicadores GRI, melhor** (só os que fazem sentido no tema), com **Governança reforçada** | 🟡 | 26 indicadores; G tem 7 (CL1, AC1, AC2 e PO1 entraram) e S ganhou SST1 (403-9). Candidatos em `docs/indicadores-candidatos.md` |
 | R9 | **Site estático**, sem back-end complexo | ✅ | |
 | R10 | **Apresentação focada no T8** | ⏳ | O segundo tema entra só como prova de escalabilidade |
 | R11 | **Modo apresentação**: a interface é a apresentação (tela cheia, tipografia grande, navegação por teclado, painel de filtros recolhível), com nível de acabamento de reunião séria | ❌ | Substitui o slide; ver "Apresentação e identidade" |

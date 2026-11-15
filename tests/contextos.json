@@ -11,5 +11,6 @@
   {"nome": "gênero F", "filtros": {"generos": ["F"]}},
   {"nome": "faixa De 30 a 50", "filtros": {"faixas": ["De 30 a 50"]}},
   {"nome": "Alto impacto + Mineração, mar-set/2025", "filtros": {"classes": ["Alto impacto"], "setores": ["Mineração"], "periodo": {"de": "2025-03", "ate": "2025-09"}}},
-  {"nome": "Eólica jan-out/2026", "filtros": {"setores": ["Eólica"], "periodo": {"de": "2026-01", "ate": "2026-10"}}}
+  {"nome": "Eólica jan-out/2026", "filtros": {"setores": ["Eólica"], "periodo": {"de": "2026-01", "ate": "2026-10"}}},
+  {"nome": "Mineração, ano 2024 (segurança do trabalho)", "filtros": {"setores": ["Mineração"], "periodo": {"de": "2024-01", "ate": "2024-12"}}}
 ]

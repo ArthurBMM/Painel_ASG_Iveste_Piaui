@@ -40,7 +40,10 @@
    "AC1.pct_com_caso": 0.16666666666666666,
    "AC1.casos_total": 4.0,
    "AC2.pct_capacitados": 0.7204968944099379,
-   "PO1.pct_politicas": 0.9722222222222222
+   "PO1.pct_politicas": 0.9722222222222222,
+   "SST1.taxa_frequencia": 6.9464821457443815,
+   "SST1.acidentes": 116.0,
+   "SST1.dias_perdidos": 1592.0
   }
  },
  {
@@ -84,7 +87,10 @@
    "AC1.pct_com_caso": 0.0,
    "AC1.casos_total": 0.0,
    "AC2.pct_capacitados": 0.5527950310559007,
-   "PO1.pct_politicas": 0.9444444444444444
+   "PO1.pct_politicas": 0.9444444444444444,
+   "SST1.taxa_frequencia": 4.576449590407761,
+   "SST1.acidentes": 20.0,
+   "SST1.dias_perdidos": 260.0
   }
  },
  {
@@ -128,7 +134,10 @@
    "AC1.pct_com_caso": 0.08333333333333333,
    "AC1.casos_total": 1.0,
    "AC2.pct_capacitados": 0.4720496894409938,
-   "PO1.pct_politicas": 0.8611111111111112
+   "PO1.pct_politicas": 0.8611111111111112,
+   "SST1.taxa_frequencia": 7.5946620375393294,
+   "SST1.acidentes": 35.0,
+   "SST1.dias_perdidos": 499.0
   }
  },
  {
@@ -172,7 +181,10 @@
    "AC1.pct_com_caso": 0.16666666666666666,
    "AC1.casos_total": 3.0,
    "AC2.pct_capacitados": 0.7204968944099379,
-   "PO1.pct_politicas": 0.9722222222222222
+   "PO1.pct_politicas": 0.9722222222222222,
+   "SST1.taxa_frequencia": 5.7586310911234815,
+   "SST1.acidentes": 21.0,
+   "SST1.dias_perdidos": 247.0
   }
  },
  {
@@ -216,7 +228,10 @@
    "AC1.pct_com_caso": 0.3333333333333333,
    "AC1.casos_total": 3.0,
    "AC2.pct_capacitados": 0.6842105263157895,
-   "PO1.pct_politicas": 0.8888888888888888
+   "PO1.pct_politicas": 0.8888888888888888,
+   "SST1.taxa_frequencia": 12.234540676071655,
+   "SST1.acidentes": 81.0,
+   "SST1.dias_perdidos": 1336.0
   }
  },
  {
@@ -260,7 +275,10 @@
    "AC1.pct_com_caso": 0.0,
    "AC1.casos_total": 0.0,
    "AC2.pct_capacitados": 0.8571428571428571,
-   "PO1.pct_politicas": 1.0
+   "PO1.pct_politicas": 1.0,
+   "SST1.taxa_frequencia": 8.265438658637382,
+   "SST1.acidentes": 7.0,
+   "SST1.dias_perdidos": 42.0
   }
  },
  {
@@ -304,7 +322,10 @@
    "AC1.pct_com_caso": 0.0,
    "AC1.casos_total": 0.0,
    "AC2.pct_capacitados": 0.7142857142857143,
-   "PO1.pct_politicas": 1.0
+   "PO1.pct_politicas": 1.0,
+   "SST1.taxa_frequencia": 2.348835648614187,
+   "SST1.acidentes": 7.0,
+   "SST1.dias_perdidos": 52.0
   }
  },
  {
@@ -348,7 +369,10 @@
    "AC1.pct_com_caso": 0.0,
    "AC1.casos_total": 0.0,
    "AC2.pct_capacitados": 0.631578947368421,
-   "PO1.pct_politicas": 1.0
+   "PO1.pct_politicas": 1.0,
+   "SST1.taxa_frequencia": 4.955401387512388,
+   "SST1.acidentes": 2.0,
+   "SST1.dias_perdidos": 17.0
   }
  },
  {
@@ -392,7 +416,10 @@
    "AC1.pct_com_caso": null,
    "AC1.casos_total": null,
    "AC2.pct_capacitados": null,
-   "PO1.pct_politicas": null
+   "PO1.pct_politicas": null,
+   "SST1.taxa_frequencia": null,
+   "SST1.acidentes": null,
+   "SST1.dias_perdidos": null
   }
  },
  {
@@ -436,7 +463,10 @@
    "AC1.pct_com_caso": null,
    "AC1.casos_total": null,
    "AC2.pct_capacitados": null,
-   "PO1.pct_politicas": null
+   "PO1.pct_politicas": null,
+   "SST1.taxa_frequencia": null,
+   "SST1.acidentes": null,
+   "SST1.dias_perdidos": null
   }
  },
  {
@@ -480,7 +510,10 @@
    "AC1.pct_com_caso": null,
    "AC1.casos_total": null,
    "AC2.pct_capacitados": null,
-   "PO1.pct_politicas": null
+   "PO1.pct_politicas": null,
+   "SST1.taxa_frequencia": null,
+   "SST1.acidentes": null,
+   "SST1.dias_perdidos": null
   }
  },
  {
@@ -524,7 +557,10 @@
    "AC1.pct_com_caso": null,
    "AC1.casos_total": null,
    "AC2.pct_capacitados": null,
-   "PO1.pct_politicas": null
+   "PO1.pct_politicas": null,
+   "SST1.taxa_frequencia": null,
+   "SST1.acidentes": null,
+   "SST1.dias_perdidos": null
   }
  },
  {
@@ -568,7 +604,57 @@
    "AC1.pct_com_caso": 0.3333333333333333,
    "AC1.casos_total": 1.0,
    "AC2.pct_capacitados": 0.8181818181818182,
-   "PO1.pct_politicas": 1.0
+   "PO1.pct_politicas": 1.0,
+   "SST1.taxa_frequencia": 2.1623959346956427,
+   "SST1.acidentes": 2.0,
+   "SST1.dias_perdidos": 18.0
+  }
+ },
+ {
+  "nome": "Mineração, ano 2024 (segurança do trabalho)",
+  "valores": {
+   "EV1.verde": 0.019911894273127752,
+   "EV1.alto_impacto": 0.7012334801762115,
+   "EV1.neutra": 0.27885462555066076,
+   "EV1.empregados": 945.8333333333334,
+   "EV2.taxa": 0.22837004405286343,
+   "EV2.contratacoes": 216.0,
+   "EV3.taxa": 0.33198237885462556,
+   "EV3.desligamentos": 314.0,
+   "EV4.mulheres": 0.1262555066079295,
+   "Q1.horas_por_empregado": 8.105022026431717,
+   "Q1.horas_total": 7666.0,
+   "Q3.pct_avaliados": 0.4512154744927228,
+   "Q2.recolocados_verde": 0.3489583333333333,
+   "Q2.taxa_conclusao": 0.8458149779735683,
+   "Q2.programas": 5.0,
+   "Q2.concluintes": 192.0,
+   "N1.prazo_aviso": 3.0,
+   "ES1.pct_renovavel": 0.16979745317123088,
+   "ES1.renovavel": 15316.800000000003,
+   "ES2.mwh_por_empregado": 95.37229955947134,
+   "ES3.pct_reducao": 0.012307344387254547,
+   "ES4.tco2e_por_empregado": 30.879753303964755,
+   "ES4.total": 29207.1,
+   "ES6.reducao_ano": 207.1,
+   "R1.por_empregado": 20.411830837004405,
+   "R1.gerados": 19306.190000000002,
+   "R2.pct_recuperados": 0.17559653147513826,
+   "A1.agua_por_empregado": 1.38320563876652,
+   "H1.ha_ano": 10.850000000000001,
+   "C1.investimento": 1356000.0,
+   "C3.pct_com_programa": 0.0,
+   "T1.pct_renovavel": 0.07900082460127511,
+   "M1.pct_com_plano": 0.3333333333333333,
+   "CL1.pct_com_multa": 0.6666666666666666,
+   "CL1.multas_total": 3.0,
+   "AC1.pct_com_caso": 0.3333333333333333,
+   "AC1.casos_total": 1.0,
+   "AC2.pct_capacitados": 0.4342105263157895,
+   "PO1.pct_politicas": 0.4444444444444444,
+   "SST1.taxa_frequencia": 15.112262521588947,
+   "SST1.acidentes": 28.0,
+   "SST1.dias_perdidos": 443.0
   }
  }
 ]

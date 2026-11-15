@@ -9,11 +9,11 @@
     "total": 7
    },
    "S": {
-    "nota": 56.81521676720214,
+    "nota": 56.36877423308338,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 63.99866429889281,
@@ -23,7 +23,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 58.71522068144364,
+    "nota": 58.566406503404046,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -37,11 +37,11 @@
     "total": 7
    },
    "S": {
-    "nota": 59.30015005901827,
+    "nota": 58.67681327783522,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 67.04594861569346,
@@ -51,7 +51,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 59.82736596071493,
+    "nota": 59.61958703365391,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -67,11 +67,11 @@
     "total": 7
    },
    "S": {
-    "nota": 56.660078524260285,
+    "nota": 58.49297245850142,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 67.75883983173549,
@@ -81,7 +81,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 60.35260948152594,
+    "nota": 60.96357412627299,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -95,11 +95,11 @@
     "total": 7
    },
    "S": {
-    "nota": 55.785896391510846,
+    "nota": 57.30861191067056,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 67.88095698679142,
@@ -109,7 +109,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 59.19300614561981,
+    "nota": 59.70057798533971,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -125,11 +125,11 @@
     "total": 7
    },
    "S": {
-    "nota": 54.64709338837182,
+    "nota": 53.89306858285267,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 58.615822623296765,
@@ -139,7 +139,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 56.75454579028433,
+    "nota": 56.50320418844461,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -153,11 +153,11 @@
     "total": 7
    },
    "S": {
-    "nota": 57.07715770514889,
+    "nota": 56.22068682121433,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 57.46843448160714,
@@ -167,7 +167,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 56.65451571173251,
+    "nota": 56.36902541708765,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -183,11 +183,11 @@
     "total": 7
    },
    "S": {
-    "nota": 59.64064609080344,
+    "nota": 59.921857514856775,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 65.04752976324424,
@@ -197,7 +197,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 61.520880426430615,
+    "nota": 61.61461756778173,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -211,11 +211,11 @@
     "total": 7
    },
    "S": {
-    "nota": 60.369511381672254,
+    "nota": 60.50724634583943,
     "cobertura": 1.0,
     "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 68.00581606768732,
@@ -225,7 +225,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 61.757628926745326,
+    "nota": 61.80354058146772,
     "cobertura": 1.0,
     "faixa": "atencao"
    }
@@ -241,11 +241,11 @@
     "total": 7
    },
    "S": {
-    "nota": 31.496518742769414,
+    "nota": 29.63078684992459,
     "cobertura": 1.0,
     "faixa": "critico",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 35.849631258867674,
@@ -255,7 +255,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 29.808556375641174,
+    "nota": 29.186645744692896,
     "cobertura": 1.0,
     "faixa": "critico"
    }
@@ -269,11 +269,11 @@
     "total": 7
    },
    "S": {
-    "nota": 37.01249683228876,
+    "nota": 34.94848557235175,
     "cobertura": 1.0,
     "faixa": "critico",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 44.79499292268985,
@@ -283,7 +283,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 34.86389030736274,
+    "nota": 34.1758865540504,
     "cobertura": 1.0,
     "faixa": "critico"
    }
@@ -299,11 +299,11 @@
     "total": 7
    },
    "S": {
-    "nota": 73.74770885869057,
+    "nota": 69.6261898230325,
     "cobertura": 1.0,
-    "faixa": "alinhado",
-    "avaliados": 8,
-    "total": 8
+    "faixa": "atencao",
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 85.7760960873705,
@@ -313,7 +313,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 78.10153394312144,
+    "nota": 76.72769426456875,
     "cobertura": 0.9666666666666667,
     "faixa": "alinhado"
    }
@@ -327,11 +327,11 @@
     "total": 7
    },
    "S": {
-    "nota": 74.65064108176894,
+    "nota": 71.34468936258173,
     "cobertura": 1.0,
     "faixa": "alinhado",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 86.34808467677438,
@@ -341,7 +341,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 77.5513490221494,
+    "nota": 76.44936511575366,
     "cobertura": 0.9523809523809524,
     "faixa": "alinhado"
    }
@@ -357,11 +357,11 @@
     "total": 7
    },
    "S": {
-    "nota": 69.74905112394357,
+    "nota": 71.83362891708097,
     "cobertura": 1.0,
-    "faixa": "atencao",
-    "avaliados": 8,
-    "total": 8
+    "faixa": "alinhado",
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 92.21795085749876,
@@ -371,7 +371,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 83.46443726129276,
+    "nota": 84.15929652567189,
     "cobertura": 0.9666666666666667,
     "faixa": "alinhado"
    }
@@ -385,11 +385,11 @@
     "total": 7
    },
    "S": {
-    "nota": 70.01311972246582,
+    "nota": 71.60511705062578,
     "cobertura": 1.0,
     "faixa": "alinhado",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 89.6073527430216,
@@ -399,7 +399,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 81.39730868110261,
+    "nota": 81.92797445715594,
     "cobertura": 0.9523809523809524,
     "faixa": "alinhado"
    }
@@ -415,11 +415,11 @@
     "total": 7
    },
    "S": {
-    "nota": 79.32888764292427,
+    "nota": 77.56247380106616,
     "cobertura": 1.0,
     "faixa": "alinhado",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 82.2895943980135,
@@ -429,7 +429,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 78.65804759505546,
+    "nota": 78.06924298110276,
     "cobertura": 0.9666666666666667,
     "faixa": "alinhado"
    }
@@ -443,11 +443,11 @@
     "total": 7
    },
    "S": {
-    "nota": 78.00088914974815,
+    "nota": 76.77456710532252,
     "cobertura": 1.0,
     "faixa": "alinhado",
-    "avaliados": 8,
-    "total": 8
+    "avaliados": 9,
+    "total": 9
    },
    "G": {
     "nota": 81.12306741600769,
@@ -457,7 +457,7 @@
     "total": 7
    },
    "geral": {
-    "nota": 76.64674712726054,
+    "nota": 76.237973112452,
     "cobertura": 0.9523809523809524,
     "faixa": "alinhado"
    }
@@ -474,10 +474,10 @@
    },
    "S": {
     "nota": 65.01783010016996,
-    "cobertura": 0.6666666666666666,
+    "cobertura": 0.5714285714285714,
     "faixa": "atencao",
     "avaliados": 5,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": 75.95833241638522,
@@ -488,7 +488,7 @@
    },
    "geral": {
     "nota": 70.48808125827759,
-    "cobertura": 0.25555555555555554,
+    "cobertura": 0.2238095238095238,
     "faixa": "sem_dados"
    }
   },
@@ -502,10 +502,10 @@
    },
    "S": {
     "nota": 66.0900541050411,
-    "cobertura": 0.625,
+    "cobertura": 0.5555555555555556,
     "faixa": "atencao",
     "avaliados": 5,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": 75.95833241638522,
@@ -516,7 +516,7 @@
    },
    "geral": {
     "nota": 71.02419326071316,
-    "cobertura": 0.25595238095238093,
+    "cobertura": 0.2328042328042328,
     "faixa": "sem_dados"
    }
   }
@@ -532,10 +532,10 @@
    },
    "S": {
     "nota": 53.570248484735544,
-    "cobertura": 0.6666666666666666,
+    "cobertura": 0.5714285714285714,
     "faixa": "atencao",
     "avaliados": 5,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": 64.43201585219344,
@@ -546,7 +546,7 @@
    },
    "geral": {
     "nota": 59.001132168464494,
-    "cobertura": 0.25555555555555554,
+    "cobertura": 0.2238095238095238,
     "faixa": "sem_dados"
    }
   },
@@ -560,10 +560,10 @@
    },
    "S": {
     "nota": 57.23434990765579,
-    "cobertura": 0.625,
+    "cobertura": 0.5555555555555556,
     "faixa": "atencao",
     "avaliados": 5,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": 64.43201585219344,
@@ -574,7 +574,7 @@
    },
    "geral": {
     "nota": 60.83318287992462,
-    "cobertura": 0.25595238095238093,
+    "cobertura": 0.2328042328042328,
     "faixa": "sem_dados"
    }
   }
@@ -590,10 +590,10 @@
    },
    "S": {
     "nota": 61.72478214775165,
-    "cobertura": 0.5,
-    "faixa": "atencao",
+    "cobertura": 0.42857142857142855,
+    "faixa": "sem_dados",
     "avaliados": 4,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": null,
@@ -604,7 +604,7 @@
    },
    "geral": {
     "nota": 61.72478214775165,
-    "cobertura": 0.16666666666666666,
+    "cobertura": 0.14285714285714285,
     "faixa": "sem_dados"
    }
   },
@@ -618,10 +618,10 @@
    },
    "S": {
     "nota": 61.663272826002625,
-    "cobertura": 0.5,
-    "faixa": "atencao",
+    "cobertura": 0.4444444444444444,
+    "faixa": "sem_dados",
     "avaliados": 4,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": null,
@@ -632,7 +632,7 @@
    },
    "geral": {
     "nota": 61.663272826002625,
-    "cobertura": 0.16666666666666666,
+    "cobertura": 0.14814814814814814,
     "faixa": "sem_dados"
    }
   }
@@ -648,10 +648,10 @@
    },
    "S": {
     "nota": 20.560138689622192,
-    "cobertura": 0.6666666666666666,
+    "cobertura": 0.5714285714285714,
     "faixa": "critico",
     "avaliados": 5,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": 34.12048425029516,
@@ -662,7 +662,7 @@
    },
    "geral": {
     "nota": 27.340311469958678,
-    "cobertura": 0.25555555555555554,
+    "cobertura": 0.2238095238095238,
     "faixa": "sem_dados"
    }
   },
@@ -676,10 +676,10 @@
    },
    "S": {
     "nota": 29.73840267814443,
-    "cobertura": 0.625,
+    "cobertura": 0.5555555555555556,
     "faixa": "critico",
     "avaliados": 5,
-    "total": 8
+    "total": 9
    },
    "G": {
     "nota": 34.12048425029516,
@@ -690,7 +690,7 @@
    },
    "geral": {
     "nota": 31.929443464219794,
-    "cobertura": 0.25595238095238093,
+    "cobertura": 0.2328042328042328,
     "faixa": "sem_dados"
    }
   }
@@ -705,11 +705,11 @@
     "total": 7
    },
    "S": {
-    "nota": 79.27438812706127,
-    "cobertura": 0.8333333333333334,
+    "nota": 80.32599462288924,
+    "cobertura": 0.8571428571428571,
     "faixa": "alinhado",
-    "avaliados": 7,
-    "total": 8
+    "avaliados": 8,
+    "total": 9
    },
    "G": {
     "nota": 71.83804720034492,
@@ -719,8 +719,8 @@
     "total": 7
    },
    "geral": {
-    "nota": 79.344379323647,
-    "cobertura": 0.9111111111111111,
+    "nota": 79.69491482225634,
+    "cobertura": 0.919047619047619,
     "faixa": "alinhado"
    }
   },
@@ -733,11 +733,11 @@
     "total": 7
    },
    "S": {
-    "nota": 75.83176283879287,
-    "cobertura": 0.875,
+    "nota": 77.05079587169739,
+    "cobertura": 0.8888888888888888,
     "faixa": "alinhado",
-    "avaliados": 7,
-    "total": 8
+    "avaliados": 8,
+    "total": 9
    },
    "G": {
     "nota": 75.65508615615987,
@@ -747,9 +747,67 @@
     "total": 7
    },
    "geral": {
-    "nota": 78.0846287234623,
-    "cobertura": 0.9107142857142857,
+    "nota": 78.49097306776382,
+    "cobertura": 0.9153439153439153,
     "faixa": "alinhado"
+   }
+  }
+ },
+ {
+  "normal": {
+   "A": {
+    "nota": 23.94013783069207,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 22.49671089434305,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 9,
+    "total": 9
+   },
+   "G": {
+    "nota": 17.215813676384645,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 7,
+    "total": 7
+   },
+   "geral": {
+    "nota": 21.217554133806587,
+    "cobertura": 1.0,
+    "faixa": "critico"
+   }
+  },
+  "pesos_iguais": {
+   "A": {
+    "nota": 25.093019587527685,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 7,
+    "total": 7
+   },
+   "S": {
+    "nota": 26.28129724805569,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 9,
+    "total": 9
+   },
+   "G": {
+    "nota": 23.465436329102705,
+    "cobertura": 1.0,
+    "faixa": "critico",
+    "avaliados": 7,
+    "total": 7
+   },
+   "geral": {
+    "nota": 24.94658438822869,
+    "cobertura": 1.0,
+    "faixa": "critico"
    }
   }
  }

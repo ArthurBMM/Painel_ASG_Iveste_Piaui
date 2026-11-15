@@ -15,6 +15,7 @@
   "N1",
   "C1",
   "C3",
+  "SST1",
   "ES1",
   "ES2",
   "ES3",
@@ -42,7 +43,8 @@
    "EV1",
    "EV1.alto_impacto",
    "EV3",
-   "Q1"
+   "Q1",
+   "SST1"
   ],
   "G": [
    "T1",
@@ -116,6 +118,17 @@
     ],
     "titulo": "Rotatividade (anualizada), mês a mês",
     "sub": "GRI 401-1-b. O pico de 2025 é o choque de desligamentos na eólica."
+   },
+   {
+    "tipo": "anual",
+    "larga": true,
+    "refs": [
+     "SST1",
+     "SST1.acidentes",
+     "SST1.dias_perdidos"
+    ],
+    "titulo": "Segurança do trabalho por ano",
+    "sub": "GRI 403-9. A taxa é por 1 milhão de horas trabalhadas, então compara projetos de portes diferentes. Na base fictícia, a mineração concentra a maior parte dos acidentes."
    }
   ],
   "G": [

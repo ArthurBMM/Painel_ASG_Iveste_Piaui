@@ -190,6 +190,21 @@
     "politica_anticorrupcao": "texto",
     "politicas_adotadas_qtd": "inteiro"
    }
+  },
+  "seguranca": {
+   "arquivo": "seguranca.csv",
+   "obrigatoria": false,
+   "chave": [
+    "projeto_id",
+    "ano"
+   ],
+   "colunas": {
+    "projeto_id": "texto",
+    "ano": "inteiro",
+    "horas_trabalhadas": "inteiro",
+    "acidentes_registraveis": "inteiro",
+    "dias_perdidos": "inteiro"
+   }
   }
  },
  "relacoes": [
@@ -235,6 +250,10 @@
   },
   {
    "de": "integridade.projeto_id",
+   "para": "projetos.projeto_id"
+  },
+  {
+   "de": "seguranca.projeto_id",
    "para": "projetos.projeto_id"
   }
  ]

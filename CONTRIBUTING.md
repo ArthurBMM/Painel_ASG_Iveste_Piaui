@@ -36,7 +36,7 @@ Somos cinco pessoas no mesmo código. Poucas regras simples evitam a maior parte
 
 ## Testes
 
-- `npm test` roda os testes de regressão: o motor calcula 39 medidas em 13 contextos de filtro e compara com `tests/referencia.json`.
+- `npm test` roda os testes de regressão: o motor calcula 42 medidas em 14 contextos de filtro e compara com `tests/referencia.json`.
 - Essa referência vem de um cálculo **independente em pandas** (`npm run referencia`, precisa de Python + pandas). Assim o motor não "corrige a si mesmo".
 - Mudou a regra de cálculo de propósito? Regenere a referência, explique no PR por que os números mudaram.
 - Indicador novo: adicione ao menos um contexto em `tests/contextos.json` que o exercite (com filtro de projeto e de ano).

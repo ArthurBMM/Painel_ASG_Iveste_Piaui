@@ -4,7 +4,7 @@
 // Três camadas de teste:
 //  1) NÚMEROS ÂNCORA: os valores que o grupo validou no Power BI (2.256 empregados, 40,5% verde...).
 //     Se algum mudar, algo quebrou na regra de cálculo ou nos dados.
-//  2) REFERÊNCIA INDEPENDENTE: 13 contextos de filtro × 39 medidas comparados com o pandas
+//  2) REFERÊNCIA INDEPENDENTE: 14 contextos de filtro × 42 medidas comparados com o pandas
 //     (tools/referencia_pandas.py). Pega erros de filtro, anualização e bloqueios.
 //  3) INTEGRIDADE: registro ↔ catálogo GRI ↔ contrato de dados sem referências quebradas;
 //     leitor de CSV; validação de arquivo importado.
@@ -156,8 +156,8 @@ test("integridade: todo campo lido pelas fórmulas existe no contrato de dados",
   assert.deepEqual(faltando, []);
 });
 
-test("integridade: os 25 indicadores do tema existem no registro, estão ativos e têm GRI com página", () => {
-  assert.equal(modelo.tema.indicadores.length, 25);
+test("integridade: os 26 indicadores do tema existem no registro, estão ativos e têm GRI com página", () => {
+  assert.equal(modelo.tema.indicadores.length, 26);
   for (const id of modelo.tema.indicadores) {
     const ind = registro.porId.get(id);
     assert.ok(ind, `indicador ${id} não está no registro`);
