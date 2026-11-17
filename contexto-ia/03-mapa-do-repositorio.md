@@ -19,6 +19,7 @@ Itens marcados **(a criar)** ainda não existem.
 ├── temas/                     um tema = uma pasta
 │   ├── index.json             lista dos temas disponíveis
 │   ├── _modelo/               molde para copiar ao criar um tema
+│   ├── gestao-ambiental/      segundo tema (energia, água e resíduos): prova de que um tema novo é só uma pasta
 │   └── t8-empregos-verdes/    tema da apresentação (dados fictícios)
 │       ├── tema.json          título, indicadores usados, destaques, cartões do topo
 │       ├── contrato.json      tabelas, colunas, tipos e relações esperadas

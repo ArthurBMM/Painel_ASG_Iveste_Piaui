@@ -57,7 +57,9 @@ export function iniciarApp(args) {
     <header><div class="topo"><div class="marca">
         ${id.logo ? `<img class="logo" src="${esc(id.logo)}" alt="${esc(id.nome_instituicao)}" onload="document.body.classList.add('com-logo')" onerror="document.body.classList.remove('com-logo'); this.remove()">` : ""}
         <div class="titulos"><h1>${esc(id.titulo_painel)}<span class="inst"> · ${esc(id.nome_instituicao)}</span></h1>
-          <p class="tema">${tema.codigo ? `<span class="tema-cod">${esc(tema.codigo)}</span>` : ""}${esc(tema.titulo)}</p>
+          <p class="tema">${tema.codigo ? `<span class="tema-cod">${esc(tema.codigo)}</span>` : ""}${indice.temas.length > 1
+            ? `<select id="sel-tema" class="sel-tema" aria-label="Tema" title="Trocar de tema (recarrega a página; dados importados são descartados)">${indice.temas.map((t) => `<option value="${esc(t.id)}"${t.id === tema.id ? " selected" : ""}>${esc(t.titulo)}</option>`).join("")}</select>`
+            : esc(tema.titulo)}</p>
           <p class="sub">Indicadores das Normas GRI para acompanhar a carteira da instituição</p></div></div>
       <div class="acoes">
         <button type="button" id="btn-filtros" class="ghost" aria-expanded="true" aria-controls="filtros" title="Mostrar ou esconder os filtros (tecla F)">Filtros</button>
@@ -155,6 +157,8 @@ export function iniciarApp(args) {
     },
   }));
   $("voltar-demo")?.addEventListener("click", () => iniciarApp(demo));
+  // trocar de tema = recarregar com ?tema=<id> (main.js lê o parâmetro). A aba atual (#hash) é mantida.
+  $("sel-tema")?.addEventListener("change", (e) => { location.search = `?tema=${encodeURIComponent(e.target.value)}`; });
 
   /** Traduz o estado da tela para os filtros que o motor entende. */
   function filtrosDoMotor() {

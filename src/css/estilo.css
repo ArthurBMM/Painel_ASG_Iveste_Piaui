@@ -238,3 +238,9 @@ body.apresentando header h1 { font-size: 20px; }
 .rolagem { overflow-x: auto; max-width: 100%; }
 .demo { min-width: 520px; }
 .busca input { max-width: 100%; }
+
+/* seletor de tema no cabeçalho: parece o título, mas é uma lista (só aparece com 2+ temas em temas/index.json) */
+select.sel-tema { font: inherit; font-weight: 600; color: var(--texto); background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); padding: 2px 6px; max-width: 100%; cursor: pointer; }
+select.sel-tema:hover { border-color: var(--primaria); }
+header .marca, header .titulos { min-width: 0; }   /* deixa o seletor de tema encolher no celular em vez de estourar a largura */
+@media (max-width: 640px) { select.sel-tema { width: 100%; } }

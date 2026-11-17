@@ -13,6 +13,7 @@ npm run servir          # abre em http://localhost:8080
 
 ## 2. Navegar
 
+- **Tema:** com mais de um tema em `temas/index.json`, o título do tema no cabeçalho vira uma lista para trocar (recarrega a página; dados importados são descartados). Também dá para abrir direto: `?tema=gestao-ambiental`.
 - **Abas:** Visão ASG · Ambiental · Social · Governança · Empresas e projetos · Indicadores e método.
 - **Filtros** (ano, origem, empresa/instituição, projeto, setor, município; classe de ocupação só na aba Social). Valem para todas as abas. O botão **Filtros** recolhe o painel; recolhido, uma linha mostra o que está filtrado.
 - **Notas (0 a 100):** cada pilar e o ASG geral têm nota, faixa (*Alinhado* ≥ 70, *Em atenção* 40 a 70, *Crítico* < 40) e **cobertura** (quanto do peso tem dado). A cor nunca é a única informação: o rótulo vem em texto.
@@ -54,6 +55,7 @@ Erros comuns: tabela obrigatória ausente · coluna faltando ou com outro nome �
 - **Nome e cores:** `config/identidade.json`.
 - **Logo:** `assets/logo-investe-piaui.png` (ver `assets/LEIA-ME.md`). Sem o arquivo, aparece só o nome.
 - **Código do tema** (o selo "T8" no cabeçalho): campo opcional `codigo` em `tema.json`.
+- **Aviso de um pilar** (ex.: "Governança tem poucos indicadores neste tema"): campo opcional `notas_pilar` em `tema.json`.
 
 ## 6. Testar
 

@@ -10,7 +10,7 @@ Ela quer um painel para monitorar **o próprio trabalho** (a Investe Piauí como
 
 | # | Requisito | Estado | Notas |
 |---|---|---|---|
-| R1 | **Escalável por tema.** Outros temas entram sem mexer em `src/`, com a mesma leitura de tópicos e gráficos dos mesmos estilos | 🟡 | Mecanismo existe (tema = pasta). Falta um **segundo tema de demonstração** para provar |
+| R1 | **Escalável por tema.** Outros temas entram sem mexer em `src/`, com a mesma leitura de tópicos e gráficos dos mesmos estilos | ✅ | Segundo tema `gestao-ambiental` (energia, água e resíduos) entrou só como pasta, sem mexer em `src/`; seletor de tema no cabeçalho |
 | R2 | **Importação de arquivos pelo navegador, em CSV e em XLSX** (planilhas Excel), sem servidor e sem persistência | 🟡 | **CSV implementado** (`nucleo/importacao.js`, `ui/importar.js`, 18 testes). **XLSX pendente** (D16); a planilha de exemplo foi regerada com as 12 tabelas |
 | R3 | **Páginas por pilar** (Ambiental, Social, Governança) **e uma página ASG geral**, todas com os mesmos filtros (ano, origem, empresa/instituição, projeto, setor, município) | 🟡 | Páginas, filtros e notas (por pilar e geral) existem; falta reforçar G (poucos indicadores) |
 | R4 | **Avaliar cada empresa/projeto e a Investe Piauí** nos três critérios | 🟡 | Nota A, S, G e geral com faixa e cobertura por entidade, mais balanço (▲▼) e aviso de sensibilidade aos pesos |

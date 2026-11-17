@@ -14,7 +14,8 @@ export function render(pilar, { registro, ctx, tema, estado, metricas }) {
   const inds = tema.indicadores.map((id) => registro.porId.get(id)).filter((i) => i && i.pilar === pilar);
   const parciais = inds.filter((i) => i.cobertura === "parcial").length;
   const notas = [];
-  if (pilar === "G") notas.push("Governança tem cobertura parcial neste tema: os indicadores abaixo são os que a base do T8 sustenta. Outros conteúdos GRI de governança estão no catálogo (página Indicadores e método) e podem ser ativados com mais dados.");
+  // aviso específico do tema (ex.: "governança tem poucos indicadores aqui"): mora em tema.json → notas_pilar, nunca em src/
+  if (tema.notas_pilar?.[pilar]) notas.push(tema.notas_pilar[pilar]);
   if (pilar === "S" && estado.classe) notas.push("Com filtro de classe, indicadores que não têm corte por ocupação (Q2, N1, C1, C3) aparecem como – de propósito: mostrar o mesmo número para todas as classes seria enganoso.");
   // nota do pilar (se houver parâmetros válidos) e, por indicador, a nota e o peso que entraram na conta
   const nota = metricas ? pontuarPilar(registro, metricas, ctx, pilar, tema.indicadores) : null;

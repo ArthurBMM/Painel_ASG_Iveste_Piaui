@@ -19,7 +19,8 @@ Tempo sugerido: **10 a 12 minutos** + perguntas. A ferramenta **é** a apresenta
 | 4 | **Governança** (1,5 min) | Multas (2-27), corrupção (205-3), capacitação anticorrupção (205-2), políticas (2-23) | A governança é o pilar com menos indicadores; já tem 7 e há mais candidatos |
 | 5 | **Empresas e projetos** (2 min) | Ranking com notas A, S, G e ASG; **Brisa Litoral e Sol de Picos 85**; **Pedra Norte e Serra Cinza 37**; abrir uma linha e ver os projetos; a **Investe Piauí** como entidade | "Mesma lente para cada empresa, projeto e para a própria Investe Piauí" |
 | 6 | **Indicadores e método** (2 min) | Tabela de parâmetros; escolher uma entidade na **demonstração da conta** | Transparência: toda nota tem piso, teto, peso, justificativa e fonte, e dá para refazer a conta à mão |
-| 7 | **Importar dados** (1 min, opcional) | Importar os CSV, ver o relatório, "Voltar à demonstração" | Escalável: outros dados e outros temas entram sem mexer no código; nada é guardado |
+| 7 | **Trocar de tema** (1 min) | No cabeçalho, escolher "Gestão ambiental na operação": mesmas telas, outros indicadores e outra história | "Um tema novo é só uma pasta com dados e um arquivo de configuração; o código não muda." Avisar que Governança ali tem só 2 indicadores |
+| 8 | **Importar dados** (1 min, opcional) | Importar os CSV, ver o relatório, "Voltar à demonstração" | Escalável: outros dados e outros temas entram sem mexer no código; nada é guardado |
 
 ## Mensagens que não podem faltar
 

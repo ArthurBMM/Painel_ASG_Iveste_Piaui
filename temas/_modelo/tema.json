@@ -9,5 +9,6 @@
   "indicadores": ["IDs", "do", "registro", "que", "este", "tema", "usa"],
   "destaques": { "A": [], "S": [], "G": [] },
   "cartoes_topo": [],
-  "historia": { "titulo": "", "pontos": [] }
+  "historia": { "titulo": "", "pontos": [] },
+  "notas_pilar": { "A": "", "S": "", "G": "" }
 }
