@@ -1,5 +1,6 @@
 {
   "id": "novo-tema",
+  "codigo": "",
   "titulo": "Título do tema",
   "resumo": "Uma frase: qual pergunta este tema responde?",
   "aviso_dados": "Dados fictícios para demonstração.",

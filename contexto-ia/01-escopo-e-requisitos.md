@@ -22,7 +22,7 @@ Ela quer um painel para monitorar **o próprio trabalho** (a Investe Piauí como
 | R9 | **Site estático**, sem back-end complexo | ✅ | |
 | R10 | **Apresentação focada no T8** | 🟡 | Roteiro em `docs/roteiro-apresentacao.md`; o segundo tema entra só como prova de escalabilidade |
 | R11 | **Modo apresentação**: a interface é a apresentação (tela cheia, tipografia grande, navegação por teclado, painel de filtros recolhível), com nível de acabamento de reunião séria | ✅ | Botão Apresentar / tecla P: tela cheia, letras maiores, setas e números, filtros recolhíveis (D17) |
-| R12 | **Identidade da Investe Piauí** como marca principal (logo no cabeçalho, nome da instituição), configurável | 🟡 | `config/identidade.json` pronto; **falta o arquivo oficial do logo em `assets/`** (o grupo fornece) |
+| R12 | **Identidade da Investe Piauí** como marca principal (logo no cabeçalho, nome da instituição), configurável | ✅ | Logo em `assets/`, cabeçalho branco e azul da Investe Piauí; nome, cores e logo em `config/identidade.json` |
 | R13 | **Dados de demonstração fixos** do T8, trocáveis por importação | 🟡 | Os dados do T8 em `temas/t8-empregos-verdes/dados/` são a demonstração; explicar à Investe Piauí que podem ser substituídos |
 
 ## Importação (R2) — como pensamos em fazer

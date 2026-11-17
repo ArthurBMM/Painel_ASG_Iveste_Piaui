@@ -47,7 +47,7 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 - **Rever:** implementar XLSX (leitor próprio ou biblioteca em `vendor/`) se a Investe Piauí exigir planilhas (ver `contexto-ia/01-…`).
 
 ### D17. Modo apresentação e identidade por configuração
-- **Por quê:** a ferramenta substitui o slide. Modo apresentação = tela cheia, letras maiores (zoom só em telas largas), atalhos de teclado, filtros recolhíveis. Nome, cores e logo vêm de `config/identidade.json`; o logo oficial é fornecido pelo grupo (nunca gerado por IA) e, se faltar, o painel mostra só o nome.
+- **Por quê:** a ferramenta substitui o slide. Modo apresentação = tela cheia, letras maiores (zoom só em telas largas), atalhos de teclado, filtros recolhíveis. Nome, cores e logo vêm de `config/identidade.json`; o logo oficial é fornecido pelo grupo (nunca gerado por IA) e, se faltar, o painel mostra só o nome. Cabeçalho branco com o azul da Investe Piauí (`#2E5893`, medido no logo). A identidade muda só cores de **marca** (`--primaria`, `--destaque`); as cores com **significado** (faixas, pilares, ▲▼) ficam fixas no CSS.
 
 ### D7. Gráficos em SVG próprio, sem Chart.js
 - **Por quê:** o registro npm estava bloqueado no ambiente em que o código foi gerado e queremos zero dependências. Simples de ler e funciona offline.

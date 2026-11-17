@@ -40,9 +40,10 @@ export function iniciarApp(args) {
   const tema = modelo.tema;
   // identidade: o que não vier do config/identidade.json cai nestes padrões
   const id = { nome_instituicao: "Investe Piauí", titulo_painel: "Painel ASG", logo: null, ...(args.identidade || {}) };
-  const cores = { primaria: "#1D4E63", destaque: "#E2741F", ...(args.identidade?.cores || {}) };
+  const cores = { primaria: "#2E5893", destaque: "#2E5893", ...(args.identidade?.cores || {}) };
   document.documentElement.style.setProperty("--primaria", cores.primaria);
-  document.documentElement.style.setProperty("--alerta", cores.destaque);
+  document.documentElement.style.setProperty("--destaque", cores.destaque);   // --alerta fica fixo: é a cor da faixa "Em atenção"
+
   const projetos = [...modelo.projetos.values()], empresasLista = [...modelo.empresas.values()];
   const anos = unicos(modelo.meses.map((m) => m.slice(0, 4)));
   const ultimoAno = anos[anos.length - 1];
@@ -54,9 +55,10 @@ export function iniciarApp(args) {
   document.title = `${id.titulo_painel} · ${id.nome_instituicao} · ${tema.titulo}`;
   document.getElementById("app").innerHTML = `
     <header><div class="topo"><div class="marca">
-        ${id.logo ? `<span class="logo-caixa"><img src="${esc(id.logo)}" alt="${esc(id.nome_instituicao)}" onerror="this.parentNode.remove()"></span>` : ""}
-        <div><h1>${esc(id.titulo_painel)} · ${esc(id.nome_instituicao)}</h1>
-          <p class="sub">Indicadores das Normas GRI para acompanhar a carteira. Tema: <b>${esc(tema.titulo)}</b></p></div></div>
+        ${id.logo ? `<img class="logo" src="${esc(id.logo)}" alt="${esc(id.nome_instituicao)}" onload="document.body.classList.add('com-logo')" onerror="document.body.classList.remove('com-logo'); this.remove()">` : ""}
+        <div class="titulos"><h1>${esc(id.titulo_painel)}<span class="inst"> · ${esc(id.nome_instituicao)}</span></h1>
+          <p class="tema">${tema.codigo ? `<span class="tema-cod">${esc(tema.codigo)}</span>` : ""}${esc(tema.titulo)}</p>
+          <p class="sub">Indicadores das Normas GRI para acompanhar a carteira da instituição</p></div></div>
       <div class="acoes">
         <button type="button" id="btn-filtros" class="ghost" aria-expanded="true" aria-controls="filtros" title="Mostrar ou esconder os filtros (tecla F)">Filtros</button>
         <button type="button" id="btn-apresentar" class="ghost" title="Tela cheia, letras maiores e atalhos de teclado (tecla P)">Apresentar</button>

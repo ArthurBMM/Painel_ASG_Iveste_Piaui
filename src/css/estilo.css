@@ -3,11 +3,12 @@
    identidade visual, troque só ali. Layout: tela limpa (a ASG pediu pouca poluição).
    ===================================================================================== */
 :root {
-  --fundo: #F2F3EF;   --texto: #1B1F1D;  --suave: #5F6B6D;  --linha: #D5D9D2;  --branco: #fff;
-  --primaria: #1D4E63;
+  --fundo: #F4F6FA;   --texto: #1B1F24;  --suave: #5C6675;  --linha: #D8DEE8;  --branco: #fff;
+  --primaria: #2E5893;   /* azul da Investe Piauí (medido no logo); trocável em config/identidade.json */
+  --destaque: #2E5893;   /* cor de marca para detalhes (aba ativa, foco). NÃO confundir com --alerta */
   --pil-A: #00704A;  --pil-S: #2A78D6;  --pil-G: #1D4E63;      /* cor de cada pilar */
   --bom: #1B7F4B;    --ruim: #C0392B;    --neutro: #6B7280;     /* cor das variações */
-  --alerta: #E2741F;
+  --alerta: #E2741F;     /* SEMÂNTICO: faixa "Em atenção". Não muda com a identidade */
   --raio: 6px;
 }
 * { box-sizing: border-box; }
@@ -15,16 +16,18 @@
 body { margin: 0; background: var(--fundo); color: var(--texto); font: 15px/1.5 "Segoe UI", system-ui, sans-serif; }
 h1, h2, h3, .valor { font-family: Georgia, "Times New Roman", serif; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--alerta); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--destaque); outline-offset: 2px; }
 
 /* ---------- topo ---------- */
-header { background: var(--primaria); color: #fff; padding: 20px 5vw 0; }
-header h1 { margin: 0; font-size: 25px; line-height: 1.25; font-weight: 600; max-width: 34ch; }
-header .sub { margin: 4px 0 14px; color: #cfe0e6; font-size: 14px; max-width: 80ch; }
+header { background: var(--branco); color: var(--texto); padding: 18px 5vw 0; border-top: 4px solid var(--primaria); border-bottom: 1px solid var(--linha); }
+header h1 { margin: 0; font-size: 22px; line-height: 1.25; font-weight: 600; color: var(--primaria); }
+header .tema { margin: 4px 0 0; font-size: 17px; line-height: 1.35; font-weight: 600; max-width: 70ch; }
+header .tema-cod { display: inline-block; background: var(--primaria); color: #fff; font-size: 13px; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin-right: 8px; vertical-align: 2px; }
+header .sub { margin: 2px 0 12px; color: var(--suave); font-size: 13px; max-width: 80ch; }
 nav { display: flex; gap: 2px; flex-wrap: wrap; }
-nav button { background: none; border: 0; color: #cfe0e6; padding: 10px 16px; font: inherit; cursor: pointer; border-bottom: 3px solid transparent; }
-nav button:hover { color: #fff; }
-nav button[aria-selected=true] { color: #fff; border-color: var(--alerta); font-weight: 600; }
+nav button { background: none; border: 0; color: var(--suave); padding: 10px 16px; font: inherit; cursor: pointer; border-bottom: 3px solid transparent; }
+nav button:hover { color: var(--primaria); }
+nav button[aria-selected=true] { color: var(--primaria); border-color: var(--destaque); font-weight: 600; }
 .aviso { background: #fff3e6; border-bottom: 1px solid #f0cfa8; padding: 6px 5vw; font-size: 13px; }
 
 /* ---------- filtros ---------- */
@@ -179,8 +182,8 @@ th { background: #e8ebe4; font-weight: 600; } td.num, th.num { text-align: right
 /* ---------- importação de dados (janela "Importar dados") ---------- */
 header .topo { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
 header .acoes { padding-top: 4px; }
-button.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.55); border-radius: var(--raio); padding: 7px 14px; font: inherit; cursor: pointer; }
-button.ghost:hover { background: rgba(255,255,255,.12); }
+button.ghost { background: var(--branco); color: var(--primaria); border: 1px solid var(--primaria); border-radius: var(--raio); padding: 7px 14px; font: inherit; cursor: pointer; }
+button.ghost:hover { background: #EAF0F8; }
 button.link { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
 .aviso.importado { background: #e8f3ec; border-bottom-color: #b5d8c1; display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; }
 dialog#dlg-importar { width: min(860px, 94vw); max-height: 90vh; border: 0; border-radius: 10px; padding: 0; box-shadow: 0 20px 60px rgba(0,0,0,.35); color: var(--texto); background: var(--branco); }
@@ -208,12 +211,14 @@ dialog#dlg-importar::backdrop { background: rgba(10, 25, 32, .6); }
 .imp ul.avisos li { color: #7a4a00; }
 .imp ul { margin: 2px 0 8px; padding-left: 20px; font-size: 13.5px; }
 .imp menu { display: flex; justify-content: flex-end; gap: 10px; padding: 0; margin: 16px 0 0; }
-@media (max-width: 640px) { header .acoes { padding-top: 0; } .imp { padding: 16px; } }
+@media (max-width: 640px) { header .acoes { padding-top: 0; } .imp { padding: 16px; } header img.logo { height: 42px; } header .tema { font-size: 15px; } body.com-logo header .titulos { padding-left: 12px; } }
 
 /* ---------- identidade (logo) ---------- */
-header .marca { display: flex; align-items: flex-start; gap: 16px; }
-.logo-caixa { background: #fff; border-radius: 8px; padding: 6px 10px; display: inline-flex; align-items: center; flex: none; }
-.logo-caixa img { display: block; height: 46px; width: auto; }
+header .marca { display: flex; align-items: center; gap: 18px; }
+header img.logo { display: block; height: 58px; width: auto; flex: none; }
+/* com o logo carregado, o nome da instituição já está no desenho: some do título (continua no alt da imagem) */
+body.com-logo header .inst { display: none; }
+body.com-logo header .titulos { border-left: 1px solid var(--linha); padding-left: 18px; }
 
 /* ---------- filtros recolhíveis e modo apresentação ---------- */
 .resumo-filtros { padding: 8px 5vw; font-size: 13px; color: var(--suave); background: var(--branco); border-bottom: 1px solid var(--linha); }
@@ -221,8 +226,8 @@ header .marca { display: flex; align-items: flex-start; gap: 16px; }
 body.apresentando .dicas-teclas { display: block; position: fixed; right: 14px; bottom: 10px; z-index: 5; background: rgba(27,31,29,.82); color: #fff; font-size: 12px; padding: 5px 12px; border-radius: 999px; }
 body.apresentando header { padding-top: 12px; }
 body.apresentando header .sub, body.apresentando #btn-importar { display: none; }
-body.apresentando header h1 { font-size: 24px; max-width: none; }
-body.apresentando .logo-caixa img { height: 38px; }
+body.apresentando header img.logo { height: 44px; }
+body.apresentando header h1 { font-size: 20px; }
 /* "zoom" amplia texto, gráficos e espaçamentos juntos; só em telas largas, para a tabela de Empresas continuar cabendo */
 @media (min-width: 1400px) { body.apresentando #app { zoom: 1.15; } }
 @media (min-width: 1700px) { body.apresentando #app { zoom: 1.3; } }

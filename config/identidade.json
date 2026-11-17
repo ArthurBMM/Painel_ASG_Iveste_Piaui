@@ -3,5 +3,9 @@
   "nome_instituicao": "Investe Piauí",
   "titulo_painel": "Painel ASG",
   "logo": "assets/logo-investe-piaui.png",
-  "cores": { "primaria": "#1D4E63", "destaque": "#E2741F" }
+  "cores": {
+    "primaria": "#2E5893",
+    "destaque": "#2E5893"
+  },
+  "como_ler": "primaria: cabeçalho, botões e bordas. destaque: aba ativa e foco. As cores das faixas (Alinhado, Em atenção, Crítico) e dos pilares são fixas no CSS, porque carregam significado."
 }

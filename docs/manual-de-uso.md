@@ -44,13 +44,16 @@ Aceitamos: separador vírgula, ponto e vírgula ou tab; números `1234.5`, `1234
 
 Erros comuns: tabela obrigatória ausente · coluna faltando ou com outro nome · texto onde deveria ser número (ex.: `n/d`) · data inválida · mês vazio · chave repetida (dois projetos com o mesmo `projeto_id`) · `metricas.json` sem justificativa ou fonte. A mensagem diz o arquivo, a coluna e a linha.
 
+**Apresentar com dados importados:** importe antes da reunião e mantenha a aba aberta. Recarregar ou fechar descarta a importação (não guardamos nada no navegador, de propósito).
+
 **XLSX:** ainda não. No Excel, use *Salvar como → CSV*. Está previsto (`docs/decisoes.md`, D16).
 
 ## 5. Trocar parâmetros, nome e logo
 
 - **Notas:** edite `config/metricas.json` (pesos, piso, teto, faixas; cada indicador pontuado exige `justificativa` e `fonte`). Recarregue a página. Se houver erro, a aba *Indicadores e método* lista o que corrigir e as notas ficam desligadas até corrigir.
 - **Nome e cores:** `config/identidade.json`.
-- **Logo:** coloque o arquivo **oficial** em `assets/logo-investe-piaui.png` (ver `assets/LEIA-ME.md`). Sem o arquivo, aparece só o nome.
+- **Logo:** `assets/logo-investe-piaui.png` (ver `assets/LEIA-ME.md`). Sem o arquivo, aparece só o nome.
+- **Código do tema** (o selo "T8" no cabeçalho): campo opcional `codigo` em `tema.json`.
 
 ## 6. Testar
 
