@@ -41,6 +41,14 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 ### D13. XLSX e CSV na importação; dados de demonstração fixos
 - **Por quê:** a Investe Piauí trabalha com planilhas. Os dados do T8 ficam como demonstração fixa e a Investe Piauí pode trocá-los por importação. Há uma planilha de exemplo (uma aba por tabela) em `temas/t8-empregos-verdes/exemplo-importacao/`. Leitor XLSX: próprio (sem biblioteca) ou biblioteca versionada; ver `contexto-ia/01-…`.
 
+### D16. Importação: só CSV por enquanto; XLSX fica para depois
+- **Por quê:** prazo de entrega em 18/11. O CSV cobre o fluxo importar → calcular → apresentar e é o que dá para validar bem (testes provam que o mesmo dado em estilo Excel pt-BR produz o mesmo modelo). Quem tem planilha usa *Salvar como CSV*.
+- **O que foi feito:** leitor com detecção de separador, vírgula decimal, datas DD/MM/AAAA e Windows-1252; validação por contrato com mensagens de arquivo/coluna/linha; `metricas.json` e `gri_catalogo.json` opcionais; nada é gravado.
+- **Rever:** implementar XLSX (leitor próprio ou biblioteca em `vendor/`) se a Investe Piauí exigir planilhas (ver `contexto-ia/01-…`).
+
+### D17. Modo apresentação e identidade por configuração
+- **Por quê:** a ferramenta substitui o slide. Modo apresentação = tela cheia, letras maiores (zoom só em telas largas), atalhos de teclado, filtros recolhíveis. Nome, cores e logo vêm de `config/identidade.json`; o logo oficial é fornecido pelo grupo (nunca gerado por IA) e, se faltar, o painel mostra só o nome.
+
 ### D7. Gráficos em SVG próprio, sem Chart.js
 - **Por quê:** o registro npm estava bloqueado no ambiente em que o código foi gerado e queremos zero dependências. Simples de ler e funciona offline.
 - **Rever:** se precisarmos de interações complexas (zoom, tooltips ricos).
@@ -71,7 +79,7 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 | E2 | Revisar o pilar de cada indicador (ver `mapeamento-asg.md`), em especial Q3 e T1 | Conteúdo |
 | E3 | Como reforçar G (hoje 3 indicadores)? Ver `indicadores-candidatos.md` | Cobertura |
 | E4 | Segundo tema de demonstração para provar a escalabilidade (sugestão: "Gestão ambiental", reaproveitando `ambiental_mensal`) | Apresentação |
-| E5 | Importação pela interface (D10) em CSV **e** XLSX (D13). Falta escolher: leitor XLSX próprio ou biblioteca | Frente 2 |
+| E5 | CSV pronto (D16). XLSX adiado: leitor próprio ou biblioteca? | Frente 2 |
 | E6 | Quanto do catálogo vira "calculável" até 27/11? | Planejamento |
 
 ## Críticas honestas ao próprio projeto

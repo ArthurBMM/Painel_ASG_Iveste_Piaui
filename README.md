@@ -60,7 +60,9 @@ Veja `CONTRIBUTING.md` (fluxo de branches, testes, regras de dados) e `docs/divi
 ## Limites conhecidos (honestidade primeiro)
 
 - É um **protótipo estático**: sem login, sem histórico de versões, sem multiusuário.
-- Importação por **CSV e XLSX** (planilha com uma aba por tabela): especificada, **ainda não implementada**. Não haverá exportação (a ferramenta é a própria apresentação).
+- Importação por **CSV** pelo navegador: **implementada** (sem persistência). **XLSX**: especificado, **ainda não implementado** (D16). Não haverá exportação (a ferramenta é a própria apresentação).
+- **Modo apresentação** (tecla P) e identidade configurável (`config/identidade.json`); o **logo oficial** precisa ser colocado em `assets/` pelo grupo.
+- Manual em `docs/manual-de-uso.md`; roteiro em `docs/roteiro-apresentacao.md`.
 - "Pilar" de cada indicador é **decisão do grupo**; o GRI não classifica conteúdos em A, S ou G (ver `docs/mapeamento-asg.md`).
 - Governança tem cobertura parcial no T8 (7 indicadores).
 - A **pontuação 0–100** por pilar (com pesos e justificativas editáveis) está **implementada, versão 1.0** (`config/metricas.json` + `src/js/nucleo/pontuacao.js`) e mostrada com cobertura e a conta passo a passo. Os parâmetros são *hipóteses do grupo*, não metas oficiais (ver `contexto-ia/02-metricas-pesos-e-normalizacao.md`).

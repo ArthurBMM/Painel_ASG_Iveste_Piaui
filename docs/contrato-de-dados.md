@@ -54,6 +54,11 @@ Os tipos e colunas exatos estão em `temas/t8-empregos-verdes/contrato.json`.
 - Percentuais ficam em **fração** (0,45) ou calculados por razão, conforme o indicador; ver `como_calcula` de cada um.
 - Não coloque dados pessoais: use sempre agregados por projeto/mês/ocupação.
 
-## Importação de XLSX / interface de upload
+## Importação pela interface (CSV)
 
-Ainda não existe. Hoje o "import" é copiar a pasta do tema. Está no `roadmap.md` (Fase 3). Alternativa simples antes disso: converter XLSX → CSV (Excel: *Salvar como CSV UTF-8*).
+Botão **Importar dados** no cabeçalho (ver `manual-de-uso.md`). O molde é este contrato: um CSV por tabela, com o nome do campo `arquivo`. O código está em `src/js/nucleo/importacao.js` (validação, testada em `tests/importacao.test.mjs`) e `src/js/ui/importar.js` (janela).
+
+- Aceita separador `,` `;` ou tab, números `1234.5` / `1234,5` / `1.234,5`, datas `AAAA-MM-DD` ou `DD/MM/AAAA`, UTF-8 ou Windows-1252.
+- Erros que bloqueiam: tabela obrigatória ausente, coluna faltando, número ou data inválidos, mês vazio, chave repetida, `metricas.json` inválido. Tabelas opcionais ausentes são só aviso.
+- Sem persistência: recarregar a página volta à demonstração.
+- **XLSX** ainda não é lido (decisão D16). A planilha de exemplo (`exemplo-importacao/`) é regerada por `python3 tools/gerar_exemplo_xlsx.py`.

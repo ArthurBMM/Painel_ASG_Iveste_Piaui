@@ -12,6 +12,8 @@
 - Tema T8 com dados fictícios; molde de tema em `temas/_modelo/`.
 - **Pontuação 0–100** implementada (frente 1): `config/metricas.json` (23 indicadores pontuados; `C1`, `ES6`, `H1` fora por serem totais absolutos), nota A/S/G/geral com faixa e cobertura em todas as páginas, notas por entidade, sensibilidade a pesos e demonstração da conta em *Indicadores e método*.
 - Entidade/projeto avaliados por **nota** e por **balanço de tendência** (▲▼).
+- **Importação de CSV** pelo navegador (com validação em português, separador `;`, vírgula decimal, datas DD/MM/AAAA, Windows-1252), **modo apresentação** (tecla P) e identidade configurável (`config/identidade.json`).
+- **Manual** (`docs/manual-de-uso.md`) e **roteiro** (`docs/roteiro-apresentacao.md`).
 
 ## Pontuação v1.0 (resumo para o grupo)
 
@@ -26,15 +28,15 @@ Arquivos da v1.0: `config/metricas.json`, `src/js/nucleo/pontuacao.js`, `src/js/
 | Pri | Item | Req. | Frente |
 |---|---|---|---|
 | 1 | Reforçar **Governança**: 6 a 8 indicadores novos e tabela(s) de dados fictícios (feitos: CL1 / 2-27, AC1 / 205-3, AC2 / 205-2, PO1 / 2-23; faltam 2-26, 2-9 e outros) | R8 | 4 |
-| 1 | **Importação** em **CSV e XLSX** (e `metricas.json`) pelo navegador, com validação | R2 | 2 |
+| 2 | **Importação XLSX** (a de CSV está pronta): leitor próprio ou biblioteca; ver `01-…` e D16 | R2 | 2 |
 | 3 | Evoluções v1.1 da pontuação (percentil na carteira, critério por pilar, simulação): ver `02-…`, última seção | R6 | 1 |
 | 2 | Revisar piso/teto/pesos com a professora ou com dados reais; criar medidas proporcionais para `C1`, `ES6`, `H1` | R6 | 1 |
 | 2 | **Segundo tema** de demonstração (ex.: "Gestão ambiental", reaproveitando `ambiental_mensal.csv`) | R1 | 4 |
-| 2 | **Modo apresentação** e **identidade da Investe Piauí** (logo, nome, cores em `config/identidade.json`) | R11, R12 | 5 |
+| 1 | **Logo oficial** da Investe Piauí em `assets/logo-investe-piaui.png` (o grupo fornece) | R12 | 5 |
 | 3 | Análise de sensibilidade dos pesos | R6 | 1 |
 | 3 | Mais indicadores A e S (ver `docs/indicadores-candidatos.md`; feito: SST1 / 403-9 com a tabela `seguranca`) | R8 | 3 |
 | 3 | Revisão do pilar de cada indicador (Q3, T1…) | — | todos |
-| 3 | Roteiro da apresentação e manual de uso | R10 | 5 |
+| 2 | Ensaiar o roteiro (`docs/roteiro-apresentacao.md`) e revisar o manual (`docs/manual-de-uso.md`) | R10 | 5 |
 
 ## Frentes de trabalho (5 pessoas; sugestão, ajustem os nomes)
 
@@ -83,5 +85,6 @@ Todos executam código, revisam o PR de alguém e leem `docs/arquitetura.md`. Co
 | 14/11/2026 (Social) | Luiz + IA | **Indicador SST1 (GRI 403-9, acidentes de trabalho):** tabela fictícia `seguranca.csv` gerada por `tools/gerador/gerar_seguranca.py` (semente 31, horas coerentes com `emprego_mensal`), contrato, registro (taxa por 1 milhão de horas, acidentes e dias perdidos), tema (destaque e quadro anual em S), `config/metricas.json` (peso 2, menor é melhor, piso 15 e teto 0), referência pandas, 1 contexto novo e testes (61 verdes). Valores antigos de `referencia.json` ficaram intactos | Aba `seguranca` na planilha de exemplo; óbitos e lesões de grande consequência (403-9 completo); revisar piso/teto com dados reais; abrir a página Social no navegador para conferir o quadro |
 | 14/11/2026 (Governança 2) | Manoel + IA | **Indicadores AC1 (GRI 205-3), AC2 (205-2) e PO1 (2-23):** tabela fictícia `integridade.csv` (mesmo gerador, `gerar_governanca.py`), contrato, registro, tema, `config/metricas.json` (AC1 peso 2; AC2 e PO1 peso 1), referência pandas e testes (59 verdes) | Aba `integridade` na planilha de exemplo; 2-26 e 2-9; revisar piso/teto com a professora |
 | 14/11/2026 (Governança) | Manoel + IA | **Indicador CL1 (GRI 2-27, conformidade):** tabela fictícia `conformidade.csv` gerada por `tools/gerador/gerar_governanca.py`, contrato, registro, tema, `config/metricas.json` (peso 2, menor é melhor), referência pandas e testes (57 verdes) | Regenerar a planilha de exemplo com a aba `conformidade`; indicadores 205-2, 205-3, 2-23 e demais de G |
+| 17/11/2026 | Arthur + IA | **Importação de CSV** (`nucleo/importacao.js`, `ui/importar.js`), **modo apresentação** e **identidade** (`config/identidade.json`, `assets/`), manual e roteiro, planilha XLSX de exemplo regerada. XLSX adiado (D16) | Logo oficial; XLSX; segundo tema (outro integrante); ensaio |
 | 14/11/2026 (noite) | Arthur + IA | **Pontuação v1.0 fechada:** método e referências de mercado gravados em `config/metricas.json` (`metodo`, `referencias_externas`), técnicas de normalização documentadas em `02-…`. Antes, **frente 1 concluída:** `config/metricas.json`, `nucleo/pontuacao.js`, `componentes/nota.js`, notas nas páginas, referência Python independente e 26 testes novos (56 no total) | Calibração dos limites com dados reais; medidas proporcionais para totais absolutos |
 | 14/11/2026 | Arthur + IA | Catálogo GRI movido para `privado/` (fora do Git) com fallback no app e testes pulados sem ele. Antes: estrutura inicial do repositório, motor, UI, catálogo GRI, documentação, `contexto-ia/` e planilha XLSX de exemplo; decisões: 5 pessoas, sem exportação, XLSX obrigatório, modo apresentação, identidade da Investe Piauí | Itens da tabela acima |

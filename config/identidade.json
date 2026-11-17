@@ -1,0 +1,7 @@
+{
+  "aviso": "Identidade visual do painel. Para trocar o nome, o logo ou as cores, edite só este arquivo (e coloque o logo em assets/). O logo OFICIAL da Investe Piauí deve ser fornecido pelo grupo; não gere por IA.",
+  "nome_instituicao": "Investe Piauí",
+  "titulo_painel": "Painel ASG",
+  "logo": "assets/logo-investe-piaui.png",
+  "cores": { "primaria": "#1D4E63", "destaque": "#E2741F" }
+}

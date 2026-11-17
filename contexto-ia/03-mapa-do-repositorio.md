@@ -8,10 +8,10 @@ Itens marcados **(a criar)** ainda não existem.
 ├── package.json               scripts: servir, test, referencia
 ├── AGENTS.md · CLAUDE.md      apontam as IAs para esta pasta (contexto-ia/)
 ├── contexto-ia/               memória compartilhada do grupo para assistentes de IA (leia 00 primeiro)
-├── assets/                    (a criar) logo oficial da Investe Piauí e imagens da interface
+├── assets/                    logo oficial da Investe Piauí (o grupo coloca o arquivo; ver assets/LEIA-ME.md)
 ├── config/                    parâmetros editáveis
 │   ├── metricas.json          pesos, piso/teto, faixas, justificativas (existe)
-│   └── identidade.json        (a criar) nome da instituição, caminho do logo, cores
+│   └── identidade.json        nome da instituição, caminho do logo, cores (existe)
 ├── catalogo/                  conhecimento sobre GRI e indicadores (dados, não código)
 │   └── indicadores.json       registro PÚBLICO dos indicadores calculáveis (fórmula, pilar, código GRI)
 ├── privado/                   FORA DO GIT (só o LEIA-ME.md é versionado)
@@ -28,9 +28,10 @@ Itens marcados **(a criar)** ainda não existem.
 │   ├── css/estilo.css         visual (tokens de cor por pilar no topo)
 │   └── js/
 │       ├── main.js            lê índice, tema e registro; liga o leitor de arquivos
-│       ├── nucleo/            MOTOR: sem HTML, roda em Node (por isso é testável); inclui pontuacao.js (notas 0-100)
+│       ├── nucleo/            MOTOR: sem HTML, roda em Node (por isso é testável); inclui pontuacao.js (notas 0-100), importacao.js (valida CSV/JSON do usuário) e leitores.js
 │       └── ui/                TELAS: sem contas; só desenham o que o motor entrega
-│           ├── app.js         casca, abas (#hash), filtros
+│           ├── app.js         casca, abas (#hash), filtros, modo apresentação, identidade
+│           ├── importar.js    janela "Importar dados" (CSV)
 │           ├── paginas/       visao · pilar (A/S/G) · empresas · metodo
 │           └── componentes/   cartao · graficos (SVG) · balanco · nota
 ├── tests/                     testes + referência independente (pandas)

@@ -7,12 +7,7 @@ import { carregarRegistro } from "./nucleo/registro.js";
 import { carregarMetricas, validarMetricas } from "./nucleo/pontuacao.js";
 import { iniciarApp } from "./ui/app.js";
 
-/** Leitor do navegador: busca o arquivo por HTTP (exige servidor; ver README). */
-const leitor = async (caminho) => {
-  const r = await fetch(caminho);
-  if (!r.ok) throw new Error(`${caminho}: HTTP ${r.status}`);
-  return r.text();
-};
+import { leitorHttp as leitor } from "./nucleo/leitores.js";   // busca os arquivos por HTTP (exige servidor; ver README)
 
 try {
   const indice = JSON.parse(await leitor("temas/index.json"));
@@ -26,7 +21,9 @@ try {
   const problemasMetricas = metricasBrutas ? validarMetricas(metricasBrutas, registro, modelo.tema.indicadores) : null;
   const metricas = metricasBrutas && !problemasMetricas.erros.length ? metricasBrutas : null;
   if (problemasMetricas?.erros.length) console.warn("config/metricas.json inválido:", problemasMetricas.erros);
-  iniciarApp({ modelo, registro, indice, metricas, problemasMetricas });
+  // Identidade visual (config/identidade.json): opcional; sem ela valem os padrões de app.js
+  const identidade = await leitor("config/identidade.json").then(JSON.parse).catch(() => null);
+  iniciarApp({ modelo, registro, indice, metricas, problemasMetricas, identidade });
 } catch (e) {
   console.error(e);
   document.getElementById("app").innerHTML = `<main style="padding:5vw;max-width:70ch"><h1>Não foi possível carregar</h1>

@@ -13,6 +13,22 @@
 import { csvParaObjetos } from "./csv.js";
 
 /**
+ * Transforma os valores que não deu para converter em mensagens claras: UMA por coluna, com exemplo e linha.
+ * São ERROS (bloqueiam a importação): um "n/d" no lugar de número viraria "sem dado" calado e mudaria as
+ * médias sem ninguém perceber. Melhor o usuário corrigir (deixar a célula vazia = sem dado, de propósito).
+ */
+function relatarInvalidos(arquivo, invalidos, problemas) {
+  const porColuna = new Map();
+  for (const x of invalidos) { if (!porColuna.has(x.coluna)) porColuna.set(x.coluna, []); porColuna.get(x.coluna).push(x); }
+  for (const [coluna, lista] of porColuna) {
+    const ex = lista[0], base = `${arquivo}, coluna ${coluna}: ${lista.length} valor(es)`;
+    problemas.erros.push(ex.tipo === "data"
+      ? `${base} com data inválida (ex.: "${ex.valor}" na linha ${ex.linha}). Use AAAA-MM-DD ou DD/MM/AAAA`
+      : `${base} que não são número (ex.: "${ex.valor}" na linha ${ex.linha}). Corrija ou deixe a célula vazia para indicar "sem dado"`);
+  }
+}
+
+/**
  * Monta o modelo a partir de textos já lidos.
  * @param {object} tema      conteúdo de tema.json
  * @param {object} contrato  conteúdo de contrato.json
@@ -29,11 +45,22 @@ export function montarModelo(tema, contrato, textos) {
       (def.obrigatoria ? problemas.erros : problemas.avisos).push(`Arquivo ausente: ${def.arquivo} (tabela ${nome})`);
       continue;
     }
-    const { linhas, cabecalho } = csvParaObjetos(texto, def.colunas);
+    const { linhas, cabecalho, invalidos } = csvParaObjetos(texto, def.colunas);
     const faltando = Object.keys(def.colunas).filter((c) => !cabecalho.includes(c));
     if (faltando.length) {
       (def.obrigatoria ? problemas.erros : problemas.avisos).push(`${def.arquivo}: faltam as colunas ${faltando.join(", ")}`);
     }
+    // valores que não são número/data válidos: erro com exemplo e linha do arquivo (ver relatarInvalidos)
+    relatarInvalidos(def.arquivo, invalidos, problemas);
+    // chave duplicada (ex.: dois projetos com o mesmo projeto_id) faria as contas somarem em dobro
+    if (def.chave?.length && def.chave.every((c) => cabecalho.includes(c))) {
+      const vistas = new Set(); let repetidas = 0;
+      for (const l of linhas) { const k = def.chave.map((c) => l[c]).join("|"); if (vistas.has(k)) repetidas++; else vistas.add(k); }
+      if (repetidas) problemas.erros.push(`${def.arquivo}: ${repetidas} linha(s) repetida(s) para a chave (${def.chave.join(", ")})`);
+    }
+    // a coluna "mes" é a base do calendário: linha sem mês quebraria séries e filtros, então é erro
+    const semMes = cabecalho.includes("mes") && !invalidos.some((v) => v.coluna === "mes") ? linhas.findIndex((r) => !r.mes) : -1;   // data inválida já foi relatada acima
+    if (semMes >= 0) problemas.erros.push(`${def.arquivo}: a coluna mes está vazia na linha ${semMes + 2}`);
     cabecalho.forEach((c) => camposDisponiveis.add(`${nome}.${c}`));
     tabelas[nome] = linhas;
   }
@@ -50,7 +77,7 @@ export function montarModelo(tema, contrato, textos) {
 
   const indexar = (nome, chave) => new Map((tabelas[nome] || []).map((r) => [r[chave], r]));
   const mesesSet = new Set();
-  for (const t of Object.values(tabelas)) if (t.length && "mes" in t[0]) t.forEach((r) => mesesSet.add(r.mes.slice(0, 7)));
+  for (const t of Object.values(tabelas)) if (t.length && "mes" in t[0]) t.forEach((r) => r.mes && mesesSet.add(r.mes.slice(0, 7)));
 
   return {
     tema, contrato, tabelas, camposDisponiveis, problemas,
