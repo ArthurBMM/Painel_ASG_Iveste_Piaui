@@ -1,0 +1,151 @@
+{
+ "id": "gestao-ambiental",
+ "titulo": "Gestão ambiental na operação: energia, água e resíduos",
+ "resumo": "As operações da carteira estão usando menos energia fóssil e menos água por empregado e destinando melhor os resíduos? E o que ainda trava o avanço?",
+ "aviso_dados": "Demonstração com dados fictícios. Nenhum número aqui representa empresas ou projetos reais.",
+ "pasta_dados": "dados",
+ "contrato": "contrato.json",
+ "indicadores": [
+  "ES1",
+  "ES2",
+  "ES3",
+  "ES4",
+  "ES6",
+  "R1",
+  "R2",
+  "A1",
+  "H1",
+  "Q1",
+  "Q2",
+  "EV3",
+  "EV4",
+  "N1",
+  "C3",
+  "C1",
+  "T1",
+  "Q3"
+ ],
+ "destaques": {
+  "A": [
+   "ES1",
+   "ES4",
+   "R2"
+  ],
+  "S": [
+   "Q1",
+   "Q2",
+   "EV3",
+   "C3"
+  ],
+  "G": [
+   "T1",
+   "Q3"
+  ]
+ },
+ "cartoes_topo": [
+  "EV1.empregados",
+  "ES1",
+  "ES4",
+  "R2",
+  "A1",
+  "Q1"
+ ],
+ "historia": {
+  "titulo": "A carteira usa energia mais limpa e recupera mais resíduos, mas gera quase o mesmo lixo por empregado",
+  "pontos": [
+   "A fatia de energia renovável sobe e as emissões por empregado caem em todos os setores da carteira.",
+   "Dois marcos do cenário se refletem nos números: a central de triagem (mar/2024) e o reúso de água nas agroindústrias (jan/2025). A recuperação de resíduos passa de cerca de um terço para metade, e a água por empregado cai.",
+   "O que ainda trava: o resíduo gerado por empregado mal se move, a rotatividade sobe nas agroindústrias (contratação sazonal da safra) e o investimento em energia renovável ainda é minoria. Governança tem a menor nota dos três pilares."
+  ]
+ },
+ "marcas": [
+  {
+   "mes": "2024-03",
+   "texto": "Central de triagem"
+  },
+  {
+   "mes": "2025-01",
+   "texto": "Reúso de água"
+  }
+ ],
+ "graficos": {
+  "visao": [
+   {
+    "tipo": "classes",
+    "larga": true,
+    "titulo": "Empregados por classe de ocupação",
+    "sub": "Média mensal de empregados. Verde, neutra e alto impacto são critério do grupo (por ocupação), não uma classificação do GRI. Neste tema, verde é a função cujo trabalho principal é ambiental."
+   }
+  ],
+  "A": [
+   {
+    "tipo": "medida",
+    "larga": true,
+    "refs": [
+     "ES1"
+    ],
+    "titulo": "% de energia renovável, mês a mês",
+    "sub": "GRI 302-1. Sobe quando a matriz de cada operação se renova."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "ES4"
+    ],
+    "titulo": "tCO2e por empregado (anualizado), mês a mês",
+    "sub": "GRI 305-1 e 305-2. Cada ponto é o mês anualizado (×12)."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "R1"
+    ],
+    "titulo": "Resíduos por empregado (t anualizadas), mês a mês",
+    "sub": "GRI 306-3. Quase não cai, e sobe na safra."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "R2"
+    ],
+    "titulo": "% de resíduos recuperados, mês a mês",
+    "sub": "GRI 306-4. Sobe depois da central de triagem e estabiliza a partir de meados de 2025."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "A1"
+    ],
+    "titulo": "Água por empregado (ML anualizados), mês a mês",
+    "sub": "GRI 303-5. Cai a partir de jan/2025, quando o reúso entra nas agroindústrias."
+   }
+  ],
+  "S": [
+   {
+    "tipo": "classes",
+    "titulo": "Empregados por classe de ocupação",
+    "sub": "Média mensal de empregados por classe."
+   },
+   {
+    "tipo": "medida",
+    "refs": [
+     "EV3"
+    ],
+    "titulo": "Rotatividade (anualizada), mês a mês",
+    "sub": "GRI 401-1-b. Os picos vão de dezembro a abril: as agroindústrias dispensam o pessoal da safra."
+   }
+  ],
+  "G": [
+   {
+    "tipo": "anual",
+    "larga": true,
+    "refs": [
+     "T1",
+     "Q3"
+    ],
+    "titulo": "Indicadores de governança por ano",
+    "sub": "Cobertura parcial: a base deste tema sustenta só dois indicadores de governança. Outros conteúdos GRI de governança estão no catálogo e dependem de mais dados."
+   }
+  ]
+ }
+}

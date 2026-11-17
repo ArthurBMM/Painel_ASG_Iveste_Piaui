@@ -1,0 +1,10 @@
+projeto_id,nome_projeto,setor,municipio,regiao,data_inicio,empresa_id
+P01,Cerâmica Barro Vivo – Unidade Teresina,Cerâmica,Teresina,Centro,2021-03-01,E01
+P02,Cerâmica Barro Vivo – Unidade Altos,Cerâmica,Altos,Centro,2022-08-01,E01
+P03,Beneficiamento de Castanha de Caju,Agroindústria,Parnaíba,Litoral,2020-11-01,E02
+P04,Polpa e Sucos Piripiri,Agroindústria,Piripiri,Norte,2022-02-01,E02
+P05,Laticínio Serra Branca,Laticínios,São Raimundo Nonato,Semiárido,2021-06-01,E03
+P06,Central de Triagem e Compostagem do Sul,Resíduos sólidos,Bom Jesus,Sul,2024-03-01,E04
+P07,Aterro Sanitário Consorciado,Resíduos sólidos,Corrente,Sul,2022-10-01,E04
+P08,Estação de Tratamento de Esgoto Teresina Sul,Saneamento,Teresina,Centro,2019-05-01,E05
+P09,Programa de Eficiência nos Distritos Industriais,Eficiência industrial,Teresina,Centro,2023-06-01,E06
