@@ -1,0 +1,16 @@
+ocupacao_id,ocupacao,categoria_funcional,classe,justificativa_classe
+O01,Técnico de tratamento de efluentes,Técnico,Verde,Opera estações de tratamento e sistemas de reúso de água
+O02,Analista de gestão ambiental,Gestão,Verde,"Licenciamento, monitoramento e relatórios ambientais"
+O03,Operador de triagem e reciclagem,Operacional,Verde,Separa e encaminha materiais recicláveis
+O04,Técnico em eficiência energética,Técnico,Verde,Reduz o consumo de energia e troca fontes por renováveis
+O05,Operador de compostagem,Operacional,Verde,Transforma resíduos orgânicos em composto
+O06,Técnico de recuperação de áreas degradadas,Técnico,Verde,Restaura matas ciliares e áreas afetadas
+O07,Assistente administrativo,Administrativo,Neutra,Não contribui nem agrava de forma relevante
+O08,Analista financeiro ou contábil,Administrativo,Neutra,Não contribui nem agrava de forma relevante
+O09,Motorista (frota leve),Operacional,Neutra,Não contribui nem agrava de forma relevante
+O10,Segurança patrimonial,Operacional,Neutra,Não contribui nem agrava de forma relevante
+O11,Gerente de operações,Gestão,Neutra,Não contribui nem agrava de forma relevante
+O12,Operador de produção (processos gerais),Operacional,Neutra,Produção sem critério ambiental específico
+O13,Operador de forno e secador,Operacional,Alto impacto,Queima de combustível: emissões e alto consumo de energia
+O14,Operador de caldeira,Operacional,Alto impacto,Caldeira a lenha ou óleo: emissões de GEE e material particulado
+O15,Motorista de caminhão a diesel,Operacional,Alto impacto,Frota pesada a diesel: alta emissão de GEE

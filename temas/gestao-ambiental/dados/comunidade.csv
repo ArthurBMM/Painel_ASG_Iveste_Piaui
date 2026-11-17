@@ -1,0 +1,36 @@
+projeto_id,ano,investimento_infraestrutura_rs,tipo_investimento,tem_programa_comunidade,prazo_aviso_semanas,investimento_total_rs,investimento_renovavel_rs,tem_plano_encerramento
+P01,2023,554000.0,Escola técnica ambiental,Não,4,11609000.0,810000.0,Não se aplica
+P01,2024,662000.0,Cisternas comunitárias,Sim,4,8844000.0,1346000.0,Não se aplica
+P01,2025,544000.0,Cisternas comunitárias,Sim,5,11731000.0,3027000.0,Não se aplica
+P01,2026,572000.0,Escola técnica ambiental,Sim,5,10617000.0,3105000.0,Não se aplica
+P02,2023,1391000.0,Horta e compostagem comunitária,Não,4,11074000.0,852000.0,Não se aplica
+P02,2024,1623000.0,Escola técnica ambiental,Sim,4,9688000.0,1562000.0,Não se aplica
+P02,2025,1207000.0,Saneamento rural,Sim,5,10120000.0,2129000.0,Não se aplica
+P02,2026,1427000.0,Coleta seletiva em bairros,Sim,5,14524000.0,4368000.0,Não se aplica
+P03,2023,918000.0,Coleta seletiva em bairros,Sim,2,14997000.0,1615000.0,Não se aplica
+P03,2024,982000.0,Escola técnica ambiental,Sim,2,23184000.0,4657000.0,Não se aplica
+P03,2025,934000.0,Cisternas comunitárias,Sim,3,16606000.0,4433000.0,Não se aplica
+P03,2026,931000.0,Coleta seletiva em bairros,Sim,5,21590000.0,7055000.0,Não se aplica
+P04,2023,1197000.0,Cisternas comunitárias,Não,2,14203000.0,1570000.0,Não se aplica
+P04,2024,1350000.0,Horta e compostagem comunitária,Sim,2,23407000.0,4507000.0,Não se aplica
+P04,2025,1009000.0,Cisternas comunitárias,Sim,3,24151000.0,5636000.0,Não se aplica
+P04,2026,1192000.0,Coleta seletiva em bairros,Sim,5,16578000.0,5752000.0,Não se aplica
+P05,2023,459000.0,Saneamento rural,Não,4,9865000.0,786000.0,Não se aplica
+P05,2024,444000.0,Saneamento rural,Não,4,8660000.0,1432000.0,Não se aplica
+P05,2025,417000.0,Escola técnica ambiental,Sim,5,8108000.0,1753000.0,Não se aplica
+P05,2026,395000.0,Cisternas comunitárias,Sim,5,8879000.0,2776000.0,Não se aplica
+P06,2024,1398000.0,Coleta seletiva em bairros,Sim,6,9882000.0,3106000.0,Não se aplica
+P06,2025,1090000.0,Coleta seletiva em bairros,Sim,6,9913000.0,3950000.0,Não se aplica
+P06,2026,1232000.0,Horta e compostagem comunitária,Sim,6,8518000.0,4055000.0,Não se aplica
+P07,2023,409000.0,Saneamento rural,Sim,6,7616000.0,1906000.0,Não se aplica
+P07,2024,527000.0,Cisternas comunitárias,Sim,6,9416000.0,2685000.0,Não se aplica
+P07,2025,419000.0,Saneamento rural,Sim,6,9124000.0,3270000.0,Não se aplica
+P07,2026,417000.0,Saneamento rural,Sim,6,9355000.0,4172000.0,Não se aplica
+P08,2023,1450000.0,Escola técnica ambiental,Sim,6,31388000.0,1744000.0,Não se aplica
+P08,2024,1436000.0,Cisternas comunitárias,Sim,6,23568000.0,3240000.0,Não se aplica
+P08,2025,1147000.0,Cisternas comunitárias,Sim,6,25358000.0,4495000.0,Não se aplica
+P08,2026,1443000.0,Cisternas comunitárias,Sim,6,32500000.0,6850000.0,Não se aplica
+P09,2023,505000.0,Escola técnica ambiental,Sim,6,3463000.0,1860000.0,Não se aplica
+P09,2024,502000.0,Cisternas comunitárias,Sim,6,4316000.0,2566000.0,Não se aplica
+P09,2025,458000.0,Coleta seletiva em bairros,Sim,6,3704000.0,2409000.0,Não se aplica
+P09,2026,476000.0,Escola técnica ambiental,Sim,6,4170000.0,2946000.0,Não se aplica

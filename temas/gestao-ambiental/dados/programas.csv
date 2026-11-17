@@ -1,0 +1,38 @@
+programa_id,projeto_id,nome_programa,tipo,publico_alvo,data_inicio,vagas,concluintes,contratados_verde
+PR01,P03,Operador de ETE e reúso de água,Curso interno,Operacionais,2023-09-01,56,47,0
+PR02,P03,Operador de ETE e reúso de água,Curso interno,Operacionais,2025-02-01,38,34,0
+PR03,P04,Operador de ETE e reúso de água,Curso interno,Operacionais,2023-09-01,57,49,0
+PR04,P04,Operador de ETE e reúso de água,Curso interno,Operacionais,2025-02-01,21,19,0
+PR05,P05,Operador de ETE e reúso de água,Curso interno,Operacionais,2023-09-01,46,43,0
+PR06,P05,Operador de ETE e reúso de água,Curso interno,Operacionais,2025-02-01,24,20,0
+PR07,P08,Operador de ETE e reúso de água,Curso interno,Operacionais,2023-09-01,31,28,0
+PR08,P08,Operador de ETE e reúso de água,Curso interno,Operacionais,2025-02-01,57,52,0
+PR09,P01,Técnico em eficiência energética,Curso interno,Técnicos,2024-05-01,52,40,0
+PR10,P02,Técnico em eficiência energética,Curso interno,Técnicos,2024-05-01,31,28,0
+PR11,P05,Técnico em eficiência energética,Curso interno,Técnicos,2024-05-01,52,39,0
+PR12,P09,Técnico em eficiência energética,Curso interno,Técnicos,2024-05-01,52,44,0
+PR13,P01,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2024-08-01,60,49,0
+PR14,P01,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2026-03-01,33,28,0
+PR15,P02,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2024-08-01,56,44,0
+PR16,P02,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2026-03-01,45,42,0
+PR17,P03,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2024-08-01,23,18,0
+PR18,P03,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2026-03-01,45,36,0
+PR19,P05,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2024-08-01,47,43,0
+PR20,P05,Operação segura e eficiente de fornos e caldeiras,Curso interno,Operadores de forno e caldeira,2026-03-01,34,30,0
+PR21,P06,Inclusão produtiva de catadores,Transição de carreira,Catadores e ex-trabalhadores de lixão,2024-04-01,31,29,14
+PR22,P06,Inclusão produtiva de catadores,Transição de carreira,Catadores e ex-trabalhadores de lixão,2025-02-01,30,25,13
+PR23,P06,Inclusão produtiva de catadores,Transição de carreira,Catadores e ex-trabalhadores de lixão,2026-03-01,26,23,11
+PR24,P07,Inclusão produtiva de catadores,Transição de carreira,Catadores e ex-trabalhadores de lixão,2024-04-01,20,15,7
+PR25,P07,Inclusão produtiva de catadores,Transição de carreira,Catadores e ex-trabalhadores de lixão,2025-02-01,54,40,21
+PR26,P07,Inclusão produtiva de catadores,Transição de carreira,Catadores e ex-trabalhadores de lixão,2026-03-01,55,52,31
+PR27,P03,Requalificação para gestão ambiental,Requalificação,Trabalhadores sazonais da safra,2025-03-01,23,19,8
+PR28,P03,Requalificação para gestão ambiental,Requalificação,Trabalhadores sazonais da safra,2026-03-01,32,30,10
+PR29,P04,Requalificação para gestão ambiental,Requalificação,Trabalhadores sazonais da safra,2025-03-01,54,38,16
+PR30,P04,Requalificação para gestão ambiental,Requalificação,Trabalhadores sazonais da safra,2026-03-01,55,43,18
+PR31,P04,Gestão de resíduos orgânicos e compostagem,Curso interno,Operacionais,2024-10-01,60,44,0
+PR32,P06,Gestão de resíduos orgânicos e compostagem,Curso interno,Operacionais,2024-10-01,48,37,0
+PR33,P01,Apoio a graduação em engenharia ambiental,Apoio a curso externo,Técnicos e administrativos,2023-03-01,55,39,0
+PR34,P01,Apoio a graduação em engenharia ambiental,Apoio a curso externo,Técnicos e administrativos,2025-08-01,23,20,0
+PR35,P08,Apoio a graduação em engenharia ambiental,Apoio a curso externo,Técnicos e administrativos,2023-03-01,22,17,0
+PR36,P08,Apoio a graduação em engenharia ambiental,Apoio a curso externo,Técnicos e administrativos,2025-08-01,35,28,0
+PR37,P09,Apoio a graduação em engenharia ambiental,Apoio a curso externo,Técnicos e administrativos,2025-08-01,59,46,0

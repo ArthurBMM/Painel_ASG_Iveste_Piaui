@@ -4,6 +4,11 @@
    "id": "t8-empregos-verdes",
    "titulo": "Empregos verdes e qualificação para a transição energética",
    "pasta": "temas/t8-empregos-verdes"
+  },
+  {
+   "id": "gestao-ambiental",
+   "titulo": "Gestão ambiental na operação: energia, água e resíduos",
+   "pasta": "temas/gestao-ambiental"
   }
  ]
 }
