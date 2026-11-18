@@ -11,6 +11,7 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { montarDicionario } from "../tools/gerar_dicionario.mjs";
+import { montarDicionarioIndicadores, formula } from "../tools/gerar_dicionario_indicadores.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = (c) => readFile(path.join(RAIZ, c), "utf-8");
@@ -44,4 +45,18 @@ test("o CSV abre certo no Excel em português (BOM, ';' e uma linha por coluna d
   const linhas = gerado.csv.trim().split(/\r?\n/);
   assert.ok(linhas[0].includes("tema;tabela;coluna;tipo"));
   assert.equal(linhas.length - 1, 84 + 63, "T8 tem 84 colunas e gestao-ambiental 63; se mudou de propósito, ajuste este número");
+});
+
+test("dicionário de indicadores: todo indicador e medida do registro aparece, e o arquivo está atualizado", async () => {
+  const ind = await montarDicionarioIndicadores();
+  const reg = JSON.parse(await ler("catalogo/indicadores.json"));
+  for (const i of reg.indicadores) for (const m of i.medidas) assert.ok(ind.md.includes(`\`${i.id}.${m.chave}\``), `${i.id}.${m.chave} ausente`);
+  assert.equal(semCR(await ler("docs/dicionario-de-indicadores.md")), semCR(ind.md), "rode: npm run dicionario");
+  assert.equal(semCR(await ler("docs/dicionario-de-indicadores.csv")), semCR(ind.csv), "rode: npm run dicionario");
+});
+
+test("a tradução das fórmulas cobre os operadores do motor", () => {
+  assert.equal(formula({ op: "razao", num: { op: "soma", tabela: "t", campo: "a" }, den: { op: "fator_anual" } }), "Σ t.a ÷ (12 ÷ meses com dado)");
+  assert.equal(formula({ op: "mult", args: [{ op: "soma", tabela: "t", campo: "a", ano: "ultimo" }, { op: "const", valor: 1000000 }] }), "Σ t.a [último ano do período] × 1.000.000");
+  assert.throws(() => formula({ op: "inexistente" }), /sem tradução/);
 });

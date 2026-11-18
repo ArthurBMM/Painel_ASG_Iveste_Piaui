@@ -5,6 +5,8 @@ Ferramenta web que organiza **indicadores das Normas GRI** nos três pilares **A
 > **Disciplina:** Ciência de Dados (iCEV) · **Desafio:** ASG Investe Piauí · **Tema:** T8, *Empregos verdes e qualificação para a transição energética*.
 > **Todos os dados são fictícios** (gerados por scripts nossos, com semente fixa). O que propomos é a **ferramenta e o método**, não os números.
 
+**Versão online:** https://arthurbmm.github.io/Painel_ASG_Iveste_Piaui/ (GitHub Pages) · **Repositório:** https://github.com/ArthurBMM/Painel_ASG_Iveste_Piaui
+
 ---
 
 ## Em 1 minuto: como abrir
@@ -47,7 +49,7 @@ Os **filtros** (ano, origem, empresa, projeto, setor, município e, no Social, c
 | **Geradores dos dados fictícios** | `tools/gerador/` (Python; semente fixa: rodar de novo dá os mesmos números) |
 | **Contrato de dados** (o "molde" que outro conjunto de dados precisa seguir) | `temas/<tema>/contrato.json`, explicado em [`docs/contrato-de-dados.md`](docs/contrato-de-dados.md) |
 
-O dicionário e as planilhas são **gerados a partir dos próprios dados**: `npm run dicionario` e `npm run planilhas`. Um teste falha se alguém criar uma coluna sem descrevê-la ou esquecer de regenerar o dicionário.
+O dicionário e as planilhas são **gerados a partir dos próprios dados**: `npm run dicionario` (dados e indicadores) e `npm run planilhas`. Um teste falha se alguém criar uma coluna sem descrevê-la ou esquecer de regenerar o dicionário.
 
 Dados novos entram pelo botão **Importar dados**, em CSV no mesmo molde. A importação valida tudo, mostra um relatório e não guarda nada: ao recarregar a página, volta a demonstração.
 
@@ -68,6 +70,8 @@ Dados novos entram pelo botão **Importar dados**, em CSV no mesmo molde. A impo
 
 ## Indicadores e GRI
 
+> **Dicionário de indicadores, fórmulas e SCORE ASG:** [`docs/dicionario-de-indicadores.md`](docs/dicionario-de-indicadores.md) (e `.csv` para Excel). Para cada indicador: por que importa, como é calculado, a fórmula exata que o motor executa, o GRI correspondente e os parâmetros da nota (peso, piso, teto, justificativa).
+
 - **26 indicadores** no T8 (9 Ambientais, 10 Sociais, 7 de Governança), cada um ligado ao seu conteúdo GRI (ex.: GRI 403-9).
 - As fórmulas ficam em [`catalogo/indicadores.json`](catalogo/indicadores.json) como **dados**, não como código. Um indicador novo é escrito ali, sem programar.
 - O **pilar** de cada indicador é decisão do grupo, porque o GRI não classifica seus conteúdos em A, S ou G. A justificativa está em [`docs/mapeamento-asg.md`](docs/mapeamento-asg.md).
@@ -83,6 +87,22 @@ O catálogo das Normas GRI (130 conteúdos, com título e página) é material *
 Um tema é **uma pasta**, `temas/<id>/`, com `tema.json` (título, história, quais indicadores e gráficos mostrar), `contrato.json` (tabelas e colunas) e os CSV. O motor e as telas não mudam.
 
 **Prova:** o segundo tema, `gestao-ambiental` (energia, água e resíduos), entrou só como pasta, sem alterar uma linha de `src/`. Passo a passo e molde: [`docs/contrato-de-dados.md`](docs/contrato-de-dados.md) e `temas/_modelo/`.
+
+---
+
+## Tecnologias empregadas
+
+| Parte | Tecnologia | Por quê |
+|---|---|---|
+| Painel | **HTML, CSS e JavaScript puros** (módulos ES), gráficos em **SVG** próprio | Site estático: abre em qualquer navegador e publica no GitHub Pages sem servidor nem build |
+| Motor de cálculo | JavaScript, com as fórmulas guardadas como **dados** (JSON) | Indicador novo ou tema novo sem mexer no código |
+| Criptografia do catálogo GRI | **Web Crypto API** do navegador (PBKDF2-SHA256 + AES-256-GCM) | Nativa e auditada; nenhuma biblioteca externa |
+| Geração dos dados fictícios e referências independentes | **Python** (pandas, NumPy, openpyxl) | Gerar bases coerentes e recalcular os indicadores por outro caminho para conferir |
+| Testes | **Node.js** (`node --test`, nativo) | Mais de 100 testes automáticos, sem dependências |
+| Protótipo inicial | **Power BI** | Os primeiros números foram validados lá e viraram "âncoras" nos testes |
+| Versionamento e publicação | **Git, GitHub e GitHub Pages** | Histórico do trabalho do grupo e versão online |
+
+Não há dependências para instalar: o painel e os testes usam só o que vem com o navegador e com o Node.js.
 
 ---
 
@@ -130,6 +150,7 @@ privado/                só o LEIA-ME vai para o Git (o catálogo aberto fica fo
 |---|---|
 | Usar e apresentar | [`docs/manual-de-uso.md`](docs/manual-de-uso.md) · [`docs/roteiro-apresentacao.md`](docs/roteiro-apresentacao.md) |
 | Entender os dados | [`docs/dicionario-de-dados.md`](docs/dicionario-de-dados.md) · [`docs/contrato-de-dados.md`](docs/contrato-de-dados.md) |
+| Entender os indicadores e a nota | [`docs/dicionario-de-indicadores.md`](docs/dicionario-de-indicadores.md) |
 | Entender o método | [`contexto-ia/02-metricas-pesos-e-normalizacao.md`](contexto-ia/02-metricas-pesos-e-normalizacao.md) · [`docs/mapeamento-asg.md`](docs/mapeamento-asg.md) |
 | Entender as escolhas | [`docs/decisoes.md`](docs/decisoes.md) (cada decisão com o porquê e o que foi descartado) |
 | Mexer no código | [`docs/arquitetura.md`](docs/arquitetura.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) · `AGENTS.md` e `contexto-ia/` (para assistentes de IA) |
