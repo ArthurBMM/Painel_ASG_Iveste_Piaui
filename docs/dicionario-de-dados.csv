@@ -1,0 +1,148 @@
+﻿tema;tabela;coluna;tipo;unidade;descricao;chave;liga_com;tabela_obrigatoria;linhas_tabela;vazios;minimo;maximo;exemplos;usada_por_indicadores
+t8-empregos-verdes;projetos;projeto_id;texto;;Identificador do projeto (chave usada por todas as tabelas de fatos).;sim;;sim;12;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;projetos;nome_projeto;texto;;Nome do projeto ou unidade.;;;sim;12;0%;;;Parque Eólico Serra Azul, Complexo Ventos do Sertão, Parque Eólico Costa Branca, Usina Solar Sol do Sertão;
+t8-empregos-verdes;projetos;setor;texto;;Setor de atividade do projeto. Alimenta o filtro Setor e a coluna de setores da aba Empresas.;;;sim;12;0%;;;Eólica, Solar, Hidrelétrica, Obras sustentáveis;
+t8-empregos-verdes;projetos;municipio;texto;;Município do Piauí onde o projeto opera. Alimenta o filtro Município.;;;sim;12;0%;;;Marcolândia, Simões, Parnaíba, São João do Piauí;
+t8-empregos-verdes;projetos;regiao;texto;;Região do estado (agrupamento do grupo).;;;sim;12;0%;;;Semiárido, Litoral, Centro, Sul;
+t8-empregos-verdes;projetos;mw_instalado;numero;MW;Capacidade instalada de geração. Vazio quando o projeto não gera energia (ex.: mineração, obras).;;;sim;12;42%;60;300;;
+t8-empregos-verdes;projetos;data_inicio;data;;Início da operação do projeto (primeiro dia do mês).;;;sim;12;0%;2020-01-01;2024-06-01;;
+t8-empregos-verdes;projetos;empresa_id;texto;;Empresa ou instituição responsável pelo projeto (liga com empresas).;;empresas.empresa_id;sim;12;0%;;;E01, E02, E03, E04;
+t8-empregos-verdes;empresas;empresa_id;texto;;Identificador da entidade.;sim;;não;9;0%;;;E01, E02, E03, E04;
+t8-empregos-verdes;empresas;nome_empresa;texto;;Nome da empresa ou instituição.;;;não;9;0%;;;Ventos do Piauí Energia S.A., Brisa Litoral Renováveis Ltda., Solaris Nordeste Geração S.A., Sol de Picos Energia Ltda.;
+t8-empregos-verdes;empresas;origem;texto;;Relação com a Investe Piauí: Empresa parceira, Instituição parceira ou Iniciativa própria. Alimenta o filtro Origem.;;;não;9;0%;;;Empresa parceira, Instituição parceira, Iniciativa própria;
+t8-empregos-verdes;ocupacoes;ocupacao_id;texto;;Identificador da ocupação.;sim;;sim;18;0%;;;O01, O02, O03, O04;
+t8-empregos-verdes;ocupacoes;ocupacao;texto;;Nome da função.;;;sim;18;0%;;;Engenheiro eólico, Engenheiro de usina solar ou hidrelétrica, Engenheiro civil (obras sustentáveis), Arquiteto (projetos sustentáveis);
+t8-empregos-verdes;ocupacoes;categoria_funcional;texto;;Grupo funcional (ex.: Engenharia, Técnico, Operacional, Administrativo, Gestão).;;;sim;18;0%;;;Engenharia, Técnico, Operacional, Administrativo;
+t8-empregos-verdes;ocupacoes;classe;texto;;"Classe ambiental da função: Verde, Neutra ou Alto impacto. Critério DO GRUPO (o GRI não classifica ocupações assim); a razão de cada uma está em justificativa_classe. Alimenta o filtro de classe da aba Social.";;;sim;18;0%;;;Verde, Neutra, Alto impacto;EV1
+t8-empregos-verdes;ocupacoes;justificativa_classe;texto;;Por que a ocupação recebeu aquela classe (texto curto).;;;sim;18;0%;;;Projeta e opera parques de energia renovável, Projeta e opera geração renovável, Obras de baixo impacto ambiental, Projetos de arquitetura de baixo impacto;
+t8-empregos-verdes;emprego_mensal;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;sim;27366;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;emprego_mensal;ocupacao_id;texto;;Ocupação (liga com ocupacoes).;sim;ocupacoes.ocupacao_id;sim;27366;0%;;;O01, O05, O07, O08;
+t8-empregos-verdes;emprego_mensal;mes;data;;Mês de referência, sempre no dia 1 (AAAA-MM-01).;sim;;sim;27366;0%;2023-01-01;2026-10-01;;A1, ES2, ES4, ES6, EV2, EV3, H1, Q1, R1
+t8-empregos-verdes;emprego_mensal;genero;texto;;Gênero declarado: F ou M.;sim;;sim;27366;0%;;;F, M;EV4
+t8-empregos-verdes;emprego_mensal;faixa_etaria;texto;;Faixa etária: Abaixo de 30, De 30 a 50 ou Acima de 50.;sim;;sim;27366;0%;;;Abaixo de 30, De 30 a 50, Acima de 50;
+t8-empregos-verdes;emprego_mensal;empregados_fim_mes;inteiro;pessoas;ESTOQUE: pessoas empregadas no último dia do mês. Média mensal = soma dos estoques ÷ número de meses (não se soma estoque entre meses).;;;sim;27366;0%;0;55;;A1, ES2, ES4, EV1, EV2, EV3, EV4, Q1, Q3, R1
+t8-empregos-verdes;emprego_mensal;contratacoes;inteiro;pessoas;FLUXO: contratações no mês.;;;sim;27366;0%;0;5;;EV2
+t8-empregos-verdes;emprego_mensal;desligamentos;inteiro;pessoas;FLUXO: desligamentos no mês (voluntários ou não).;;;sim;27366;0%;0;12;;EV3
+t8-empregos-verdes;capacitacao;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;10379;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;capacitacao;ocupacao_id;texto;;Ocupação (liga com ocupacoes).;sim;ocupacoes.ocupacao_id;não;10379;0%;;;O01, O05, O07, O08;
+t8-empregos-verdes;capacitacao;mes;data;;Mês de referência (AAAA-MM-01).;sim;;não;10379;0%;2023-01-01;2026-10-01;;
+t8-empregos-verdes;capacitacao;genero;texto;;Gênero: F ou M.;sim;;não;10379;0%;;;F, M;
+t8-empregos-verdes;capacitacao;horas_capacitacao;numero;horas;Horas de treinamento realizadas no mês (soma das horas de todas as pessoas do grupo).;;;não;10379;0%;0;239;;Q1
+t8-empregos-verdes;capacitacao;empregados_avaliados;inteiro;pessoas;Pessoas que passaram por avaliação regular de desempenho no mês.;;;não;10379;0%;0;73;;Q3
+t8-empregos-verdes;programas;programa_id;texto;;Identificador do programa.;sim;;não;33;0%;;;PR01, PR02, PR03, PR04;Q2
+t8-empregos-verdes;programas;projeto_id;texto;;Projeto que oferece o programa (liga com projetos).;;projetos.projeto_id;não;33;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;programas;nome_programa;texto;;Nome do curso ou programa.;;;não;33;0%;;;Técnico de manutenção de aerogerador, Apoio a graduação em engenharia, Transição de carreira (desligados da eólica), Requalificação para energia renovável;
+t8-empregos-verdes;programas;tipo;texto;;Tipo: Curso interno, Apoio a curso externo, Transição de carreira ou Requalificação.;;;não;33;0%;;;Curso interno, Apoio a curso externo, Transição de carreira, Requalificação;
+t8-empregos-verdes;programas;publico_alvo;texto;;A quem o programa se destina.;;;não;33;0%;;;Técnicos, Técnicos e administrativos, Desligados em 2025, Ex-operadores de mina;
+t8-empregos-verdes;programas;data_inicio;data;;Início da turma (primeiro dia do mês).;;;não;33;0%;2023-07-01;2026-04-01;;
+t8-empregos-verdes;programas;vagas;inteiro;pessoas;Vagas oferecidas.;;;não;33;0%;21;75;;Q2
+t8-empregos-verdes;programas;concluintes;inteiro;pessoas;Pessoas que concluíram (nunca mais que as vagas).;;;não;33;0%;15;55;;Q2
+t8-empregos-verdes;programas;contratados_verde;inteiro;pessoas;Concluintes recolocados em função de classe Verde (mede se a qualificação vira emprego verde).;;;não;33;0%;0;25;;Q2
+t8-empregos-verdes;energia_emissoes;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;552;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;energia_emissoes;mes;data;;Mês de referência (AAAA-MM-01).;sim;;não;552;0%;2023-01-01;2026-10-01;;
+t8-empregos-verdes;energia_emissoes;energia_renovavel_mwh;numero;MWh;Energia consumida de fontes renováveis.;;;não;552;0%;66;1004,8;;ES1, ES2, ES3
+t8-empregos-verdes;energia_emissoes;energia_nao_renovavel_mwh;numero;MWh;Energia consumida de fontes não renováveis.;;;não;552;0%;9,1;3102;;ES1, ES2, ES3
+t8-empregos-verdes;energia_emissoes;reducao_consumo_mwh;numero;MWh;Energia economizada no mês por ações de eficiência.;;;não;552;0%;0,6;52,7;;ES3
+t8-empregos-verdes;energia_emissoes;emissoes_escopo1_tco2e;numero;tCO2e;Emissões diretas (escopo 1: combustíveis e processos próprios).;;;não;552;0%;3,6;1008,2;;ES4
+t8-empregos-verdes;energia_emissoes;emissoes_escopo2_tco2e;numero;tCO2e;Emissões indiretas da energia comprada (escopo 2).;;;não;552;0%;0,5;192,7;;ES4
+t8-empregos-verdes;energia_emissoes;reducao_emissoes_tco2e;numero;tCO2e;Emissões evitadas no mês por iniciativas de redução.;;;não;552;0%;0,1;11,9;;ES6
+t8-empregos-verdes;ambiental_mensal;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;552;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;ambiental_mensal;mes;data;;Mês de referência (AAAA-MM-01).;sim;;não;552;0%;2023-01-01;2026-10-01;;
+t8-empregos-verdes;ambiental_mensal;residuos_perigosos_ton;numero;t;Resíduos perigosos gerados.;;;não;552;0%;0,58;171,84;;R1, R2
+t8-empregos-verdes;ambiental_mensal;residuos_nao_perigosos_ton;numero;t;Resíduos não perigosos gerados.;;;não;552;0%;8,24;591,87;;R1, R2
+t8-empregos-verdes;ambiental_mensal;residuos_recuperados_ton;numero;t;Resíduos desviados da disposição final (reciclagem, compostagem, reúso).;;;não;552;0%;4,22;134,06;;R2
+t8-empregos-verdes;ambiental_mensal;residuos_disposicao_final_ton;numero;t;Resíduos enviados para disposição final (aterro, incineração). Recuperados + disposição final = gerados.;;;não;552;0%;4,69;645,25;;
+t8-empregos-verdes;ambiental_mensal;consumo_agua_megalitros;numero;ML;Água consumida (1 megalitro = 1 milhão de litros).;;;não;552;0%;0,2205;49,4383;;A1
+t8-empregos-verdes;ambiental_mensal;habitat_restaurado_ha;numero;ha;Área de habitat restaurada no mês.;;;não;552;0%;0,06;4,41;;H1
+t8-empregos-verdes;comunidade;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;48;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;comunidade;ano;inteiro;ano;Ano de referência.;sim;;não;48;0%;2023;2026;;M1, N1
+t8-empregos-verdes;comunidade;investimento_infraestrutura_rs;numero;R$;Investimento em infraestrutura para a comunidade no ano.;;;não;48;0%;228000;2865000;;C1
+t8-empregos-verdes;comunidade;tipo_investimento;texto;;Principal tipo de infraestrutura apoiada (ex.: saneamento, escola técnica).;;;não;48;0%;;;Estrada de acesso, Posto de saúde, Energia comunitária, Escola técnica;
+t8-empregos-verdes;comunidade;tem_programa_comunidade;texto;;O projeto tem programa de engajamento com a comunidade local? Sim ou Não.;;;não;48;0%;;;Sim, Não;C3
+t8-empregos-verdes;comunidade;prazo_aviso_semanas;inteiro;semanas;Antecedência mínima com que os empregados são avisados de mudanças operacionais.;;;não;48;0%;2;6;;N1
+t8-empregos-verdes;comunidade;investimento_total_rs;numero;R$;Investimento total do projeto no ano.;;;não;48;0%;6219000;67640000;;T1
+t8-empregos-verdes;comunidade;investimento_renovavel_rs;numero;R$;Parte do investimento total destinada a energia renovável e à transição.;;;não;48;0%;1285000;35377000;;T1
+t8-empregos-verdes;comunidade;tem_plano_encerramento;texto;;Há plano de fechamento da operação (relevante para mineração)? Sim, Não ou Não se aplica.;;;não;48;0%;;;Não se aplica, Não, Sim;M1
+t8-empregos-verdes;conformidade;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;48;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;conformidade;ano;inteiro;ano;Ano de referência.;sim;;não;48;0%;2023;2026;;CL1
+t8-empregos-verdes;conformidade;multas_qtd;inteiro;ocorrências;Número de multas ou sanções no ano.;;;não;48;0%;0;3;;CL1
+t8-empregos-verdes;conformidade;multas_valor_rs;numero;R$;Valor total das multas no ano.;;;não;48;0%;0;739000;;
+t8-empregos-verdes;conformidade;teve_multa;texto;;Teve ao menos uma multa no ano? Sim ou Não (coerente com multas_qtd).;;;não;48;0%;;;Não, Sim;CL1
+t8-empregos-verdes;integridade;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;48;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;integridade;ano;inteiro;ano;Ano de referência.;sim;;não;48;0%;2023;2026;;AC1, AC2, PO1
+t8-empregos-verdes;integridade;casos_corrupcao;inteiro;ocorrências;Casos de corrupção confirmados no ano.;;;não;48;0%;0;2;;AC1
+t8-empregos-verdes;integridade;teve_caso_corrupcao;texto;;Teve ao menos um caso confirmado no ano? Sim ou Não.;;;não;48;0%;;;Não, Sim;AC1
+t8-empregos-verdes;integridade;gestores_total;inteiro;pessoas;Gestores do projeto no ano.;;;não;48;0%;7;27;;AC2
+t8-empregos-verdes;integridade;gestores_capacitados_anticorrupcao;inteiro;pessoas;Gestores capacitados em políticas anticorrupção (nunca mais que o total).;;;não;48;0%;3;19;;AC2
+t8-empregos-verdes;integridade;politica_ambiental;texto;;Tem política ambiental formal? Sim ou Não.;;;não;48;0%;;;Sim, Não;
+t8-empregos-verdes;integridade;politica_direitos_humanos;texto;;Tem política de direitos humanos formal? Sim ou Não.;;;não;48;0%;;;Sim, Não;
+t8-empregos-verdes;integridade;politica_anticorrupcao;texto;;Tem política anticorrupção formal? Sim ou Não.;;;não;48;0%;;;Sim, Não;
+t8-empregos-verdes;integridade;politicas_adotadas_qtd;inteiro;políticas;Quantas das três políticas acima o projeto adota (0 a 3).;;;não;48;0%;0;3;;PO1
+t8-empregos-verdes;seguranca;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;48;0%;;;P01, P02, P03, P04;
+t8-empregos-verdes;seguranca;ano;inteiro;ano;Ano de referência.;sim;;não;48;0%;2023;2026;;
+t8-empregos-verdes;seguranca;horas_trabalhadas;inteiro;horas;Total de horas trabalhadas no ano (base para as taxas por milhão de horas).;;;não;48;0%;50200;753800;;SST1
+t8-empregos-verdes;seguranca;acidentes_registraveis;inteiro;ocorrências;Acidentes de trabalho registráveis no ano.;;;não;48;0%;0;14;;SST1
+t8-empregos-verdes;seguranca;dias_perdidos;inteiro;dias;Dias de trabalho perdidos por acidentes no ano.;;;não;48;0%;0;245;;SST1
+gestao-ambiental;projetos;projeto_id;texto;;Identificador do projeto (chave usada por todas as tabelas de fatos).;sim;;sim;9;0%;;;P01, P02, P03, P04;
+gestao-ambiental;projetos;nome_projeto;texto;;Nome do projeto ou unidade.;;;sim;9;0%;;;Cerâmica Barro Vivo – Unidade Teresina, Cerâmica Barro Vivo – Unidade Altos, Beneficiamento de Castanha de Caju, Polpa e Sucos Piripiri;
+gestao-ambiental;projetos;setor;texto;;Setor de atividade (ex.: Cerâmica, Agroindústria, Laticínios, Resíduos sólidos, Saneamento). Alimenta o filtro Setor.;;;sim;9;0%;;;Cerâmica, Agroindústria, Laticínios, Resíduos sólidos;
+gestao-ambiental;projetos;municipio;texto;;Município do Piauí onde o projeto opera. Alimenta o filtro Município.;;;sim;9;0%;;;Teresina, Altos, Parnaíba, Piripiri;
+gestao-ambiental;projetos;regiao;texto;;Região do estado (agrupamento do grupo).;;;sim;9;0%;;;Centro, Litoral, Norte, Semiárido;
+gestao-ambiental;projetos;data_inicio;data;;Início da operação do projeto (primeiro dia do mês).;;;sim;9;0%;2019-05-01;2024-03-01;;
+gestao-ambiental;projetos;empresa_id;texto;;Empresa ou instituição responsável pelo projeto (liga com empresas).;;empresas.empresa_id;sim;9;0%;;;E01, E02, E03, E04;
+gestao-ambiental;empresas;empresa_id;texto;;Identificador da entidade.;sim;;não;6;0%;;;E01, E02, E03, E04;
+gestao-ambiental;empresas;nome_empresa;texto;;Nome da empresa ou instituição.;;;não;6;0%;;;Cerâmica Barro Vivo Ltda., Agroindustrial Caju Dourado S.A., Laticínios Serra Branca Ltda., Consórcio Intermunicipal Ambiental do Sul;
+gestao-ambiental;empresas;origem;texto;;Relação com a Investe Piauí: Empresa parceira, Instituição parceira ou Iniciativa própria. Alimenta o filtro Origem.;;;não;6;0%;;;Empresa parceira, Instituição parceira, Iniciativa própria;
+gestao-ambiental;ocupacoes;ocupacao_id;texto;;Identificador da ocupação.;sim;;sim;15;0%;;;O01, O02, O03, O04;
+gestao-ambiental;ocupacoes;ocupacao;texto;;Nome da função.;;;sim;15;0%;;;Técnico de tratamento de efluentes, Analista de gestão ambiental, Operador de triagem e reciclagem, Técnico em eficiência energética;
+gestao-ambiental;ocupacoes;categoria_funcional;texto;;Grupo funcional (ex.: Engenharia, Técnico, Operacional, Administrativo, Gestão).;;;sim;15;0%;;;Técnico, Gestão, Operacional, Administrativo;
+gestao-ambiental;ocupacoes;classe;texto;;Classe ambiental da função: Verde, Neutra ou Alto impacto. Neste tema, Verde é a função cujo trabalho principal é ambiental (tratamento de efluentes, triagem, compostagem, eficiência energética). Critério DO GRUPO, não do GRI.;;;sim;15;0%;;;Verde, Neutra, Alto impacto;EV1
+gestao-ambiental;ocupacoes;justificativa_classe;texto;;Por que a ocupação recebeu aquela classe (texto curto).;;;sim;15;0%;;;Opera estações de tratamento e sistemas de reúso de água, Licenciamento, monitoramento e relatórios ambientais, Separa e encaminha materiais recicláveis, Reduz o consumo de energia e troca fontes por renováveis;
+gestao-ambiental;emprego_mensal;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;sim;14737;0%;;;P01, P02, P03, P04;
+gestao-ambiental;emprego_mensal;ocupacao_id;texto;;Ocupação (liga com ocupacoes).;sim;ocupacoes.ocupacao_id;sim;14737;0%;;;O13, O12, O15, O04;
+gestao-ambiental;emprego_mensal;mes;data;;Mês de referência, sempre no dia 1 (AAAA-MM-01).;sim;;sim;14737;0%;2023-01-01;2026-10-01;;A1, ES2, ES4, ES6, EV2, EV3, H1, Q1, R1
+gestao-ambiental;emprego_mensal;genero;texto;;Gênero declarado: F ou M.;sim;;sim;14737;0%;;;F, M;EV4
+gestao-ambiental;emprego_mensal;faixa_etaria;texto;;Faixa etária: Abaixo de 30, De 30 a 50 ou Acima de 50.;sim;;sim;14737;0%;;;De 30 a 50, Acima de 50, Abaixo de 30;
+gestao-ambiental;emprego_mensal;empregados_fim_mes;inteiro;pessoas;ESTOQUE: pessoas empregadas no último dia do mês. Média mensal = soma dos estoques ÷ número de meses (não se soma estoque entre meses).;;;sim;14737;0%;0;27;;A1, ES2, ES4, EV1, EV2, EV3, EV4, Q1, Q3, R1
+gestao-ambiental;emprego_mensal;contratacoes;inteiro;pessoas;FLUXO: contratações no mês.;;;sim;14737;0%;0;3;;EV2
+gestao-ambiental;emprego_mensal;desligamentos;inteiro;pessoas;FLUXO: desligamentos no mês (voluntários ou não).;;;sim;14737;0%;0;4;;EV3
+gestao-ambiental;capacitacao;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;6668;0%;;;P01, P02, P03, P04;
+gestao-ambiental;capacitacao;ocupacao_id;texto;;Ocupação (liga com ocupacoes).;sim;ocupacoes.ocupacao_id;não;6668;0%;;;O01, O02, O04, O07;
+gestao-ambiental;capacitacao;mes;data;;Mês de referência (AAAA-MM-01).;sim;;não;6668;0%;2023-01-01;2026-10-01;;
+gestao-ambiental;capacitacao;genero;texto;;Gênero: F ou M.;sim;;não;6668;0%;;;F, M;
+gestao-ambiental;capacitacao;horas_capacitacao;numero;horas;Horas de treinamento realizadas no mês (soma das horas de todas as pessoas do grupo).;;;não;6668;0%;0;85;;Q1
+gestao-ambiental;capacitacao;empregados_avaliados;inteiro;pessoas;Pessoas que passaram por avaliação regular de desempenho no mês.;;;não;6668;0%;0;34;;Q3
+gestao-ambiental;programas;programa_id;texto;;Identificador do programa.;sim;;não;37;0%;;;PR01, PR02, PR03, PR04;Q2
+gestao-ambiental;programas;projeto_id;texto;;Projeto que oferece o programa (liga com projetos).;;projetos.projeto_id;não;37;0%;;;P03, P04, P05, P08;
+gestao-ambiental;programas;nome_programa;texto;;Nome do curso ou programa.;;;não;37;0%;;;Operador de ETE e reúso de água, Técnico em eficiência energética, Operação segura e eficiente de fornos e caldeiras, Inclusão produtiva de catadores;
+gestao-ambiental;programas;tipo;texto;;Tipo: Curso interno, Apoio a curso externo, Transição de carreira ou Requalificação.;;;não;37;0%;;;Curso interno, Transição de carreira, Requalificação, Apoio a curso externo;
+gestao-ambiental;programas;publico_alvo;texto;;A quem o programa se destina.;;;não;37;0%;;;Operacionais, Técnicos, Operadores de forno e caldeira, Catadores e ex-trabalhadores de lixão;
+gestao-ambiental;programas;data_inicio;data;;Início da turma (primeiro dia do mês).;;;não;37;0%;2023-03-01;2026-03-01;;
+gestao-ambiental;programas;vagas;inteiro;pessoas;Vagas oferecidas.;;;não;37;0%;20;60;;Q2
+gestao-ambiental;programas;concluintes;inteiro;pessoas;Pessoas que concluíram (nunca mais que as vagas).;;;não;37;0%;15;52;;Q2
+gestao-ambiental;programas;contratados_verde;inteiro;pessoas;Concluintes recolocados em função de classe Verde (mede se a qualificação vira emprego verde).;;;não;37;0%;0;31;;Q2
+gestao-ambiental;energia_emissoes;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;395;0%;;;P01, P02, P03, P04;
+gestao-ambiental;energia_emissoes;mes;data;;Mês de referência (AAAA-MM-01).;sim;;não;395;0%;2023-01-01;2026-10-01;;
+gestao-ambiental;energia_emissoes;energia_renovavel_mwh;numero;MWh;Energia consumida de fontes renováveis.;;;não;395;0%;15;830,5;;ES1, ES2, ES3
+gestao-ambiental;energia_emissoes;energia_nao_renovavel_mwh;numero;MWh;Energia consumida de fontes não renováveis.;;;não;395;0%;5,5;889,3;;ES1, ES2, ES3
+gestao-ambiental;energia_emissoes;reducao_consumo_mwh;numero;MWh;Energia economizada no mês por ações de eficiência.;;;não;395;0%;0,1;25;;ES3
+gestao-ambiental;energia_emissoes;emissoes_escopo1_tco2e;numero;tCO2e;Emissões diretas (escopo 1: combustíveis e processos próprios).;;;não;395;0%;0,4;273,4;;ES4
+gestao-ambiental;energia_emissoes;emissoes_escopo2_tco2e;numero;tCO2e;Emissões indiretas da energia comprada (escopo 2).;;;não;395;0%;0,3;53,1;;ES4
+gestao-ambiental;energia_emissoes;reducao_emissoes_tco2e;numero;tCO2e;Emissões evitadas no mês por iniciativas de redução.;;;não;395;0%;0;11,7;;ES6
+gestao-ambiental;ambiental_mensal;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;395;0%;;;P01, P02, P03, P04;
+gestao-ambiental;ambiental_mensal;mes;data;;Mês de referência (AAAA-MM-01).;sim;;não;395;0%;2023-01-01;2026-10-01;;
+gestao-ambiental;ambiental_mensal;residuos_perigosos_ton;numero;t;Resíduos perigosos gerados.;;;não;395;0%;0,07;12,67;;R1, R2
+gestao-ambiental;ambiental_mensal;residuos_nao_perigosos_ton;numero;t;Resíduos não perigosos gerados.;;;não;395;0%;0,68;404,54;;R1, R2
+gestao-ambiental;ambiental_mensal;residuos_recuperados_ton;numero;t;Resíduos desviados da disposição final (reciclagem, compostagem, reúso).;;;não;395;0%;0,41;216,92;;R2
+gestao-ambiental;ambiental_mensal;residuos_disposicao_final_ton;numero;t;Resíduos enviados para disposição final (aterro, incineração). Recuperados + disposição final = gerados.;;;não;395;0%;0,31;258,31;;
+gestao-ambiental;ambiental_mensal;consumo_agua_megalitros;numero;ML;Água consumida (1 megalitro = 1 milhão de litros).;;;não;395;0%;0,0447;17,543;;A1
+gestao-ambiental;ambiental_mensal;habitat_restaurado_ha;numero;ha;Área de habitat restaurada no mês.;;;não;395;0%;0,02;2,69;;H1
+gestao-ambiental;comunidade;projeto_id;texto;;Projeto (liga com projetos).;sim;projetos.projeto_id;não;35;0%;;;P01, P02, P03, P04;
+gestao-ambiental;comunidade;ano;inteiro;ano;Ano de referência.;sim;;não;35;0%;2023;2026;;M1, N1
+gestao-ambiental;comunidade;investimento_infraestrutura_rs;numero;R$;Investimento em infraestrutura para a comunidade no ano.;;;não;35;0%;395000;1623000;;C1
+gestao-ambiental;comunidade;tipo_investimento;texto;;Principal tipo de infraestrutura apoiada (ex.: saneamento, escola técnica).;;;não;35;0%;;;Escola técnica ambiental, Cisternas comunitárias, Horta e compostagem comunitária, Saneamento rural;
+gestao-ambiental;comunidade;tem_programa_comunidade;texto;;O projeto tem programa de engajamento com a comunidade local? Sim ou Não.;;;não;35;0%;;;Não, Sim;C3
+gestao-ambiental;comunidade;prazo_aviso_semanas;inteiro;semanas;Antecedência mínima com que os empregados são avisados de mudanças operacionais.;;;não;35;0%;2;6;;N1
+gestao-ambiental;comunidade;investimento_total_rs;numero;R$;Investimento total do projeto no ano.;;;não;35;0%;3463000;32500000;;T1
+gestao-ambiental;comunidade;investimento_renovavel_rs;numero;R$;Parte do investimento total destinada a energia renovável e à transição.;;;não;35;0%;786000;7055000;;T1
+gestao-ambiental;comunidade;tem_plano_encerramento;texto;;Há plano de fechamento da operação (relevante para mineração)? Sim, Não ou Não se aplica.;;;não;35;0%;;;Não se aplica;M1

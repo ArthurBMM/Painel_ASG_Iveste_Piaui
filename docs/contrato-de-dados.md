@@ -31,6 +31,8 @@ E registrar o tema em `temas/index.json`:
 
 ## Tabelas do T8 (referência)
 
+> Descrição completa de **cada coluna** (significado, unidade, faixa de valores, vazios e indicadores que a usam): [`dicionario-de-dados.md`](dicionario-de-dados.md), gerado por `npm run dicionario`.
+
 | Tabela | Chave | Conteúdo (colunas principais) |
 |---|---|---|
 | `empresas` | `empresa_id` | `nome_empresa`, `origem` (empresa parceira, instituição parceira ou iniciativa própria) |
@@ -42,6 +44,9 @@ E registrar o tema em `temas/index.json`:
 | `energia_emissoes` | projeto × mês | energia renovável/não renovável (MWh), redução de consumo, emissões escopo 1 e 2, redução de emissões (tCO2e) |
 | `ambiental_mensal` | projeto × mês | resíduos (perigosos, não perigosos, recuperados, disposição final, em toneladas), água (megalitros), habitat restaurado (ha) |
 | `comunidade` | projeto × **ano** | investimento em infraestrutura, tipo, programa na comunidade, prazo de aviso (semanas), investimento total e renovável, plano de encerramento |
+| `conformidade` | projeto × ano | `multas_qtd`, `multas_valor_rs`, `teve_multa` |
+| `integridade` | projeto × ano | `casos_corrupcao`, `gestores_total`, `gestores_capacitados_anticorrupcao`, políticas (ambiental, direitos humanos, anticorrupção) |
+| `seguranca` | projeto × ano | `horas_trabalhadas`, `acidentes_registraveis`, `dias_perdidos` |
 
 As relações (chaves estrangeiras) também ficam no contrato, em `relacoes` (ex.: `emprego_mensal.projeto_id → projetos.projeto_id`), e são validadas.
 

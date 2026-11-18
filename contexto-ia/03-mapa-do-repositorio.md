@@ -37,7 +37,7 @@ Itens marcados **(a criar)** ainda não existem.
 │           ├── paginas/       visao · pilar (A/S/G) · empresas · metodo
 │           └── componentes/   cartao · graficos (SVG) · balanco · nota
 ├── tests/                     testes + referência independente (pandas)
-├── tools/                     scripts de apoio (servidor local, extrair catálogo, cifrar catálogo, gerar dados fictícios, referência)
+├── tools/                     scripts de apoio (servidor local, extrair catálogo, cifrar catálogo, gerar dados fictícios, dicionário, planilhas, referência)
 ├── vendor/                    (a criar, só se necessário) bibliotecas versionadas (ex.: XLSX, se a opção B for escolhida)
 ├── docs/                      documentação humana (arquitetura, contrato de dados, decisões, roadmap…)
 └── material-privado/          (ignorada pelo Git) material interno da disciplina; NUNCA enviar a IA
@@ -48,6 +48,7 @@ Itens marcados **(a criar)** ainda não existem.
 | Quero… | Onde |
 |---|---|
 | Novo indicador (fórmula) | `catalogo/indicadores.json` (cite só o código GRI) |
+| Coluna ou tabela nova nos dados | `contrato.json` do tema + descrição em `catalogo/dicionario-dados.json`; depois `npm run dicionario` (o teste cobra) |
 | Peso, piso/teto, faixa de um indicador | `config/metricas.json` (com `justificativa` e `fonte`) |
 | Novo tema | copiar `temas/_modelo/` → `temas/<id>/` e registrar em `temas/index.json` |
 | Nova tabela de dados | CSV em `temas/<id>/dados/` + entrada no `contrato.json` |

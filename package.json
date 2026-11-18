@@ -10,7 +10,9 @@
     "referencia": "python3 tools/referencia_pandas.py",
     "servir:python": "python -m http.server 8080",
     "cifrar-gri": "node tools/cifrar_gri.mjs",
-    "conferir-gri": "node tools/cifrar_gri.mjs --conferir"
+    "conferir-gri": "node tools/cifrar_gri.mjs --conferir",
+    "dicionario": "node tools/gerar_dicionario.mjs",
+    "planilhas": "python tools/gerar_exemplo_xlsx.py"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,15 @@
+{
+ "aviso": "Descrições que valem SÓ para este tema e substituem as de catalogo/dicionario-dados.json. Só escreva aqui o que muda de significado.",
+ "tabelas": {
+  "ocupacoes": {
+   "colunas": {
+    "classe": { "descricao": "Classe ambiental da função: Verde, Neutra ou Alto impacto. Neste tema, Verde é a função cujo trabalho principal é ambiental (tratamento de efluentes, triagem, compostagem, eficiência energética). Critério DO GRUPO, não do GRI." }
+   }
+  },
+  "projetos": {
+   "colunas": {
+    "setor": { "descricao": "Setor de atividade (ex.: Cerâmica, Agroindústria, Laticínios, Resíduos sólidos, Saneamento). Alimenta o filtro Setor." }
+   }
+  }
+ }
+}
