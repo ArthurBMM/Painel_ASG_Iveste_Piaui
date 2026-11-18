@@ -244,3 +244,13 @@ select.sel-tema { font: inherit; font-weight: 600; color: var(--texto); backgrou
 select.sel-tema:hover { border-color: var(--primaria); }
 header .marca, header .titulos { min-width: 0; }   /* deixa o seletor de tema encolher no celular em vez de estourar a largura */
 @media (max-width: 640px) { select.sel-tema { width: 100%; } }
+
+/* ---------- catálogo GRI cifrado ---------- */
+.selo-gri { align-self: center; font-size: 12px; color: var(--bom); border: 1px solid currentColor; border-radius: 999px; padding: 3px 10px; }
+.campo-senha { display: flex; flex-direction: column; gap: 6px; font-weight: 600; margin: 14px 0 4px; }
+.campo-senha input { font: inherit; font-weight: 400; padding: 8px 10px; border: 1px solid var(--linha); border-radius: var(--raio); max-width: 420px; }
+.gri-msg { min-height: 1.4em; margin: 6px 0 0; color: var(--suave); }
+.gri-msg.erro { color: var(--ruim); font-weight: 600; }
+dialog#dlg-gri { width: min(560px, 94vw); border: 0; border-radius: 10px; padding: 0; box-shadow: 0 20px 60px rgba(0,0,0,.35); color: var(--texto); background: var(--branco); }
+dialog#dlg-gri::backdrop { background: rgba(10, 25, 32, .6); }
+body.apresentando .selo-gri { display: none; }

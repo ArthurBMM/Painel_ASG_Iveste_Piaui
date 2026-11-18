@@ -8,7 +8,9 @@
     "test": "node --test",
     "servir": "node tools/servir.mjs",
     "referencia": "python3 tools/referencia_pandas.py",
-    "servir:python": "python -m http.server 8080"
+    "servir:python": "python -m http.server 8080",
+    "cifrar-gri": "node tools/cifrar_gri.mjs",
+    "conferir-gri": "node tools/cifrar_gri.mjs --conferir"
   },
   "engines": {
     "node": ">=20"

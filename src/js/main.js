@@ -9,11 +9,14 @@ import { iniciarApp } from "./ui/app.js";
 
 import { leitorHttp as leitor } from "./nucleo/leitores.js";   // busca os arquivos por HTTP (exige servidor; ver README)
 
-try {
-  const indice = JSON.parse(await leitor("temas/index.json"));
-  const pedido = new URLSearchParams(location.search).get("tema");
-  const info = indice.temas.find((t) => t.id === pedido) || indice.temas[0];
-  const [modelo, registro] = await Promise.all([carregarTema(leitor, info.pasta), carregarRegistro(leitor)]);
+/**
+ * Carrega um tema (dados + parâmetros da pontuação validados contra o registro).
+ * Fica numa função porque a troca de tema no cabeçalho reusa este caminho SEM recarregar a página
+ * (recarregar perderia o catálogo GRI desbloqueado, que vive só na memória).
+ */
+async function prepararTema(indice, idTema, registro) {
+  const info = indice.temas.find((t) => t.id === idTema) || indice.temas[0];
+  const modelo = await carregarTema(leitor, info.pasta);
   if (modelo.problemas.erros.length) console.warn("Problemas nos dados:", modelo.problemas);
   // Parâmetros da pontuação (config/metricas.json). Com ERROS de validação não calculamos nota nenhuma:
   // melhor mostrar só valores do que uma nota errada. A página "Indicadores e método" lista o que corrigir.
@@ -21,9 +24,21 @@ try {
   const problemasMetricas = metricasBrutas ? validarMetricas(metricasBrutas, registro, modelo.tema.indicadores) : null;
   const metricas = metricasBrutas && !problemasMetricas.erros.length ? metricasBrutas : null;
   if (problemasMetricas?.erros.length) console.warn("config/metricas.json inválido:", problemasMetricas.erros);
-  // Identidade visual (config/identidade.json): opcional; sem ela valem os padrões de app.js
-  const identidade = await leitor("config/identidade.json").then(JSON.parse).catch(() => null);
-  iniciarApp({ modelo, registro, indice, metricas, problemasMetricas, identidade });
+  return { modelo, metricas, problemasMetricas };
+}
+
+try {
+  const indice = JSON.parse(await leitor("temas/index.json"));
+  const registro = await carregarRegistro(leitor);
+  const pedido = new URLSearchParams(location.search).get("tema");
+  const [tema, identidade, catalogoCifrado] = await Promise.all([
+    prepararTema(indice, pedido, registro),
+    // Identidade visual (config/identidade.json): opcional; sem ela valem os padrões de app.js
+    leitor("config/identidade.json").then(JSON.parse).catch(() => null),
+    // Catálogo GRI cifrado (público). Só interessa se o catálogo ABERTO (privado/, fora do Git) não existe.
+    registro.catalogoDisponivel ? null : leitor("catalogo/gri_catalogo.cifrado.json").then(JSON.parse).catch(() => null),
+  ]);
+  iniciarApp({ ...tema, registro, indice, identidade, catalogoCifrado, abrirTema: (id, reg) => prepararTema(indice, id, reg) });
 } catch (e) {
   console.error(e);
   document.getElementById("app").innerHTML = `<main style="padding:5vw;max-width:70ch"><h1>Não foi possível carregar</h1>

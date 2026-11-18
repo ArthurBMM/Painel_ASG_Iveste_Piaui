@@ -14,6 +14,9 @@ Ferramenta web (estática, sem build) que organiza **indicadores das Normas GRI*
 
 ## Catálogo GRI privado (faça isto uma vez)
 
+No site publicado, o catálogo vem **cifrado** (`catalogo/gri_catalogo.cifrado.json`): clique em **🔒 Desbloquear GRI** e digite a senha do grupo (passada por mensagem, nunca pelo GitHub). Detalhes e limites em `privado/LEIA-ME.md`.
+
+
 O conteúdo das Normas GRI não é versionado. Peça o arquivo `gri_catalogo.json` ao grupo (e-mail) e salve em `privado/gri_catalogo.json`. Sem ele tudo funciona, mas os indicadores aparecem só pelo código GRI (veja `privado/LEIA-ME.md`).
 
 ## Como rodar
@@ -32,7 +35,7 @@ Para abrir outro tema: `http://localhost:8080/?tema=<id>` (os ids estão em `tem
 ## Mapa das pastas
 
 ```
-catalogo/    indicadores.json (registro público: fórmulas, pilar, código GRI)
+catalogo/    indicadores.json (registro público: fórmulas, pilar, código GRI) e gri_catalogo.cifrado.json (catálogo GRI cifrado)
 privado/     gri_catalogo.json (catálogo GRI, FORA do Git, recebido por e-mail)
 temas/       uma pasta por tema (t8-empregos-verdes) + _modelo/ para copiar
 src/js/nucleo/   motor: lê CSV, valida contrato, avalia fórmulas, calcula variações (sem HTML aqui)

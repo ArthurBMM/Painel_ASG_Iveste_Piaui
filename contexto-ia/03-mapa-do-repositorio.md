@@ -29,14 +29,15 @@ Itens marcados **(a criar)** ainda não existem.
 │   ├── css/estilo.css         visual (tokens de cor por pilar no topo)
 │   └── js/
 │       ├── main.js            lê índice, tema e registro; liga o leitor de arquivos
-│       ├── nucleo/            MOTOR: sem HTML, roda em Node (por isso é testável); inclui pontuacao.js (notas 0-100), importacao.js (valida CSV/JSON do usuário) e leitores.js
+│       ├── nucleo/            MOTOR: sem HTML, roda em Node (por isso é testável); inclui pontuacao.js (notas 0-100), cifra.js (catálogo GRI cifrado), importacao.js (valida CSV/JSON do usuário) e leitores.js
 │       └── ui/                TELAS: sem contas; só desenham o que o motor entrega
 │           ├── app.js         casca, abas (#hash), filtros, modo apresentação, identidade
 │           ├── importar.js    janela "Importar dados" (CSV)
+│           ├── desbloquear.js janela "Desbloquear GRI" (senha → decifra o catálogo na memória)
 │           ├── paginas/       visao · pilar (A/S/G) · empresas · metodo
 │           └── componentes/   cartao · graficos (SVG) · balanco · nota
 ├── tests/                     testes + referência independente (pandas)
-├── tools/                     scripts de apoio (servidor local, extrair catálogo, gerar dados fictícios, referência)
+├── tools/                     scripts de apoio (servidor local, extrair catálogo, cifrar catálogo, gerar dados fictícios, referência)
 ├── vendor/                    (a criar, só se necessário) bibliotecas versionadas (ex.: XLSX, se a opção B for escolhida)
 ├── docs/                      documentação humana (arquitetura, contrato de dados, decisões, roadmap…)
 └── material-privado/          (ignorada pelo Git) material interno da disciplina; NUNCA enviar a IA

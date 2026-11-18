@@ -6,6 +6,7 @@ Tempo sugerido: **10 a 12 minutos** + perguntas. A ferramenta **é** a apresenta
 
 - `npm run servir`, abrir `http://localhost:8080`, tecla **P** (tela cheia). Testar a projeção antes.
 - Conferir o logo (`assets/logo-investe-piaui.png`) e que a faixa de aviso ("dados fictícios") está visível.
+- **Desbloquear o GRI** (🔒 Desbloquear GRI → senha) **antes** da reunião e não recarregar a página: assim os cartões mostram título e página das Normas.
 - Ter à mão uma pasta com CSV de teste para mostrar a importação (opcional; ensaie antes).
 - **Vai apresentar com dados próprios?** Abra o painel **antes** da reunião, importe os arquivos e **não recarregue nem feche a aba**: nada é guardado, e recarregar volta à demonstração. Isso é proposital (nenhum dado fica no navegador).
 

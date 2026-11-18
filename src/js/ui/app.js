@@ -13,6 +13,7 @@ import * as empresas from "./paginas/empresas.js";
 import * as metodo from "./paginas/metodo.js";
 import { esc } from "./util.js";
 import { abrirImportacao } from "./importar.js";
+import { abrirDesbloqueio } from "./desbloquear.js";
 import { carregarRegistro } from "../nucleo/registro.js";
 import { validarMetricas } from "../nucleo/pontuacao.js";
 import { leitorHttp, leitorComSubstitutos } from "../nucleo/leitores.js";
@@ -33,6 +34,9 @@ let removerGlobais = [];
  * @param {object} args
  * @param {object} [args.importado]  presente quando os dados vieram de arquivos do usuário: { arquivos: [...] }
  * @param {object} [args.demo]       os argumentos ORIGINAIS (demonstração), para o botão "Voltar à demonstração"
+ * @param {object} [args.catalogoCifrado]  envelope de catalogo/gri_catalogo.cifrado.json (habilita "Desbloquear GRI")
+ * @param {string} [args.catalogoTexto]    catálogo GRI já decifrado nesta aba (só em memória)
+ * @param {Function} [args.abrirTema]      (id, registro) → {modelo, metricas, problemasMetricas}: troca de tema sem recarregar
  */
 export function iniciarApp(args) {
   const { modelo, registro, indice, metricas = null, problemasMetricas = null, importado = null } = args;
@@ -58,13 +62,15 @@ export function iniciarApp(args) {
         ${id.logo ? `<img class="logo" src="${esc(id.logo)}" alt="${esc(id.nome_instituicao)}" onload="document.body.classList.add('com-logo')" onerror="document.body.classList.remove('com-logo'); this.remove()">` : ""}
         <div class="titulos"><h1>${esc(id.titulo_painel)}<span class="inst"> · ${esc(id.nome_instituicao)}</span></h1>
           <p class="tema">${tema.codigo ? `<span class="tema-cod">${esc(tema.codigo)}</span>` : ""}${indice.temas.length > 1
-            ? `<select id="sel-tema" class="sel-tema" aria-label="Tema" title="Trocar de tema (recarrega a página; dados importados são descartados)">${indice.temas.map((t) => `<option value="${esc(t.id)}"${t.id === tema.id ? " selected" : ""}>${esc(t.titulo)}</option>`).join("")}</select>`
+            ? `<select id="sel-tema" class="sel-tema" aria-label="Tema" title="Trocar de tema (dados importados são descartados)">${indice.temas.map((t) => `<option value="${esc(t.id)}"${t.id === tema.id ? " selected" : ""}>${esc(t.titulo)}</option>`).join("")}</select>`
             : esc(tema.titulo)}</p>
           <p class="sub">Indicadores das Normas GRI para acompanhar a carteira da instituição</p></div></div>
       <div class="acoes">
         <button type="button" id="btn-filtros" class="ghost" aria-expanded="true" aria-controls="filtros" title="Mostrar ou esconder os filtros (tecla F)">Filtros</button>
         <button type="button" id="btn-apresentar" class="ghost" title="Tela cheia, letras maiores e atalhos de teclado (tecla P)">Apresentar</button>
-        <button type="button" id="btn-importar" class="ghost">Importar dados</button></div></div>
+        <button type="button" id="btn-importar" class="ghost">Importar dados</button>
+        ${args.catalogoCifrado && !registro.catalogoDisponivel ? `<button type="button" id="btn-gri" class="ghost" title="Mostrar títulos e páginas das Normas GRI (pede a senha do grupo)">🔒 Desbloquear GRI</button>` : ""}
+        ${args.catalogoTexto ? `<span class="selo-gri" title="Catálogo GRI aberto nesta aba (não é salvo)">GRI desbloqueado</span>` : ""}</div></div>
       <nav role="tablist" aria-label="Páginas">${PAGINAS.map((p) => `<button role="tab" data-p="${p.id}">${esc(p.rotulo)}</button>`).join("")}</nav></header>
     ${importado
       ? `<div class="aviso importado"><span><b>Dados importados</b> (${importado.arquivos.map((x) => esc(x)).join(", ")}). Não são os dados de demonstração e valem só nesta sessão.</span> <button type="button" id="voltar-demo" class="link">Voltar à demonstração</button></div>`
@@ -152,13 +158,40 @@ export function iniciarApp(args) {
       const reg = r.catalogoTexto ? await carregarRegistro(leitorComSubstitutos({ "privado/gri_catalogo.json": r.catalogoTexto }, leitorHttp)) : registro;
       const met = r.metricas || metricas;
       const probs = r.metricas ? validarMetricas(r.metricas, reg, tema.indicadores) : problemasMetricas;
-      iniciarApp({ modelo: r.modelo || modelo, registro: reg, indice, metricas: met, problemasMetricas: probs, demo,
+      // ...args: mantém identidade (logo!), catálogo desbloqueado e troca de tema
+      iniciarApp({ ...args, modelo: r.modelo || modelo, registro: reg, metricas: met, problemasMetricas: probs, demo,
                    importado: { arquivos: r.relatorio.lidos.map((l) => l.arquivo) } });
     },
   }));
   $("voltar-demo")?.addEventListener("click", () => iniciarApp(demo));
-  // trocar de tema = recarregar com ?tema=<id> (main.js lê o parâmetro). A aba atual (#hash) é mantida.
-  $("sel-tema")?.addEventListener("change", (e) => { location.search = `?tema=${encodeURIComponent(e.target.value)}`; });
+
+  // ---------- catálogo GRI cifrado: senha → decifra na memória → refaz o registro (mesmo caminho do catálogo importado)
+  $("btn-gri")?.addEventListener("click", () => abrirDesbloqueio({
+    envelope: args.catalogoCifrado,
+    aoAbrir: async (texto) => {
+      const reg = await carregarRegistro(leitorComSubstitutos({ "privado/gri_catalogo.json": texto }, leitorHttp));
+      // a demonstração guardada também ganha o catálogo, para "Voltar à demonstração" não trancar de novo
+      const novoDemo = { ...demo, registro: reg, catalogoTexto: texto };
+      iniciarApp(args.importado ? { ...args, registro: reg, catalogoTexto: texto, demo: novoDemo } : novoDemo);
+    },
+  }));
+
+  // ---------- trocar de tema SEM recarregar (recarregar perderia o catálogo desbloqueado). O endereço ?tema= é atualizado.
+  $("sel-tema")?.addEventListener("change", async (e) => {
+    const idTema = e.target.value;
+    if (!args.abrirTema) { location.search = `?tema=${encodeURIComponent(idTema)}`; return; }   // sem a função: recarrega
+    try {
+      e.target.disabled = true;
+      const novo = await args.abrirTema(idTema, registro);
+      history.replaceState(null, "", `?tema=${encodeURIComponent(idTema)}${location.hash}`);
+      // começa uma nova "demonstração" (dados importados do tema anterior são descartados)
+      const base = { ...args, ...novo, importado: null, demo: null };
+      iniciarApp(base);
+    } catch (err) {
+      console.error(err);
+      location.search = `?tema=${encodeURIComponent(idTema)}`;                             // plano B: recarregar
+    }
+  });
 
   /** Traduz o estado da tela para os filtros que o motor entende. */
   function filtrosDoMotor() {

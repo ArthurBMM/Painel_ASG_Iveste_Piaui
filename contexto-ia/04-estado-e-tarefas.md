@@ -6,7 +6,7 @@
 
 ## O que existe hoje (`main`)
 
-- Motor genérico + registro de **26 indicadores / 42 medidas** (9 A · 10 S · 7 G), validado contra cálculo independente em pandas (14 contextos × 42 medidas; 61 testes verdes, incluindo a pontuação).
+- Motor genérico + registro de **26 indicadores / 42 medidas** (9 A · 10 S · 7 G), validado contra cálculo independente em pandas (14 contextos × 42 medidas; 100 testes verdes e 3 pulados sem a senha, incluindo pontuação, importação, segundo tema e cifra).
 - Páginas: Visão ASG, Ambiental, Social, Governança, Empresas e projetos (empresas, instituições parceiras e iniciativas próprias, com projetos), Indicadores e método.
 - Catálogo GRI com 130 conteúdos e níveis de maturidade (catalogado → mapeado → calculável → em painel). **O catálogo é privado** (`privado/gri_catalogo.json`, fora do Git, por e-mail); sem ele o app mostra só os códigos GRI.
 - Tema T8 com dados fictícios; **segundo tema `gestao-ambiental`** (prova de escalabilidade, entrou só como pasta); molde em `temas/_modelo/`; **seletor de tema** no cabeçalho.
@@ -14,6 +14,7 @@
 - Entidade/projeto avaliados por **nota** e por **balanço de tendência** (▲▼).
 - **Importação de CSV** pelo navegador (com validação em português, separador `;`, vírgula decimal, datas DD/MM/AAAA, Windows-1252), **modo apresentação** (tecla P) e identidade configurável (`config/identidade.json`).
 - **Manual** (`docs/manual-de-uso.md`) e **roteiro** (`docs/roteiro-apresentacao.md`).
+- **Catálogo GRI cifrado** no repositório público (`catalogo/gri_catalogo.cifrado.json`, D18): botão *Desbloquear GRI* com a senha do grupo; gerar/trocar senha com `npm run cifrar-gri`.
 
 ## Pontuação v1.0 (resumo para o grupo)
 
@@ -84,6 +85,7 @@ Todos executam código, revisam o PR de alguém e leem `docs/arquitetura.md`. Co
 | 14/11/2026 (Social) | Luiz + IA | **Indicador SST1 (GRI 403-9, acidentes de trabalho):** tabela fictícia `seguranca.csv` gerada por `tools/gerador/gerar_seguranca.py` (semente 31, horas coerentes com `emprego_mensal`), contrato, registro (taxa por 1 milhão de horas, acidentes e dias perdidos), tema (destaque e quadro anual em S), `config/metricas.json` (peso 2, menor é melhor, piso 15 e teto 0), referência pandas, 1 contexto novo e testes (61 verdes). Valores antigos de `referencia.json` ficaram intactos | Aba `seguranca` na planilha de exemplo; óbitos e lesões de grande consequência (403-9 completo); revisar piso/teto com dados reais; abrir a página Social no navegador para conferir o quadro |
 | 14/11/2026 (Governança 2) | Manoel + IA | **Indicadores AC1 (GRI 205-3), AC2 (205-2) e PO1 (2-23):** tabela fictícia `integridade.csv` (mesmo gerador, `gerar_governanca.py`), contrato, registro, tema, `config/metricas.json` (AC1 peso 2; AC2 e PO1 peso 1), referência pandas e testes (59 verdes) | Aba `integridade` na planilha de exemplo; 2-26 e 2-9; revisar piso/teto com a professora |
 | 14/11/2026 (Governança) | Manoel + IA | **Indicador CL1 (GRI 2-27, conformidade):** tabela fictícia `conformidade.csv` gerada por `tools/gerador/gerar_governanca.py`, contrato, registro, tema, `config/metricas.json` (peso 2, menor é melhor), referência pandas e testes (57 verdes) | Regenerar a planilha de exemplo com a aba `conformidade`; indicadores 205-2, 205-3, 2-23 e demais de G |
+| 18/11/2026 | Arthur + IA | **Catálogo GRI cifrado** (`nucleo/cifra.js`, `ui/desbloquear.js`, `tools/cifrar_gri.mjs`, 10 testes); troca de tema sem recarregar; correção: importar CSV apagava o logo (a identidade não era repassada) | Arthur gera o cifrado com a senha; repositório público; Pages (opcional) |
 | 17/11/2026 (fim da tarde) | Arthur + IA | Revisão do tema `gestao-ambiental` (93 testes verdes, sem erro nas telas); **seletor de tema**; aviso de Governança tirado de `src/` e movido para `tema.json → notas_pilar` (havia "T8" escrito no código); legenda de governança do T8 atualizada (7 indicadores) | Visão por setor; molde para IA |
 | 17/11/2026 (tarde) | Arthur + IA | Logo da Investe Piauí no cabeçalho, visual branco e azul (cor medida no logo), selo do tema (`codigo` em `tema.json`), `--destaque` separado de `--alerta` (a cor da faixa "Em atenção" não muda com a identidade), aviso de não recarregar ao apresentar com dados importados | Feedback do Arthur sobre visão por setor e importação de tema |
 | 17/11/2026 | Arthur + IA | **Importação de CSV** (`nucleo/importacao.js`, `ui/importar.js`), **modo apresentação** e **identidade** (`config/identidade.json`, `assets/`), manual e roteiro, planilha XLSX de exemplo regerada. XLSX adiado (D16) | Logo oficial; XLSX; segundo tema (outro integrante); ensaio |

@@ -90,7 +90,7 @@ export function render({ modelo, registro, tema, ctx, metricas, problemasMetrica
   // O catálogo GRI é privado (fora do Git). Sem ele, explicamos como obtê-lo em vez de mostrar uma tabela vazia.
   const avisoCatalogo = `<div class="caixa larga atencao"><h3>Catálogo GRI não carregado</h3>
     <p class="sub">O catálogo completo das Normas GRI (títulos, páginas, níveis de maturidade) é material privado do grupo e não fica no repositório.
-    Peça o arquivo <code>gri_catalogo.json</code> ao grupo e coloque em <code>privado/</code>; depois recarregue a página.
+    Para vê-lo, use <b>🔒 Desbloquear GRI</b> no cabeçalho com a senha do grupo (o catálogo é publicado cifrado), ou importe o arquivo <code>gri_catalogo.json</code> em <b>Importar dados</b>.
     Os indicadores abaixo continuam identificados pelo código GRI.</p></div>`;
 
   const linhasInd = tema.indicadores.map((id) => registro.porId.get(id)).map((i) => {

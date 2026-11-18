@@ -13,13 +13,23 @@ npm run servir          # abre em http://localhost:8080
 
 ## 2. Navegar
 
-- **Tema:** com mais de um tema em `temas/index.json`, o título do tema no cabeçalho vira uma lista para trocar (recarrega a página; dados importados são descartados). Também dá para abrir direto: `?tema=gestao-ambiental`.
+- **Tema:** com mais de um tema em `temas/index.json`, o título do tema no cabeçalho vira uma lista para trocar (na mesma página; dados importados são descartados). Também dá para abrir direto: `?tema=gestao-ambiental`.
 - **Abas:** Visão ASG · Ambiental · Social · Governança · Empresas e projetos · Indicadores e método.
 - **Filtros** (ano, origem, empresa/instituição, projeto, setor, município; classe de ocupação só na aba Social). Valem para todas as abas. O botão **Filtros** recolhe o painel; recolhido, uma linha mostra o que está filtrado.
 - **Notas (0 a 100):** cada pilar e o ASG geral têm nota, faixa (*Alinhado* ≥ 70, *Em atenção* 40 a 70, *Crítico* < 40) e **cobertura** (quanto do peso tem dado). A cor nunca é a única informação: o rótulo vem em texto.
 - **Indicadores e método:** parâmetros (piso, teto, peso, justificativa, fonte), onde editar e uma **demonstração da conta** de uma entidade à escolha.
 
-## 3. Apresentar
+## 3. Catálogo GRI (senha)
+
+Os títulos e as páginas das Normas GRI são publicados **cifrados**. Para vê-los: botão **🔒 Desbloquear GRI** → senha do grupo → **Desbloquear**. O selo "GRI desbloqueado" confirma.
+
+- Vale enquanto a aba estiver aberta, inclusive ao trocar de tema, importar CSV e voltar à demonstração. **Recarregar ou fechar a aba tranca de novo** (nada é salvo).
+- Sem a senha, tudo funciona; os indicadores aparecem só com o código (ex.: GRI 305-1).
+- Quem tem `privado/gri_catalogo.json` no computador não vê o botão: o catálogo aberto é usado direto.
+- Trocar a senha: `npm run cifrar-gri` (ver `privado/LEIA-ME.md`).
+- Se aparecer "o navegador não liberou a criptografia": abra por `http://localhost` ou `https`, não pelo IP da rede.
+
+## 3b. Apresentar
 
 Botão **Apresentar** (ou tecla **P**): tela cheia, letras maiores, cabeçalho enxuto e filtros recolhidos.
 
@@ -73,4 +83,5 @@ Deve terminar com 0 falhas. Os testes com o catálogo GRI só rodam se `privado/
 | Importação não habilita o botão | há erro no relatório; leia o primeiro item |
 | Acentos estranhos no importado | arquivo em outra codificação; salve como CSV UTF-8 |
 | Sem notas, só valores | `config/metricas.json` inválido ou ausente (ver *Indicadores e método*) |
-| Referências GRI só com código | falta `privado/gri_catalogo.json` (pedir por e-mail ao grupo) |
+| Referências GRI só com código | clique em **🔒 Desbloquear GRI** e digite a senha (ou tenha `privado/gri_catalogo.json`) |
+| "Senha incorreta" | confira maiúsculas, espaços e acentos; a senha é a do grupo, passada por mensagem |

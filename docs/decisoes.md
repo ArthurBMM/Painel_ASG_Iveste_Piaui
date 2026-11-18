@@ -49,6 +49,12 @@ Formato: **decisão · por quê · alternativa descartada · quando rever.** Atu
 ### D17. Modo apresentação e identidade por configuração
 - **Por quê:** a ferramenta substitui o slide. Modo apresentação = tela cheia, letras maiores (zoom só em telas largas), atalhos de teclado, filtros recolhíveis. Nome, cores e logo vêm de `config/identidade.json`; o logo oficial é fornecido pelo grupo (nunca gerado por IA) e, se faltar, o painel mostra só o nome. Cabeçalho branco com o azul da Investe Piauí (`#2E5893`, medido no logo). A identidade muda só cores de **marca** (`--primaria`, `--destaque`); as cores com **significado** (faixas, pilares, ▲▼) ficam fixas no CSS.
 
+### D18. Catálogo GRI publicado cifrado, com senha
+- **Por quê:** o repositório ficou público e o catálogo GRI é confidencial. Um "login" num site estático não protege nada (a senha estaria no JavaScript e o arquivo seria baixável). Então o arquivo publicado é **cifrado** e a senha é a chave: AES-256-GCM, chave por PBKDF2-SHA256 com 600.000 repetições, via Web Crypto (sem biblioteca). Decifra na memória; nada é salvo.
+- **Junto:** a troca de tema passou a ser feita sem recarregar a página (recarregar trancaria de novo).
+- **Limites:** depende de senha longa; o arquivo antigo continua no histórico ao trocar a senha; quem tem a senha pode copiar o catálogo.
+- **Rever:** se a professora ou a Investe preferirem que nada do GRI seja publicado, basta apagar `catalogo/gri_catalogo.cifrado.json` (o site volta a mostrar só códigos).
+
 ### D7. Gráficos em SVG próprio, sem Chart.js
 - **Por quê:** o registro npm estava bloqueado no ambiente em que o código foi gerado e queremos zero dependências. Simples de ler e funciona offline.
 - **Rever:** se precisarmos de interações complexas (zoom, tooltips ricos).
